@@ -1,3 +1,4 @@
+// THIS IS JUST COPIED CODE FROM THE ACTIVITIES
 const router = require('express').Router();
 const { User } = require('../../models');
 
