@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>API TEST</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script>
+</head>
+
+<body>
+  <select id="muscleGroup">
+    <optgroup label="Select a muscle group">
+      <!-- Add a template tag with a custom id -->
+      <template id="muscleGroupTemplate">
+        {{#each muscleGroups}}
+        <option value="{{value}}" id="{{id}}">{{label}}</option>
+        {{/each}}
+      </template>
+    </optgroup>
+  </select>
+
+  <button id="getExercises">Get Exercises!</button>
+  <button id="getRandomExercises">Get Random Exercises!</button>
+  <button id="getAllExercises">Get All Exercises</button>
+  <button id="retrieve">Retrieve from local storage</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
