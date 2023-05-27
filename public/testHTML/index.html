@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>API TEST</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script>
+    </head>
+
+    <body>
+        <select id="muscleGroup">
+            <optgroup label="Select a muscle group">
+                <option value="abdominals" id="abdominals">Abdominals</option>
+                <option value="abductors" id="abductors">Abductors</option>
+                <option value="adductors" id="adductors">Adductors</option>
+                <option value="biceps" id="biceps">Biceps</option>
+                <option value="calves" id="calves">Calves</option>
+                <option value="chest" id="chest">Chest</option>
+                <option value="forearms" id="forearms">Forearms</option>
+                <option value="glutes" id="glutes">Glutes</option>
+                <option value="hamstrings" id="hamstrings">Hamstrings</option>
+                <option value="lats" id="lats">Lats</option>
+                <option value="lowerBack" id="lowerBack">Lower Back</option>
+                <option value="middleBack" id="middleBack">Middle Back</option>
+                <option value="neck" id="neck">Neck</option>
+                <option value="quadriceps" id="quadriceps">Quadriceps</option>
+                <option value="shoulders" id="shoulders">Shoulders</option>
+                <option value="traps" id="traps">Traps</option>
+                <option value="triceps" id="triceps">Triceps</option>
+            </optgroup>
+        </select>
+
+        <button id="getExercises">Get Exercises!</button>
+        <button id="getRandomExercises">Get Random Exercises!</button>
+        <button id="getAllExercises">Get All Exercises</button>
+        <button id="retrieve">Retrieve from local storage</button>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
