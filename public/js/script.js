@@ -70,14 +70,15 @@ async function getAllExercises() {
         const exercises = await fetchExercises(muscleGroupArray[i]);
         console.log(`Ten ${muscleGroupArray[i]} exercises:\n`);
         console.log(exercises);
-        localStorage.setItem("muscleGroup", JSON.stringify(exercises));
+        localStorage.setItem(muscleGroupArray[i], JSON.stringify(exercises));
     }
 }
 
 function retrieveFromLocalStorage() {
+    console.clear();
     for (let i = 0; i < muscleGroupArray.length; i++) {
         const muscleGroup = muscleGroupArray[i];
-        const exercises = JSON.parse(localStorage.getItem(muscleGroup));
+        const exercises = JSON.parse(localStorage.getItem(muscleGroupArray[i]));
 
         console.log(`Ten ${muscleGroup} exercises:\n`);
         console.log(exercises);
