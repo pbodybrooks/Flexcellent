@@ -26,7 +26,6 @@ Workout.init(
           key: 'id',
         },
     },
-
   },
   {
     sequelize,

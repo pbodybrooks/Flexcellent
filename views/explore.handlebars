@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <title>API TEST</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script>
+    <title>API TEST</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script> -->
 </head>
 
 <body>
@@ -15,17 +15,32 @@
     <optgroup label="Select a muscle group">
       <!-- Add a template tag with a custom id -->
       <template id="muscleGroupTemplate">
-        {{#each muscleGroups}}
-        <option value="{{value}}" id="{{id}}">{{label}}</option>
+        {{#each muscle_group}}
+        <option value="{{muscle_group}}" id="{{muscle_group}}">{{muscle_group}}</option>
         {{/each}}
       </template>
     </optgroup>
   </select>
 
-  <button id="getExercises">Get Exercises!</button>
-  <button id="getRandomExercises">Get Random Exercises!</button>
-  <button id="getAllExercises">Get All Exercises</button>
-  <button id="retrieve">Retrieve from local storage</button>
+    <button class="btn-red" id="getExercises">Get Exercises! [Call API]</button>
+    <button class="btn-red" id="getRandomExercises">Get Random Exercises! [Call API]</button>
+    <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
+    <button id="retrieve">Retrieve from local storage</button>
+
+    <div class="m-4" id="exerciseContainer"></div>
+        {{#each exercises as |exercise|}}
+        <div class="card">
+            <div class="card-header">
+                <h2>{{exercise.name}}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{exercise.muscle}}</p>
+                <p>{{exercise.equipment}}</p>
+                <p>{{exercise.difficulty}}</p>
+                <p>{{exercise.instructions}}</p>
+            </div>
+        </div>
+        {{/each}}
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
   <script src="../public/js/script.js"></script>

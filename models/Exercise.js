@@ -15,7 +15,7 @@ Exercise.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    muscle_group: {
+    muscle: {
       type: DataTypes.STRING,
       allowNull: false,
     },
