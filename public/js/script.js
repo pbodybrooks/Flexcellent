@@ -6,7 +6,33 @@ let getAllExercisesBtn = document.getElementById('getAllExercises');
 let retrieveBtn = document.getElementById('retrieve');
 
 let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
+// let muscleGroupArray = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower_back", "Middle_back", "Neck", "Quadriceps", "Traps", "Triceps"];
 
+//////////////////////// handlebars test ////////////////////////
+// const muscleGroupData = [
+//     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
+//     { value: 'abductors', id: 'abductors', label: 'Abductors' },
+//     { value: 'adductors', id: 'adductors', label: 'Adductors' },
+//     { value: 'biceps', id: 'biceps', label: 'Biceps' },
+//     { value: 'calves', id: 'calves', label: 'Calves' },
+//     { value: 'chest', id: 'chest', label: 'Chest' },
+//     { value: 'forearms', id: 'forearms', label: 'Forearms' },
+//     { value: 'glutes', id: 'glutes', label: 'Glutes' },
+//     { value: 'hamstrings', id: 'hamstrings', label: 'Hamstrings' },
+//     { value: 'lats', id: 'lats', label: 'Lats' },
+//     { value: 'lower_back', id: 'lower_back', label: 'Lower Back' },
+//     { value: 'middle_back', id: 'middle_back', label: 'Middle Back' },
+//     { value: 'neck', id: 'neck', label: 'Neck' },
+//     { value: 'quadriceps', id: 'quadriceps', label: 'Quadriceps' },
+//     { value: 'traps', id: 'traps', label: 'Traps' },
+//     { value: 'triceps', id: 'triceps', label: 'Triceps' }
+// ];
+// const muscleGroupTemplate = Handlebars.compile(document.getElementById('muscleGroupTemplate').innerHTML);
+// const renderedOptions = muscleGroupTemplate({ muscleGroups: muscleGroupData });
+// document.querySelector('#muscleGroup optgroup').innerHTML = renderedOptions;
+//////////////////////// handlebars test ////////////////////////
+
+// call the API to get exercises based on the muscle group fed into the function
 function fetchExercises(muscleGroup) {
     const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${muscleGroup}`;
     const options = {
@@ -22,18 +48,15 @@ function fetchExercises(muscleGroup) {
         return response.json();
         })
         .then(function (data) {
-
-        // console.log("Exercise data: ", data);
         return data;
         });
-    
 }
 
 // show exercises based on the muscle group selected by the user
 async function getExercises() {
+    console.clear();
     let selectedMuscleGroup = document.getElementById("muscleGroup").value;
 
-    // if the user fails to enter any of the required criteria, alert them to which criteria was left blank and must be filled
     if (selectedMuscleGroup === "null") {
         alert("Please select a muscle group.");
     }
@@ -41,17 +64,15 @@ async function getExercises() {
         const exercises = await fetchExercises(selectedMuscleGroup);
         console.log(`Ten ${selectedMuscleGroup} exercises:\n`);
         console.log(exercises);
+        for (let i = 0; i < exercises.length; i++) {
+            renderExercise(exercises[i]);
+        }
     }
 }
 
-// function getRandomMuscleGroup() {
-//     const randomMuscleIndex = Math.floor(Math.random() * muscleGroupArray.length);
-//     const randomMuscleGroup = muscleGroupArray[randomMuscleIndex];
-//     fetchExercises(randomMuscleGroup);
-// }
-
-// needs to be updated to show a random exercise from the random muscle group, rather than a full muscle group
+// show a random exercise from a random muscle group
 async function getRandomMuscleGroup() {
+    console.clear();
     const randomMuscleIndex = Math.floor(Math.random() * muscleGroupArray.length);
     const randomMuscleGroup = muscleGroupArray[randomMuscleIndex];
 
@@ -64,30 +85,120 @@ async function getRandomMuscleGroup() {
     console.log(randomExercise);
 }
 
+// // show all exercises for all muscle groups (temp - saved to LS as arrays in one big object)
+// async function getAllExercises() {
+//     console.clear();
+//     const allExercises = {}; // Create an empty object to store the exercises
+  
+//     for (let i = 0; i < muscleGroupArray.length; i++) {
+//       const muscleGroup = muscleGroupArray[i];
+//       const exercises = await fetchExercises(muscleGroup);
+  
+//       console.log(`Ten ${muscleGroup} exercises:\n`);
+//       console.log(exercises);
+  
+//       allExercises[muscleGroup] = exercises; // Assign the exercises to the corresponding muscle group key
+//     }
+//     localStorage.setItem('allExercises', JSON.stringify(allExercises));
+// }
 
+// show all exercises for all muscle groups (temp - saved to LS as individual arrays)
 async function getAllExercises() {
+    console.clear();
+    localStorage.clear();
+  
     for (let i = 0; i < muscleGroupArray.length; i++) {
-        const exercises = await fetchExercises(muscleGroupArray[i]);
-        console.log(`Ten ${muscleGroupArray[i]} exercises:\n`);
-        console.log(exercises);
-        localStorage.setItem(muscleGroupArray[i], JSON.stringify(exercises));
+      let muscleGroup = muscleGroupArray[i];
+      let exercises = await fetchExercises(muscleGroup);
+  
+      console.log(`Ten ${muscleGroup} exercises:\n`);
+      console.log(exercises);
+      localStorage.setItem(muscleGroup, JSON.stringify(exercises));
     }
 }
 
+// retrive the big allExercises object from LS and log it to the console
+// function retrieveFromLocalStorage() {
+//     console.clear();
+//     const allExercises = JSON.parse(localStorage.getItem('allExercises'));
+//     console.log(allExercises);
+// }
+
+// retrive each muscle group array from LS and log it to the console
 function retrieveFromLocalStorage() {
     console.clear();
-    for (let i = 0; i < muscleGroupArray.length; i++) {
-        const muscleGroup = muscleGroupArray[i];
-        const exercises = JSON.parse(localStorage.getItem(muscleGroupArray[i]));
 
+    for (let i = 0; i < muscleGroupArray.length; i++) {
+        let muscleGroup = muscleGroupArray[i];
+        let exercises = JSON.parse(localStorage.getItem(muscleGroup));
         console.log(`Ten ${muscleGroup} exercises:\n`);
         console.log(exercises);
+        for (let i = 0; i < exercises.length; i++) {
+            renderExercise(exercises[i]);
+        }
     }
 }
 
+function renderExercise(exercise) {
+    let exerciseName = toTitleCase(exercise.name);
+    let targetedMuscleGroup = toTitleCase(exercise.muscle);
+    let equipment = toTitleCase(exercise.equipment);
+    let difficulty = toTitleCase(exercise.difficulty);
+    let instructions = toTitleCase(exercise.instructions);
+
+    let exerciseTemplate = `
+        <div class="exercise m-4">
+            <h3>${exerciseName}</h3>
+            <p><strong>Targeted Muscle Group:</strong> ${targetedMuscleGroup}</p>
+            <p><strong>Equipment:</strong> ${equipment}</p>
+            <p><strong>Difficulty:</strong> ${difficulty}</p>
+            <p><strong>Instructions:</strong> ${instructions}</p>
+        </div>`;
+
+    exerciseContainer.innerHTML += exerciseTemplate;
+};
+
+// remove underscores from the string and capitalize the first letter of each word for purtiness
+function toTitleCase(str) {
+    let words = str.replace("_", " ").split(" ");
+    let titleCaseWords = words.map(function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    let titleCaseStr = titleCaseWords.join(" ");
+    return titleCaseStr;
+};
+  
 
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
 retrieveBtn.addEventListener('click', retrieveFromLocalStorage);
 
+
+
+/////////////////////////////////////// GRAVEYARD ///////////////////////////////////////
+// async function getAllExercises() {
+//     const allExercises = [];
+//     for (let i = 0; i < muscleGroupArray.length; i++) {
+//         const exercises = await fetchExercises(muscleGroupArray[i]);
+//         console.log(`Ten ${muscleGroupArray[i]} exercises:\n`);
+//         console.log(exercises);
+//         allExercises.push(exercises);
+//         // localStorage.setItem(muscleGroupArray[i], JSON.stringify(exercises));
+//     }
+//     localStorage.setItem('allExercises', JSON.stringify(allExercises));
+// }
+
+// function retrieveFromLocalStorage() {
+//     console.clear();
+//     // for (let i = 0; i < muscleGroupArray.length; i++) {
+//     //     const muscleGroup = muscleGroupArray[i];
+//     //     const exercises = JSON.parse(localStorage.getItem(muscleGroupArray[i]));
+
+//     //     console.log(`Ten ${muscleGroup} exercises:\n`);
+//     //     console.log(exercises);
+//     // }
+//     const allExercises = JSON.parse(localStorage.getItem('allExercises'));
+//     console.log(allExercises);
+// }
+/////////////////////////////////////// GRAVEYARD ///////////////////////////////////////
