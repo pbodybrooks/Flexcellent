@@ -32,7 +32,7 @@ let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calve
 // document.querySelector('#muscleGroup optgroup').innerHTML = renderedOptions;
 //////////////////////// handlebars test ////////////////////////
 
-
+// call the API to get exercises based on the muscle group fed into the function
 function fetchExercises(muscleGroup) {
     const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${muscleGroup}`;
     const options = {
@@ -54,6 +54,7 @@ function fetchExercises(muscleGroup) {
 
 // show exercises based on the muscle group selected by the user
 async function getExercises() {
+    console.clear();
     let selectedMuscleGroup = document.getElementById("muscleGroup").value;
 
     if (selectedMuscleGroup === "null") {
@@ -69,7 +70,9 @@ async function getExercises() {
     }
 }
 
+// show a random exercise from a random muscle group
 async function getRandomMuscleGroup() {
+    console.clear();
     const randomMuscleIndex = Math.floor(Math.random() * muscleGroupArray.length);
     const randomMuscleGroup = muscleGroupArray[randomMuscleIndex];
 
@@ -82,34 +85,58 @@ async function getRandomMuscleGroup() {
     console.log(randomExercise);
 }
 
+// // show all exercises for all muscle groups (temp - saved to LS as arrays in one big object)
+// async function getAllExercises() {
+//     console.clear();
+//     const allExercises = {}; // Create an empty object to store the exercises
+  
+//     for (let i = 0; i < muscleGroupArray.length; i++) {
+//       const muscleGroup = muscleGroupArray[i];
+//       const exercises = await fetchExercises(muscleGroup);
+  
+//       console.log(`Ten ${muscleGroup} exercises:\n`);
+//       console.log(exercises);
+  
+//       allExercises[muscleGroup] = exercises; // Assign the exercises to the corresponding muscle group key
+//     }
+//     localStorage.setItem('allExercises', JSON.stringify(allExercises));
+// }
 
-
+// show all exercises for all muscle groups (temp - saved to LS as individual arrays)
 async function getAllExercises() {
-    const allExercises = {}; // Create an empty object to store the exercises
+    console.clear();
+    localStorage.clear();
   
     for (let i = 0; i < muscleGroupArray.length; i++) {
-      const muscleGroup = muscleGroupArray[i];
-      const exercises = await fetchExercises(muscleGroup);
+      let muscleGroup = muscleGroupArray[i];
+      let exercises = await fetchExercises(muscleGroup);
   
       console.log(`Ten ${muscleGroup} exercises:\n`);
       console.log(exercises);
-  
-      allExercises[muscleGroup] = exercises; // Assign the exercises to the corresponding muscle group key
+      localStorage.setItem(muscleGroup, JSON.stringify(exercises));
     }
-  
-    localStorage.setItem('allExercises', JSON.stringify(allExercises));
 }
 
+// retrive the big allExercises object from LS and log it to the console
+// function retrieveFromLocalStorage() {
+//     console.clear();
+//     const allExercises = JSON.parse(localStorage.getItem('allExercises'));
+//     console.log(allExercises);
+// }
+
+// retrive each muscle group array from LS and log it to the console
 function retrieveFromLocalStorage() {
     console.clear();
-    const allExercises = JSON.parse(localStorage.getItem('allExercises'));
-    console.log(allExercises);
-  
-//     // for (const muscleGroup in allExercises) {
-//     //   if (allExercises.hasOwnProperty(muscleGroup)) {
-//     //     const exercises = allExercises[muscleGroup];
-//     //   }
-//     // }
+
+    for (let i = 0; i < muscleGroupArray.length; i++) {
+        let muscleGroup = muscleGroupArray[i];
+        let exercises = JSON.parse(localStorage.getItem(muscleGroup));
+        console.log(`Ten ${muscleGroup} exercises:\n`);
+        console.log(exercises);
+        for (let i = 0; i < exercises.length; i++) {
+            renderExercise(exercises[i]);
+        }
+    }
 }
 
 function renderExercise(exercise) {
@@ -120,7 +147,7 @@ function renderExercise(exercise) {
     let instructions = toTitleCase(exercise.instructions);
 
     let exerciseTemplate = `
-        <div class="exercise">
+        <div class="exercise m-4">
             <h3>${exerciseName}</h3>
             <p><strong>Targeted Muscle Group:</strong> ${targetedMuscleGroup}</p>
             <p><strong>Equipment:</strong> ${equipment}</p>
