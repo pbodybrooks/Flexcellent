@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_in = true;
-
+      req.session.userid = userData.dataValues.id;
       res.redirect("/")
       // res.status(200).json(userData);
     });
