@@ -3,16 +3,16 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
+
     try {
-        const userInput = await User.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
+        // const userInput = await User.findAll({
+        //     attributes: { exclude: ['password'] },
+        //     order: [['name', 'ASC']],
+        // });
 
-        const users = userInput.map((project) => project.get({ plain: true }));
+        // const users = userInput.map((project) => project.get({ plain: true }));
 
-        res.render('home', {
-            users, 
+        res.render('homepage', {
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -29,6 +29,14 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get('/register', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('register');
+});
 
 module.exports = router;
 

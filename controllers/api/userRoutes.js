@@ -5,15 +5,16 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
-      username: req.body.username,
+      // username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.redirect("/")
+      // res.status(200).json(userData);
     });
   } catch (err) {
     console.log(err);
@@ -47,11 +48,11 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
-      res
-        .status(200)
-        .json({ user: userData, message: 'You are now logged in!' });
+      res.redirect("/")
+      // .status(200)
+      // .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
@@ -62,9 +63,10 @@ router.post('/login', async (req, res) => {
 // Logout
 router.post('/logout', (req, res) => {
   // When the user logs out, the session is destroyed
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      // res.status(204).end();
+      res.redirect("/login")
     });
   } else {
     res.status(404).end();
