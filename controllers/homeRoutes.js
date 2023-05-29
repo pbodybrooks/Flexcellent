@@ -4,7 +4,14 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
 
+    if (
+        req.session.logged_in == false && !req.session.userid
+    ) {
+        res.redirect('/login')
+        return;
+    }
     try {
+        console.log(req.session)
         // const userInput = await User.findAll({
         //     attributes: { exclude: ['password'] },
         //     order: [['name', 'ASC']],
