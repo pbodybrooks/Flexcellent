@@ -11,15 +11,15 @@ router.get('/', withAuth, async (req, res) => {
     }
     try {
         console.log(req.session)
-        // const userInput = await User.findAll({
-        //     attributes: { exclude: ['password'] },
-        //     order: [['name', 'ASC']],
-        // });
+        const userInput = await User.findAll({
+            attributes: { exclude: ['password'] },
+            order: [['name', 'ASC']],
+        });
 
-        // const users = userInput.map((project) => project.get({ plain: true }));
+        const users = userInput.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
-            // users, 
+            users, 
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -36,7 +36,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/signUp', (req, res) => {
+router.get('/register', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
         return;

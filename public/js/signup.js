@@ -7,8 +7,8 @@ const signupFormHandler = async (event) => {
     const confirmPassword = document.querySelector('#confirm-password-signup').value.trim();
 
     if (name && email && password && confirmPassword) {
-        if (confirmpassword !== password) {
-            return alert('Passwords dont match! :(');
+        if (confirmPassword !== password) {
+            return alert("Passwords don't match! :(");
         }
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -23,19 +23,10 @@ const signupFormHandler = async (event) => {
       }
 
     } else {
-        alert("Missing feilds")
+        alert("Missing fields")
     }
   };
 
-  function backToLogin(event) {
-    event.preventDefault();
-    
-    window.location.href = '/login';
-  };
-  
-
-  
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-    document.querySelector('#show-login-form').addEventListener('click', backToLogin);
   });
