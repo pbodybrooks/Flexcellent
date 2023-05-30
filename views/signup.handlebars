@@ -1,0 +1,29 @@
+<img id="logo">
+<p>Ready to be flexcellent? Create your profile.</p>
+
+<form class="form signup-form">
+  <div class="form-group">
+    <label for="name-signup">name</label>
+    <input class="form-input" type="text" id="name-signup" />
+  </div>
+  <div class="form-group">
+    <label for="email-signup">email</label>
+    <input class="form-input" type="text" id="email-signup" />
+  </div>
+  <div class="form-group">
+    <label for="password-signup">create a password</label>
+    <input class="form-input" type="password" id="password-signup" />
+  </div>
+
+  {{!-- TODO: Add confirm password if there is time --}}
+  {{!-- <div class="form-group">
+    <label for="confirm-password-signup">confirm password</label>
+    <input class="form-input" type="password" id="confirm-password-signup" />
+  </div> --}}
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Let's do this</button>
+  </div>
+</form>
+<p id="show-login-form">Back to <a href="/login">login</a></p>
+
+<script src="/js/signup.js"></script>
