@@ -59,11 +59,12 @@ router.get('/explore', withAuth, async (req, res) => {
         res.render('explore', {
             // ...user,
             // logged_in: true
+            
         });    
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 router.get('/myWorkouts', withAuth, async (req, res) => {
     try {
