@@ -6,6 +6,9 @@ let getRandomExercisesBtn = document.getElementById('getRandomExercises');
 let getAllExercisesBtn = document.getElementById('getAllExercises');
 let retrieveBtn = document.getElementById('retrieve');
 
+// TODO: replace placeholder with element
+const selectExerciseCard = document.querySelector('placeholer');
+
 let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
 // let muscleGroupArray = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower_back", "Middle_back", "Neck", "Quadriceps", "Traps", "Triceps"];
 
@@ -173,8 +176,45 @@ function toTitleCase(str) {
     let titleCaseStr = titleCaseWords.join(" ");
     return titleCaseStr;
 };
-  
 
+// TODO: add suggested exercises to card
+function exerciseCard() {
+
+};
+
+// TODO: add selected exercises to DB
+const storeExercise = async (event) => {
+    event.preventDefault();
+
+    // TODO: grab info from selected card; no need to call api again -- just from text
+    const name = '';
+    const muscle = '';
+    const equipment = '';
+    const difficulty = '';
+    const instructions = '';
+
+    // TODO: add some sort of unique identifier here like in 28-Stu_Mini-Project/Main/public/js/profile.js line: 26
+    if (event.target.hasAttribute('')) {
+        const id = event.target.getAttribute('');
+
+        const response = await fetch('/api/exercises', {
+            method: 'POST',
+            body: JSON.stringify({ name, muscle, equipment, difficulty, instructions }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            // TODO: display a message saying it was saved to the user on the UI
+        } else {
+            // TODO: display an error to user
+        }
+    } else {
+        // TODO: display different error to user
+    }
+};
+
+// TODO: add event listener for exercise card
+selectExerciseCard.addEventListener('click', storeExercise);
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
