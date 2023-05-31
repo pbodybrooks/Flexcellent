@@ -76,8 +76,8 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
         // const user = userInput.get({ plain: true });
 
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
+            exercises,
+            logged_in: true
         });    
     } catch (err) {
         res.status(500).json(err);
