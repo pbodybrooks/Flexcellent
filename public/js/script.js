@@ -1,5 +1,5 @@
-// require('dotenv').config();
-// const APIKey = process.env.API_KEY; 
+// THIS FILE IS FOR TESTING ONLY AND EVENTUALLY NEEDS TO BE MOVED TO userRoutes OR OTHER
+// API ROUTES FILE
 
 let getExercisesBtn = document.getElementById('getExercises');
 let getRandomExercisesBtn = document.getElementById('getRandomExercises');
@@ -117,7 +117,6 @@ async function getAllExercises() {
         renderExercise(exercises[i]);
       }
       
-  
       console.log(`Ten ${muscleGroup} exercises:\n`);
       console.log(exercises);
       localStorage.setItem(muscleGroup, JSON.stringify(exercises));
