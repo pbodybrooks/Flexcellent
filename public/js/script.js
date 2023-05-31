@@ -77,7 +77,7 @@ async function getExercises() {
 }
 
 // show a random exercise from a random muscle group
-async function getRandomMuscleGroup() {
+async function getRandomExercise() {
     console.clear();
     const randomMuscleIndex = Math.floor(Math.random() * muscleGroupArray.length);
     const randomMuscleGroup = muscleGroupArray[randomMuscleIndex];
@@ -89,6 +89,7 @@ async function getRandomMuscleGroup() {
 
     console.log(`Your random ${randomMuscleGroup} exercise:\n`);
     console.log(randomExercise);
+    renderExercise(randomExercise);
 }
 
 // // show all exercises for all muscle groups (temp - saved to LS as arrays in one big object)
@@ -214,9 +215,9 @@ const storeExercise = async (event) => {
 };
 
 // TODO: add event listener for exercise card
-selectExerciseCard.addEventListener('click', storeExercise);
+// selectExerciseCard.addEventListener('click', storeExercise);
 getExercisesBtn.addEventListener('click', getExercises);
-getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
+getRandomExercisesBtn.addEventListener('click', getRandomExercise);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
 retrieveBtn.addEventListener('click', retrieveFromLocalStorage);
 
