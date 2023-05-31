@@ -43,7 +43,10 @@ function fetchExercises(muscleGroup) {
         method: 'GET',
         headers: {
             // TODO: add API key to .env file and reference it here
-            // API key goes in the back end - API routes
+
+            // API key goes in the back end - API routes. All the script.js will eventually live
+            // in an controllers > api > userRoutes.js (or other appropriate file)
+
             'X-RapidAPI-Key': '796f6b4699mshefa8dc1aaefb6bdp14d3f6jsn3ee6a9cbc13a',
             'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
 	}};
@@ -115,6 +118,10 @@ async function getAllExercises() {
     for (let i = 0; i < muscleGroupArray.length; i++) {
       let muscleGroup = muscleGroupArray[i];
       let exercises = await fetchExercises(muscleGroup);
+      for (let i = 0; i < exercises.length; i++) {
+        renderExercise(exercises[i]);
+      }
+      
   
       console.log(`Ten ${muscleGroup} exercises:\n`);
       console.log(exercises);
