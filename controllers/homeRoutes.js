@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Workout } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-
     if (
         req.session.logged_in == false && !req.session.userid
     ) {
@@ -12,14 +11,17 @@ router.get('/', withAuth, async (req, res) => {
     }
     try {
         console.log(req.session)
-        // const userInput = await User.findAll({
-        //     attributes: { exclude: ['password'] },
-        //     order: [['name', 'ASC']],
-        // });
+        const userData = await User.findAll({
+            attributes: { exclude: ['password'] },
+            order: [['name', 'ASC']],
+        });
 
-        // const users = userInput.map((project) => project.get({ plain: true }));
+        console.log("userData", userData)
+
+        const users = userData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
+            users, 
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -44,6 +46,36 @@ router.get('/register', (req, res) => {
 
     res.render('register');
 });
+
+router.get('/explore', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Workout }],
+        });
+
+        // const user = userData.get({ plain: true });
+
+        res.render('explore', {
+            // ...user,
+            // logged_in: true
+        });    
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login');
+});
+
+
+
 
 module.exports = router;
 
