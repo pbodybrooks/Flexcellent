@@ -16,7 +16,6 @@ Measurement.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-// TO DO: Make sure this is correct
 User.hasMany(Workout, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
@@ -27,4 +26,4 @@ User.hasMany(Measurement, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Exercise, Workout}
+module.exports = { User, Exercise, Workout, Measurement }
