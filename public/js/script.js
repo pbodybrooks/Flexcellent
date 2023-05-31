@@ -1,4 +1,5 @@
 // require('dotenv').config();
+// const APIKey = process.env.API_KEY; 
 
 let getExercisesBtn = document.getElementById('getExercises');
 let getRandomExercisesBtn = document.getElementById('getRandomExercises');
@@ -39,6 +40,7 @@ function fetchExercises(muscleGroup) {
         method: 'GET',
         headers: {
             // TODO: add API key to .env file and reference it here
+            // API key goes in the back end - API routes
             'X-RapidAPI-Key': '796f6b4699mshefa8dc1aaefb6bdp14d3f6jsn3ee6a9cbc13a',
             'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
 	}};
