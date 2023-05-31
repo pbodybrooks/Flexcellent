@@ -76,13 +76,32 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
         // const user = userInput.get({ plain: true });
 
         res.render('workouts', {
-            exercises,
-            logged_in: true
+            // ...user,
+            // logged_in: true
+            
         });    
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
+// router.get('/myWorkouts', withAuth, async (req, res) => {
+//     try {
+//         // const userInput = await User.findByPk(req.session.user_id, {
+//         //     attributes: { exclude: ['password'] },
+//         //     include: [{ model: Workout }],
+//         // });
+
+//         // const user = userInput.get({ plain: true });
+
+//         res.render('workouts', {
+//             exercises,
+//             logged_in: true
+//         });    
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// })
 
 router.get('/', (req, res) => {
     if (req.session.logged_in) {
