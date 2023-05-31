@@ -49,7 +49,7 @@ router.get('/register', (req, res) => {
 
 router.get('/explore', withAuth, async (req, res) => {
     try {
-        // const userInput = await User.findByPk(req.session.user_id, {
+        // const userData = await User.findByPk(req.session.user_id, {
         //     attributes: { exclude: ['password'] },
         //     include: [{ model: Workout }],
         // });
@@ -68,12 +68,12 @@ router.get('/explore', withAuth, async (req, res) => {
 
 router.get('/myWorkouts', withAuth, async (req, res) => {
     try {
-        // const userInput = await User.findByPk(req.session.user_id, {
+        // const userData = await User.findByPk(req.session.user_id, {
         //     attributes: { exclude: ['password'] },
         //     include: [{ model: Workout }],
         // });
 
-        // const user = userInput.get({ plain: true });
+        // const user = userData.get({ plain: true });
 
         res.render('workouts', {
             // ...user,
@@ -87,12 +87,12 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
 
 // router.get('/myWorkouts', withAuth, async (req, res) => {
 //     try {
-//         // const userInput = await User.findByPk(req.session.user_id, {
+//         // const userData = await User.findByPk(req.session.user_id, {
 //         //     attributes: { exclude: ['password'] },
 //         //     include: [{ model: Workout }],
 //         // });
 
-//         // const user = userInput.get({ plain: true });
+//         // const user = userData.get({ plain: true });
 
 //         res.render('workouts', {
 //             exercises,
