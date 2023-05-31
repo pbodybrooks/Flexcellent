@@ -16,6 +16,8 @@ router.get('/', withAuth, async (req, res) => {
             order: [['name', 'ASC']],
         });
 
+        console.log("userData", userData)
+
         const users = userData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
