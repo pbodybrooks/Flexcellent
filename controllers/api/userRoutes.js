@@ -3,7 +3,7 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const userInput = await User.create({
+    const userData = await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
@@ -11,8 +11,10 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.logged_in = true;
-      req.session.user_id = userInput.id;
-      res.status(200).json(userInput);
+      req.session.userid = userData.dataValues.id;
+      res.redirect("/")
+      // res.status(200).json(userData);
+
     });
   } catch (err) {
     console.log(err);
@@ -22,20 +24,20 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const userInput = await User.findOne({
+    const userData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!userInput) {
+    if (!userData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
-    const validPassword = await userInput.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -43,14 +45,14 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    console.log("user data values id", userInput.dataValues.id)
-    console.log("user input id", userInput.id)
+    console.log(userData.dataValues.id)
     req.session.save(() => {
       req.session.logged_in = true;
-      req.session.user_id = userInput.id;
-      res
-        .status(200)
-        .json({ user: userInput, message: 'You are now logged in!' });
+      req.session.userid = userData.dataValues.id;
+      res.redirect("/")
+      // res
+      //   .status(200)
+      //   .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
@@ -61,8 +63,8 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
+      // res.status(204).end();
       res.redirect("/login");
-      res.status(204).end();
     });
   } else {
     res.status(404).end();

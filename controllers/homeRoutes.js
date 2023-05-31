@@ -11,12 +11,12 @@ router.get('/', withAuth, async (req, res) => {
     }
     try {
         console.log(req.session)
-        const userInput = await User.findAll({
+        const userData = await User.findAll({
             attributes: { exclude: ['password'] },
             order: [['name', 'ASC']],
         });
 
-        const users = userInput.map((project) => project.get({ plain: true }));
+        const users = userData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
             users, 
@@ -47,12 +47,12 @@ router.get('/register', (req, res) => {
 
 router.get('/explore', withAuth, async (req, res) => {
     try {
-        const userInput = await User.findByPk(req.session.user_id, {
+        const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
             include: [{ model: Workout }],
         });
 
-        // const user = userInput.get({ plain: true });
+        // const user = userData.get({ plain: true });
 
         res.render('explore', {
             // ...user,
