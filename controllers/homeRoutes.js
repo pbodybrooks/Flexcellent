@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { User, Workout, Exercise } = require('../models');
 const withAuth = require('../utils/auth');
+const http = require('https');
 
+require('dotenv').config();
 
 router.get('/', withAuth, async (req, res) => {
     if (
@@ -22,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
         const users = userData.map((project) => project.get({ plain: true }));
 
         res.render('homepage', {
-            users, 
+            users,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -48,20 +50,63 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
+// req will have the query params passed in
+// example = req.query.muscleGroup 
+// if muscle exists, then query exercises?muscle=quadriceps, if not, just render without query
 router.get('/explore', withAuth, async (req, res) => {
     try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
+        let exercises = [];
+        // TODO: create a function that returns this if statement
+        if (req.query.muscleGroup) {
+            const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${req.query.muscleGroup}`;
+            const options = {
+                host: 'exercises-by-api-ninjas.p.rapidapi.com',
+                path: `/v1/exercises?muscle=${req.query.muscleGroup}`,
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': process.env.API_KEY,
+                    'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
+                }
+            };
 
-        // const user = userData.get({ plain: true });
+            // console.log({ url, options });
+
+            
+            const promise = new Promise((resolve, reject) => {
+                const httpReq = http.request(options, function(httpRes) {
+                  const chunks = [];
+                  httpRes.on('data', function(chunk) {
+                    chunks.push(chunk);
+                  });
+                  httpRes.on('end', function () {
+                    const body = Buffer.concat(chunks);
+                    resolve(body.toString());
+                  });
+                })
+              
+                httpReq.on('error', function(err) {
+                  reject(err);
+                })
+              
+                httpReq.end();
+              });
+
+            exercises = await promise
+                .then(function (response) {
+                    // console.log(response);
+                    return JSON.parse(response);
+                })
+                .catch((err) => {
+                    console.log({ err });
+                    return [];
+                })
+        }
+
+        console.log({ exercises });
 
         res.render('explore', {
-            // ...user,
-            // logged_in: true
-            
-        });    
+            exercises
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -79,8 +124,8 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
         res.render('workouts', {
             // ...user,
             // logged_in: true
-            
-        });    
+
+        });
     } catch (err) {
         res.status(500).json(err);
     }

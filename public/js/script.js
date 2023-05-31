@@ -51,6 +51,8 @@ function fetchExercises(muscleGroup) {
             'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
 	}};
 
+    //await on this fetch maybe
+    // once you get the data, pass it to the render
     return fetch(url, options)
         .then(function (response) {
         return response.json();
@@ -58,24 +60,27 @@ function fetchExercises(muscleGroup) {
         .then(function (data) {
         return data;
         });
-}
+};
 
 // show exercises based on the muscle group selected by the user
 async function getExercises() {
-    console.clear();
+    // console.clear();
     let selectedMuscleGroup = document.getElementById("muscleGroup").value;
 
     if (selectedMuscleGroup === "null") {
         alert("Please select a muscle group.");
     }
     else {
-        const exercises = await fetchExercises(selectedMuscleGroup);
-        console.log(`Ten ${selectedMuscleGroup} exercises:\n`);
-        console.log(exercises);
-        for (let i = 0; i < exercises.length; i++) {
-            renderExercise(exercises[i]);
-        }
+        // const exercises = await fetchExercises(selectedMuscleGroup);
+        // console.log(`Ten ${selectedMuscleGroup} exercises:\n`);
+        // console.log(exercises);
+        // for (let i = 0; i < exercises.length; i++) {
+        //     renderExercise(exercises[i]);
+        // }
+        window.location.href = '/explore?muscleGroup=' + selectedMuscleGroup;
     }
+
+
 }
 
 // show a random exercise from a random muscle group
@@ -217,7 +222,7 @@ const storeExercise = async (event) => {
 };
 
 // TODO: add event listener for exercise card
-selectExerciseCard.addEventListener('click', storeExercise);
+// selectExerciseCard.addEventListener('click', storeExercise);
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
