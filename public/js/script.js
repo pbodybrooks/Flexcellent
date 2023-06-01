@@ -7,7 +7,7 @@ let getAllExercisesBtn = document.getElementById('getAllExercises');
 let retrieveBtn = document.getElementById('retrieve');
 
 // TODO: replace placeholder with element
-// const selectExerciseCard = document.querySelector('placeholer');
+const selectExerciseCard = document.querySelector('.card');
 
 let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
 // let muscleGroupArray = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower_back", "Middle_back", "Neck", "Quadriceps", "Traps", "Triceps"];
@@ -181,20 +181,17 @@ function toTitleCase(str) {
 
 // };
 
-// TODO: add selected exercises to DB
-const storeExercise = async (event) => {
+const storeExerciseDb = async (event) => {
     event.preventDefault();
 
-    // TODO: add some sort of unique identifier here like in 28-Stu_Mini-Project/Main/public/js/profile.js line: 26
     if (event.target.hasAttribute('card')) {
-        const card = event.target.getAttribute('card');
+        // const card = event.target.getAttribute('card');
 
-        // TODO: grab info from selected card; no need to call api again -- just from text
-        const name = document.querySelector('#exerciseName');
-        const muscle = document.querySelector('#exerciseMuscle');
-        const equipment = document.querySelector('#exerciseEquipment');
-        const difficulty = document.querySelector('#exerciseDifficulty');
-        const instructions = document.querySelector('#exerciseInstructions');
+        const name = document.querySelector('#exerciseName').textContent;
+        const muscle = document.querySelector('#exerciseMuscle').textContent;
+        const equipment = document.querySelector('#exerciseEquipment').textContent;
+        const difficulty = document.querySelector('#exerciseDifficulty').textContent;
+        const instructions = document.querySelector('#exerciseInstructions').textContent;
 
         const response = await fetch('/api/exercises', {
             method: 'POST',
@@ -203,17 +200,24 @@ const storeExercise = async (event) => {
         });
 
         if (response.ok) {
-            // TODO: display a message saying it was saved to the user on the UI
+            console.log({ response });
+            const message = document.querySelector('#messageUser');
+            message.textContent = "Your exercise has been saved";
         } else {
             // TODO: display an error to user
+            console.log({ response });
+            const message = document.querySelector('#messageUser');
+            message.textContent = `Your exercise has not been saved: ${response}`;
         }
-    } else {
-        // TODO: display different error to user
     }
+    // else {
+    //     // TODO: display different error to user
+
+    // }
 };
 
 // TODO: add event listener for exercise card
-// selectExerciseCard.addEventListener('click', storeExercise);
+selectExerciseCard.addEventListener('click', storeExerciseDb);
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
