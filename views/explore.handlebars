@@ -13,41 +13,40 @@
 </head>
 
 <body>
-  <select id="muscleGroup">
-    <optgroup label="Select a muscle group">
-      <!-- Add a template tag with a custom id -->
-      <template id="muscleGroupTemplate">
-        {{#each muscle_group}}
-        <option value="{{muscle_group}}" id="{{muscle_group}}">{{muscle_group}}</option>
-        {{/each}}
-      </template>
-    </optgroup>
-  </select>
+  <form action="/explore" method="GET">
+    <label for="muscleGroup">Select a muscle group:</label>
+    <select name="muscleGroup" id="muscleGroup">
+      {{#each muscleGroups}}
+        <option value="{{value}}" id="{{id}}">{{label}}</option>
+      {{/each}}
+    </select>
+  </form>
 
   {{!-- <a href="/explore"></a> --}}
 
-    <button class="btn-red" id="getExercises">Get Exercises! [Call API]</button>
-    <button class="btn-red" id="getRandomExercises">Get Random Exercises! [Call API]</button>
-    <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
-    <button id="retrieve">Retrieve from local storage</button>
+  <button class="btn-red" id="getExercises">Get Exercises! [Call API]</button>
+  <button class="btn-red" id="getRandomExercises">Get Random Exercises! [Call API]</button>
+  <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
+  <button id="retrieve">Retrieve from local storage</button>
 
-    <div class="m-4" id="exerciseContainer"></div>
-        {{#each exercises as |exercise|}}
-        <div class="card">
-            <div class="card-header">
-                <h2>{{exercise.name}}</h2>
-            </div>
-            <div class="card-body">
-                <p>{{exercise.muscle}}</p>
-                <p>{{exercise.equipment}}</p>
-                <p>{{exercise.difficulty}}</p>
-                <p>{{exercise.instructions}}</p>
-            </div>
+  <div class="m-4" id="exerciseContainer">
+    {{#each exercises}}
+      <div class="card">
+        <div class="card-header">
+          <h2 id="exerciseName">{{name}}</h2>
         </div>
-        {{/each}}
+        <div class="card-body">
+          <p id="exerciseMuscle">{{muscle}}</p>
+          <p id="exerciseEquipment">{{equipment}}</p>
+          <p id="exerciseDifficulty">{{difficulty}}</p>
+          <p id="exerciseInstructions">{{instructions}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-  <script src="/js/script.js"  type="text/javascript"></script>
+  <script src="/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

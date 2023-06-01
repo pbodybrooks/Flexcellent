@@ -50,15 +50,53 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-// req will have the query params passed in
-// example = req.query.muscleGroup 
-// if muscle exists, then query exercises?muscle=quadriceps, if not, just render without query
+
+router.get('/myWorkouts', withAuth, async (req, res) => {
+    try {
+        // const userData = await User.findByPk(req.session.user_id, {
+        //     attributes: { exclude: ['password'] },
+        //     include: [{ model: Workout }],
+        // });
+
+        // const user = userData.get({ plain: true });
+
+        res.render('workouts', {
+            // ...user,
+            // logged_in: true
+
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// TODO: put this in a helper file and then import it in this file, maybe
+const muscleGroupData = [
+    { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
+    { value: 'abductors', id: 'abductors', label: 'Abductors' },
+    { value: 'adductors', id: 'adductors', label: 'Adductors' },
+    { value: 'biceps', id: 'biceps', label: 'Biceps' },
+    { value: 'calves', id: 'calves', label: 'Calves' },
+    { value: 'chest', id: 'chest', label: 'Chest' },
+    { value: 'forearms', id: 'forearms', label: 'Forearms' },
+    { value: 'glutes', id: 'glutes', label: 'Glutes' },
+    { value: 'hamstrings', id: 'hamstrings', label: 'Hamstrings' },
+    { value: 'lats', id: 'lats', label: 'Lats' },
+    { value: 'lower_back', id: 'lower_back', label: 'Lower Back' },
+    { value: 'middle_back', id: 'middle_back', label: 'Middle Back' },
+    { value: 'neck', id: 'neck', label: 'Neck' },
+    { value: 'quadriceps', id: 'quadriceps', label: 'Quadriceps' },
+    { value: 'traps', id: 'traps', label: 'Traps' },
+    { value: 'triceps', id: 'triceps', label: 'Triceps' }
+];
+
 router.get('/explore', withAuth, async (req, res) => {
     try {
         let exercises = [];
+
         // TODO: create a function that returns this if statement
         if (req.query.muscleGroup) {
-            const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${req.query.muscleGroup}`;
+            // const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${req.query.muscleGroup}`;
             const options = {
                 host: 'exercises-by-api-ninjas.p.rapidapi.com',
                 path: `/v1/exercises?muscle=${req.query.muscleGroup}`,
@@ -68,10 +106,7 @@ router.get('/explore', withAuth, async (req, res) => {
                     'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
                 }
             };
-
             // console.log({ url, options });
-
-            
             const promise = new Promise((resolve, reject) => {
                 const httpReq = http.request(options, function(httpRes) {
                   const chunks = [];
@@ -93,7 +128,7 @@ router.get('/explore', withAuth, async (req, res) => {
 
             exercises = await promise
                 .then(function (response) {
-                    // console.log(response);
+                    console.log({ response });
                     return JSON.parse(response);
                 })
                 .catch((err) => {
@@ -105,63 +140,13 @@ router.get('/explore', withAuth, async (req, res) => {
         console.log({ exercises });
 
         res.render('explore', {
-            exercises
+            exercises,
+            muscleGroups: muscleGroupData
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
-router.get('/myWorkouts', withAuth, async (req, res) => {
-    try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
-
-        // const user = userData.get({ plain: true });
-
-        res.render('workouts', {
-            // ...user,
-            // logged_in: true
-
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// router.get('/myWorkouts', withAuth, async (req, res) => {
-//     try {
-//         // const userData = await User.findByPk(req.session.user_id, {
-//         //     attributes: { exclude: ['password'] },
-//         //     include: [{ model: Workout }],
-//         // });
-
-//         // const user = userData.get({ plain: true });
-
-//         res.render('workouts', {
-//             exercises,
-//             logged_in: true
-//         });    
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
-
-router.get('/', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('login');
-});
-
-
 
 
 module.exports = router;
-
-// TODO: will need routes for: login, home, myworkouts, explore
-// TODO: might need routes for: home/rewards
