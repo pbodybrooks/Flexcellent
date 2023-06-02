@@ -2,14 +2,27 @@
   background-color: rgb(255, 139, 139);
 }
 
+#newCard {
+  margin-bottom: 3vh;
+}
+
 .workouts{
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width:auto;
+  width:98%;
   height:auto;
   background-color: azure;
+}
+
+.workCard {
+  width: 250px;
+    height: 400px;
+    background-color: lightgrey;
+    box-shadow: 7px 7px 5px grey;
+    margin: 12px;
+    border-radius: 10px;
 }
 
 /* .workoutCard {
