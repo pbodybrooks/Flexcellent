@@ -1,5 +1,5 @@
-// require('dotenv').config();
-// const APIKey = process.env.API_KEY; 
+// THIS FILE IS FOR TESTING ONLY AND EVENTUALLY NEEDS TO BE MOVED TO userRoutes OR OTHER
+// API ROUTES FILE
 
 let getExercisesBtn = document.getElementById('getExercises');
 let getRandomExercisesBtn = document.getElementById('getRandomExercises');
@@ -75,7 +75,7 @@ async function getExercises() {
 };
 
 // show a random exercise from a random muscle group
-async function getRandomMuscleGroup() {
+async function getRandomExercise() {
     console.clear();
     const randomMuscleIndex = Math.floor(Math.random() * muscleGroupArray.length);
     const randomMuscleGroup = muscleGroupArray[randomMuscleIndex];
@@ -87,6 +87,7 @@ async function getRandomMuscleGroup() {
 
     console.log(`Your random ${randomMuscleGroup} exercise:\n`);
     console.log(randomExercise);
+    renderExercise(randomExercise);
 }
 
 // // show all exercises for all muscle groups (temp - saved to LS as arrays in one big object)
@@ -214,7 +215,7 @@ function toTitleCase(str) {
 // selectExerciseCard.addEventListener('click', storeExerciseDb);
 
 getExercisesBtn.addEventListener('click', getExercises);
-getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
+getRandomExercisesBtn.addEventListener('click', getRandomExercise);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
 retrieveBtn.addEventListener('click', retrieveFromLocalStorage);
 
