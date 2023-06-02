@@ -7,12 +7,13 @@ let getAllExercisesBtn = document.getElementById('getAllExercises');
 let retrieveBtn = document.getElementById('retrieve');
 
 // TODO: replace placeholder with element
-const selectExerciseCard = document.querySelector('placeholer');
 
 let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
 // let muscleGroupArray = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower_back", "Middle_back", "Neck", "Quadriceps", "Traps", "Triceps"];
 
 //////////////////////// handlebars test ////////////////////////
+// let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
+
 // const muscleGroupData = [
 //     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
 //     { value: 'abductors', id: 'abductors', label: 'Abductors' },
@@ -37,46 +38,41 @@ let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calve
 //////////////////////// handlebars test ////////////////////////
 
 // call the API to get exercises based on the muscle group fed into the function
-function fetchExercises(muscleGroup) {
-    const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${muscleGroup}`;
-    const options = {
-        method: 'GET',
-        headers: {
-            // TODO: add API key to .env file and reference it here
+// function fetchExercises(muscleGroup) {
+//     const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${muscleGroup}`;
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             // TODO: add API key to .env file and reference it here
 
-            // API key goes in the back end - API routes. All the script.js will eventually live
-            // in an controllers > api > userRoutes.js (or other appropriate file)
+//             // API key goes in the back end - API routes. All the script.js will eventually live
+//             // in an controllers > api > userRoutes.js (or other appropriate file)
 
-            'X-RapidAPI-Key': '796f6b4699mshefa8dc1aaefb6bdp14d3f6jsn3ee6a9cbc13a',
-            'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
-	}};
+//             'X-RapidAPI-Key': '',
+//             'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
+// 	}};
 
-    return fetch(url, options)
-        .then(function (response) {
-        return response.json();
-        })
-        .then(function (data) {
-        return data;
-        });
-}
+//     //await on this fetch maybe
+//     // once you get the data, pass it to the render
+//     return fetch(url, options)
+//         .then(function (response) {
+//         return response.json();
+//         })
+//         .then(function (data) {
+//         return data;
+//         });
+// };
 
 // show exercises based on the muscle group selected by the user
 async function getExercises() {
-    console.clear();
     let selectedMuscleGroup = document.getElementById("muscleGroup").value;
 
     if (selectedMuscleGroup === "null") {
         alert("Please select a muscle group.");
-    }
-    else {
-        const exercises = await fetchExercises(selectedMuscleGroup);
-        console.log(`Ten ${selectedMuscleGroup} exercises:\n`);
-        console.log(exercises);
-        for (let i = 0; i < exercises.length; i++) {
-            renderExercise(exercises[i]);
-        }
-    }
-}
+    } else {
+        window.location.href = '/explore?muscleGroup=' + selectedMuscleGroup;
+    };
+};
 
 // show a random exercise from a random muscle group
 async function getRandomMuscleGroup() {
@@ -97,14 +93,14 @@ async function getRandomMuscleGroup() {
 // async function getAllExercises() {
 //     console.clear();
 //     const allExercises = {}; // Create an empty object to store the exercises
-  
+
 //     for (let i = 0; i < muscleGroupArray.length; i++) {
 //       const muscleGroup = muscleGroupArray[i];
 //       const exercises = await fetchExercises(muscleGroup);
-  
+
 //       console.log(`Ten ${muscleGroup} exercises:\n`);
 //       console.log(exercises);
-  
+
 //       allExercises[muscleGroup] = exercises; // Assign the exercises to the corresponding muscle group key
 //     }
 //     localStorage.setItem('allExercises', JSON.stringify(allExercises));
@@ -114,18 +110,17 @@ async function getRandomMuscleGroup() {
 async function getAllExercises() {
     console.clear();
     localStorage.clear();
-  
+
     for (let i = 0; i < muscleGroupArray.length; i++) {
-      let muscleGroup = muscleGroupArray[i];
-      let exercises = await fetchExercises(muscleGroup);
-      for (let i = 0; i < exercises.length; i++) {
-        renderExercise(exercises[i]);
-      }
-      
-  
-      console.log(`Ten ${muscleGroup} exercises:\n`);
-      console.log(exercises);
-      localStorage.setItem(muscleGroup, JSON.stringify(exercises));
+        let muscleGroup = muscleGroupArray[i];
+        let exercises = await fetchExercises(muscleGroup);
+        for (let i = 0; i < exercises.length; i++) {
+            renderExercise(exercises[i]);
+        }
+
+        console.log(`Ten ${muscleGroup} exercises:\n`);
+        console.log(exercises);
+        localStorage.setItem(muscleGroup, JSON.stringify(exercises));
     }
 }
 
@@ -151,73 +146,73 @@ function retrieveFromLocalStorage() {
     }
 }
 
-function renderExercise(exercise) {
-    let exerciseName = toTitleCase(exercise.name);
-    let targetedMuscleGroup = toTitleCase(exercise.muscle);
-    let equipment = toTitleCase(exercise.equipment);
-    let difficulty = toTitleCase(exercise.difficulty);
-    let instructions = toTitleCase(exercise.instructions);
+// function renderExercise(exercise) {
+//     let exerciseName = toTitleCase(exercise.name);
+//     let targetedMuscleGroup = toTitleCase(exercise.muscle);
+//     let equipment = toTitleCase(exercise.equipment);
+//     let difficulty = toTitleCase(exercise.difficulty);
+//     let instructions = toTitleCase(exercise.instructions);
 
-    let exerciseTemplate = `
-        <div class="exercise m-4">
-            <h3>${exerciseName}</h3>
-            <p><strong>Targeted Muscle Group:</strong> ${targetedMuscleGroup}</p>
-            <p><strong>Equipment:</strong> ${equipment}</p>
-            <p><strong>Difficulty:</strong> ${difficulty}</p>
-            <p><strong>Instructions:</strong> ${instructions}</p>
-        </div>`;
+//     let exerciseTemplate = `
+//         <div class="exercise m-4">
+//             <h3>${exerciseName}</h3>
+//             <p><strong>Targeted Muscle Group:</strong> ${targetedMuscleGroup}</p>
+//             <p><strong>Equipment:</strong> ${equipment}</p>
+//             <p><strong>Difficulty:</strong> ${difficulty}</p>
+//             <p><strong>Instructions:</strong> ${instructions}</p>
+//         </div>`;
 
-    exerciseContainer.innerHTML += exerciseTemplate;
-};
+//     exerciseContainer.innerHTML += exerciseTemplate;
+// };
 
 // remove underscores from the string and capitalize the first letter of each word for purtiness
 function toTitleCase(str) {
     let words = str.replace("_", " ").split(" ");
-    let titleCaseWords = words.map(function(word) {
-      return word.charAt(0).toUpperCase() + word.slice(1);
+    let titleCaseWords = words.map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     });
     let titleCaseStr = titleCaseWords.join(" ");
     return titleCaseStr;
 };
 
-// TODO: add suggested exercises to card
-function exerciseCard() {
 
-};
+//-------------SPRINKLE-------------------------------------------------------------
+// const selectExerciseCard = document.querySelector('#exerciseContainer');
 
-// TODO: add selected exercises to DB
-const storeExercise = async (event) => {
-    event.preventDefault();
+// const storeExerciseDb = async (event) => {
+//     console.log("event target", event.target);
+//     event.preventDefault();
 
-    // TODO: grab info from selected card; no need to call api again -- just from text
-    const name = '';
-    const muscle = '';
-    const equipment = '';
-    const difficulty = '';
-    const instructions = '';
+//     if (event.target.classList.contains('card')) {
+//         // const card = event.target.getAttribute('card');
 
-    // TODO: add some sort of unique identifier here like in 28-Stu_Mini-Project/Main/public/js/profile.js line: 26
-    if (event.target.hasAttribute('')) {
-        const id = event.target.getAttribute('');
+//         const name = document.querySelector('#exerciseName').textContent;
+//         const muscle = document.querySelector('#exerciseMuscle').textContent;
+//         const equipment = document.querySelector('#exerciseEquipment').textContent;
+//         const difficulty = document.querySelector('#exerciseDifficulty').textContent;
+//         const instructions = document.querySelector('#exerciseInstructions').textContent;
 
-        const response = await fetch('/api/exercises', {
-            method: 'POST',
-            body: JSON.stringify({ name, muscle, equipment, difficulty, instructions }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+//         const response = await fetch('/api/exercises', {
+//             method: 'POST',
+//             body: JSON.stringify({ name, muscle, equipment, difficulty, instructions }),
+//             headers: { 'Content-Type': 'application/json' },
+//         });
 
-        if (response.ok) {
-            // TODO: display a message saying it was saved to the user on the UI
-        } else {
-            // TODO: display an error to user
-        }
-    } else {
-        // TODO: display different error to user
-    }
-};
+//         if (response.ok) {
+//             console.log({ response });
+//             const message = document.querySelector('#messageUser');
+//             message.textContent = "Your exercise has been saved";
+//         } else {
+//             // TODO: display an error to user
+//             console.log({ response });
+//             const message = document.querySelector('#messageUser');
+//             message.textContent = `Your exercise has not been saved: ${response}`;
+//         }
+//     }
+// };
 
-// TODO: add event listener for exercise card
-selectExerciseCard.addEventListener('click', storeExercise);
+// selectExerciseCard.addEventListener('click', storeExerciseDb);
+
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);

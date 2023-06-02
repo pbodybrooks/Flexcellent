@@ -1,7 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Exercise extends Model {}
+class Exercise extends Model {
+  // static async checkExercise(allParams) {
+  //   const exercise = await Exercise.findOne({
+  //     where: allParams
+  //   });
+
+  //   // Returns true if exercise exists, false otherwise 
+  //   return exercise !== null; 
+  // }
+}
 
 Exercise.init(
   {
