@@ -1,3 +1,19 @@
 .btn-red {
   background-color: rgb(255, 139, 139);
 }
+
+.workoutCard {
+  height: 400px;
+  width: 300px;
+  color: black;
+  background-color: lightgrey;
+  box-shadow: 7px 7px 5px rgb(55, 55, 55);
+}
+
+.workbtn {
+  color: blue;
+}
+
+.workForm {
+  visibility: hidden;
+}
