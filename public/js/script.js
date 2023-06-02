@@ -7,7 +7,6 @@ let getAllExercisesBtn = document.getElementById('getAllExercises');
 let retrieveBtn = document.getElementById('retrieve');
 
 // TODO: replace placeholder with element
-const selectExerciseCard = document.querySelector('.card');
 
 let muscleGroupArray = ["abdominals", "abductors", "adductors", "biceps", "calves", "chest", "forearms", "glutes", "hamstrings", "lats", "lower_back", "middle_back", "neck", "quadriceps", "traps", "triceps"];
 // let muscleGroupArray = ["Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower_back", "Middle_back", "Neck", "Quadriceps", "Traps", "Triceps"];
@@ -176,48 +175,44 @@ function toTitleCase(str) {
     return titleCaseStr;
 };
 
-// // TODO: add suggested exercises to card
-// function exerciseCard() {
 
+//-------------SPRINKLE-------------------------------------------------------------
+// const selectExerciseCard = document.querySelector('#exerciseContainer');
+
+// const storeExerciseDb = async (event) => {
+//     console.log("event target", event.target);
+//     event.preventDefault();
+
+//     if (event.target.classList.contains('card')) {
+//         // const card = event.target.getAttribute('card');
+
+//         const name = document.querySelector('#exerciseName').textContent;
+//         const muscle = document.querySelector('#exerciseMuscle').textContent;
+//         const equipment = document.querySelector('#exerciseEquipment').textContent;
+//         const difficulty = document.querySelector('#exerciseDifficulty').textContent;
+//         const instructions = document.querySelector('#exerciseInstructions').textContent;
+
+//         const response = await fetch('/api/exercises', {
+//             method: 'POST',
+//             body: JSON.stringify({ name, muscle, equipment, difficulty, instructions }),
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+
+//         if (response.ok) {
+//             console.log({ response });
+//             const message = document.querySelector('#messageUser');
+//             message.textContent = "Your exercise has been saved";
+//         } else {
+//             // TODO: display an error to user
+//             console.log({ response });
+//             const message = document.querySelector('#messageUser');
+//             message.textContent = `Your exercise has not been saved: ${response}`;
+//         }
+//     }
 // };
 
-const storeExerciseDb = async (event) => {
-    event.preventDefault();
+// selectExerciseCard.addEventListener('click', storeExerciseDb);
 
-    if (event.target.hasAttribute('card')) {
-        // const card = event.target.getAttribute('card');
-
-        const name = document.querySelector('#exerciseName').textContent;
-        const muscle = document.querySelector('#exerciseMuscle').textContent;
-        const equipment = document.querySelector('#exerciseEquipment').textContent;
-        const difficulty = document.querySelector('#exerciseDifficulty').textContent;
-        const instructions = document.querySelector('#exerciseInstructions').textContent;
-
-        const response = await fetch('/api/exercises', {
-            method: 'POST',
-            body: JSON.stringify({ name, muscle, equipment, difficulty, instructions }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            console.log({ response });
-            const message = document.querySelector('#messageUser');
-            message.textContent = "Your exercise has been saved";
-        } else {
-            // TODO: display an error to user
-            console.log({ response });
-            const message = document.querySelector('#messageUser');
-            message.textContent = `Your exercise has not been saved: ${response}`;
-        }
-    }
-    // else {
-    //     // TODO: display different error to user
-
-    // }
-};
-
-// TODO: add event listener for exercise card
-selectExerciseCard.addEventListener('click', storeExerciseDb);
 getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomMuscleGroup);
 getAllExercisesBtn.addEventListener('click', getAllExercises);
