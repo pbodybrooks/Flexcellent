@@ -1,5 +1,5 @@
 const ctx = document.getElementById('myChart');
-const data = []
+let data = []
 const trackerBtn = document.getElementById('weightTrackerButton');
 const yearElement = document.getElementById("year");
 const weight = document.getElementById("barvalue");
@@ -55,24 +55,71 @@ function chart2() {
         }, plugins: [plugin],
     })
 };
+
+async function deleteWeight(id) {
+    const remove = await fetch('/api/weight/delete', {
+        method: "delete", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify({ rowId: id })
+    })
+    userData()
+}
+async function upWeight(id) {
+    const weight = document.querySelector(`.row${id} input.weight`).value
+    const date = document.querySelector(`.row${id} input.date`).value
+    console.log(weight)
+    const remove = await fetch('/api/weight/update', {
+        method: "put", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify({ rowId: id, weight: weight, date: date })
+    })
+    userData()
+}
+
 async function userData() {
     const response = await fetch('/api/weight/retriever');
     const jsonData = await response.json();
-    console.log(jsonData)
+    chart.data.datasets[0].data = jsonData.weights.map((value) => { return { x: value.x, y: value.y } })
+    chart.update();
+    const weightDataElement = document.getElementById("weightdata")
+    let html = ""
+    for (let i = 0; i < jsonData.weights.length; i++) {
+        const date = new Date(jsonData.weights[i].x);
+        const formattedDated = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : date.getMonth()}-${(date.getDate() + 1) < 10 ? "0" + (date.getDate() + 1) : date.getDate()}`;
+        html += `<div class= "row${jsonData.weights[i].id}">
+        <input class="weight" type="number" value= "${jsonData.weights[i].y}"/>
+    <input class="date" type="date" value = "${formattedDated}"/>
+    <button class="updateWeightBtn" data-userId="${jsonData.id}" onclick="upWeight(${jsonData.weights[i].id})">
+        Update
+    </button>
+    <button class= "deleteWeightBtn" data-userId="${jsonData.id}" onclick="deleteWeight(${jsonData.weights[i].id})">
+    Delete Me </button>
+    </div>`
+    }
+    weightDataElement.innerHTML = html;
 }
 function init() {
     yearElement.value = new Date().getFullYear()
     chart2()
+    userData()
+
 }
 init()
 
-trackerBtn.addEventListener('click', () => {
+trackerBtn.addEventListener('click', async () => {
     const weightData = {
-        x: weekly.value,
-        y: weight.value
+        date: weekly.value,
+        weight: weight.value
     };
-    data.push(weightData)
-    chart.update();
+    const storing = await fetch('/api/weight/add', {
+        method: "POST", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify(weightData)
+    })
+    userData()
+    // const jsonData = await storing.json();
+    // data.push(weightData)
+    // chart.update();
 });
 yearElement.addEventListener('change', () => {
     const year = yearElement.value
