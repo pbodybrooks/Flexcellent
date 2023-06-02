@@ -140,6 +140,8 @@ router.get('/explore', withAuth, async (req, res) => {
         console.log({ exercises });
 
         res.render('explore', {
+            layout: 'main',
+            logged_in: req.session.logged_in,
             exercises,
             muscleGroups: muscleGroupData
         });
