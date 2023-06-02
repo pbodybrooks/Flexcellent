@@ -15,7 +15,7 @@ router.post('/add', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
-router.get('/retiever', async (req, res) => {
+router.get('/retriever', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
     }

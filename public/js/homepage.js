@@ -55,7 +55,11 @@ function chart2() {
         }, plugins: [plugin],
     })
 };
-
+async function userData() {
+    const response = await fetch('/api/weight/retriever');
+    const jsonData = await response.json();
+    console.log(jsonData)
+}
 function init() {
     yearElement.value = new Date().getFullYear()
     chart2()
