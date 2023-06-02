@@ -10,9 +10,9 @@ router.post('/add', async (req, res) => {
         const { weight, date } = req.body;
         const userId = req.session.userid;
         await Weight.create({ userId, weight, date });
-        res.sendStatus(200);
+        res.status(200).json({ message: "success" });
     } catch (error) {
-        res.status(500).send(error.message);
+        res.status(500).send(error.message); s
     }
 });
 router.get('/retriever', async (req, res) => {
@@ -22,7 +22,7 @@ router.get('/retriever', async (req, res) => {
 
     try {
         const userId = req.session.userid;
-        const weights = await Weight.findAll({ where: { userId } });
+        const weights = await Weight.findAll({ attributes: ["id", ["weight", 'y'], ['date', 'x']], where: { userId } });
         res.status(200).json({ userId, weights });
     } catch (error) {
         res.status(500).send(error.message);

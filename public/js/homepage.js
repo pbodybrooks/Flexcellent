@@ -1,5 +1,5 @@
 const ctx = document.getElementById('myChart');
-const data = []
+let data = []
 const trackerBtn = document.getElementById('weightTrackerButton');
 const yearElement = document.getElementById("year");
 const weight = document.getElementById("barvalue");
@@ -58,21 +58,37 @@ function chart2() {
 async function userData() {
     const response = await fetch('/api/weight/retriever');
     const jsonData = await response.json();
-    console.log(jsonData)
+    chart.data.datasets[0].data = jsonData.weights.map((value) => { return { x: value.x, y: value.y } })
+    chart.update();
+    const weightDataElement = document.getElementById("weightdata")
+    let html = ""
+    for (let i = 0; i < jsonData.weights.length; i++) {
+        html += `<div>
+    
+    </div>`}
 }
 function init() {
     yearElement.value = new Date().getFullYear()
     chart2()
+    userData()
+
 }
 init()
 
-trackerBtn.addEventListener('click', () => {
+trackerBtn.addEventListener('click', async () => {
     const weightData = {
-        x: weekly.value,
-        y: weight.value
+        date: weekly.value,
+        weight: weight.value
     };
-    data.push(weightData)
-    chart.update();
+    const storing = await fetch('/api/weight/add', {
+        method: "POST", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify(weightData)
+    })
+    userData()
+    // const jsonData = await storing.json();
+    // data.push(weightData)
+    // chart.update();
 });
 yearElement.addEventListener('change', () => {
     const year = yearElement.value
