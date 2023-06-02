@@ -2,7 +2,17 @@
   background-color: rgb(255, 139, 139);
 }
 
-.workoutCard {
+.workouts{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width:auto;
+  height:auto;
+  background-color: azure;
+}
+
+/* .workoutCard {
   height: 400px;
   width: 300px;
   color: black;
@@ -10,10 +20,10 @@
   box-shadow: 7px 7px 5px rgb(55, 55, 55);
 }
 
-.workbtn {
+#workbtn {
   color: blue;
 }
 
-.workForm {
+#workForm {
   visibility: hidden;
-}
+} */
