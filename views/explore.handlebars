@@ -33,13 +33,13 @@
     {{#each exercises}}
       <div class="card">
         <div class="card-header">
-          <h2 id="exerciseName">{{name}}</h2>
+          <h2 id="exerciseName">{{toTitleCase name}}</h2>
         </div>
         <div class="card-body">
-          <p id="exerciseMuscle">{{muscle}}</p>
-          <p id="exerciseEquipment">{{equipment}}</p>
-          <p id="exerciseDifficulty">{{difficulty}}</p>
-          <p id="exerciseInstructions">{{instructions}}</p>
+          <p id="exerciseMuscle">{{toTitleCase muscle}}</p>
+          <p id="exerciseEquipment">{{toTitleCase equipment}}</p>
+          <p id="exerciseDifficulty">{{toTitleCase difficulty}}</p>
+          <p id="exerciseInstructions">{{ instructions}}</p>
         </div>
         <p id="messageUser"></p>
       </div>
