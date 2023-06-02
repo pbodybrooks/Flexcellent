@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Weight } = require('../../models');
+const { Op } = require("sequelize");
 
 router.post('/add', async (req, res) => {
     if (!req.session.logged_in) {
@@ -8,11 +9,11 @@ router.post('/add', async (req, res) => {
 
     try {
         const { weight, date } = req.body;
-        const userId = req.session.userid;
+        const userId = req.session.user_id;
         await Weight.create({ userId, weight, date });
         res.status(200).json({ message: "success" });
     } catch (error) {
-        res.status(500).send(error.message); s
+        res.status(500).send(error.message);
     }
 });
 router.get('/retriever', async (req, res) => {
@@ -21,7 +22,8 @@ router.get('/retriever', async (req, res) => {
     }
 
     try {
-        const userId = req.session.userid;
+        const userId = req.session.user_id;
+        console.log(req.session.userid)
         const weights = await Weight.findAll({ attributes: ["id", ["weight", 'y'], ['date', 'x']], where: { userId } });
         res.status(200).json({ userId, weights });
     } catch (error) {
@@ -32,9 +34,9 @@ router.put('/update', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
     }
-    const userId = req.session.userid;
-    const { weight, date } = req.body;
-    await Weight.update({ weight, date }, { where: { userId } });
+    const userId = req.session.user_id;
+    const { rowId, weight, date } = req.body;
+    await Weight.update({ id: rowId, weight: weight, date: date }, { where: { [Op.and]: [{ userId: userId }, { id: rowId }] } });
 
     try {
         res.sendStatus(200);

@@ -55,6 +55,27 @@ function chart2() {
         }, plugins: [plugin],
     })
 };
+
+async function deleteWeight(id) {
+    const remove = await fetch('/api/weight/delete', {
+        method: "delete", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify({ rowId: id })
+    })
+    userData()
+}
+async function upWeight(id) {
+    const weight = document.querySelector(`.row${id} input.weight`).value
+    const date = document.querySelector(`.row${id} input.date`).value
+    console.log(weight)
+    const remove = await fetch('/api/weight/update', {
+        method: "put", headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify({ rowId: id, weight: weight, date: date })
+    })
+    userData()
+}
+
 async function userData() {
     const response = await fetch('/api/weight/retriever');
     const jsonData = await response.json();
@@ -63,9 +84,19 @@ async function userData() {
     const weightDataElement = document.getElementById("weightdata")
     let html = ""
     for (let i = 0; i < jsonData.weights.length; i++) {
-        html += `<div>
-    
-    </div>`}
+        const date = new Date(jsonData.weights[i].x);
+        const formattedDated = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : date.getMonth()}-${(date.getDate() + 1) < 10 ? "0" + (date.getDate() + 1) : date.getDate()}`;
+        html += `<div class= "row${jsonData.weights[i].id}">
+        <input class="weight" type="number" value= "${jsonData.weights[i].y}"/>
+    <input class="date" type="date" value = "${formattedDated}"/>
+    <button class="updateWeightBtn" data-userId="${jsonData.id}" onclick="upWeight(${jsonData.weights[i].id})">
+        Update
+    </button>
+    <button class= "deleteWeightBtn" data-userId="${jsonData.id}" onclick="deleteWeight(${jsonData.weights[i].id})">
+    Delete Me </button>
+    </div>`
+    }
+    weightDataElement.innerHTML = html;
 }
 function init() {
     yearElement.value = new Date().getFullYear()
