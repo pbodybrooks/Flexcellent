@@ -23,12 +23,14 @@
     </form>
 
     {{!-- <a href="/explore"></a> --}}
-
-    <button class="btn-red" id="getExercises">Get Exercises! [Call API]</button>
-    <button class="btn-red" id="getRandomExercises">Get Random Exercises! [Call API]</button>
-    {{!-- the below two buttons were for testing purposes and can be deleted when we are done --}}
-    {{!-- <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
-    <button id="retrieve">Retrieve from local storage</button> --}}
+    
+    <div>
+      <button class="btn-red neon-glow-button" id="getExercises">Get Exercises! [Call API]</button>
+      <button class="btn-red neon-glow-button" id="getRandomExercises">Get Random Exercises! [Call API]</button>
+      {{!-- the below two buttons were for testing purposes and can be deleted when we are done --}}
+      {{!-- <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
+      <button id="retrieve">Retrieve from local storage</button> --}}
+    </div>
 
     <div class="neon-glow-container m-4" id="exerciseContainer">
       {{#each exercises}}
