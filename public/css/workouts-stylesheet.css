@@ -1,3 +1,7 @@
+body{
+    background-color: #292827;
+}
+
 #newCard {
         margin-bottom: 3vh;
     }
@@ -13,27 +17,38 @@
         align-items: center;
         width:100%;
         height:auto;
-        background-color: azure;
     }
     
     .workCard {
         width: 250px;
         height: 400px;
-        background-color: lightgrey;
-        box-shadow: 7px 7px 5px grey;
+        color:white;
+        background-color: #3a3a39;
+        box-shadow: 7px 7px 5px black;
         margin: 12px;
         border-radius: 10px;
     }
     
-    input[type=text] {
+    input[type=text], textarea {
         width:95%;
         padding:6px 10px;
         margin:4px 2.5%;
         display:inline-block;
-        border: 1px solid cyan;
+        color:white;
+        border: 1px solid #00CAB1;
+        background-color: #292827;
         border-radius: 3px;
         box-sizing: border-box;
+    }
 
+    input[type=text]:focus {
+        outline:none;
+        border-color: #00fdde;
+        box-shadow: 0 0 10px #00fdde;
+    }
+
+    label {
+        margin:4px 2.5%;
     }
 
     /* .workoutForm {
