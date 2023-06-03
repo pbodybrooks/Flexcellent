@@ -50,7 +50,7 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-
+// render workout history from database -> workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
     try {
         // const userData = await User.findByPk(req.session.user_id, {
@@ -60,7 +60,7 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
 
         // const user = userData.get({ plain: true });
 
-        res.render('workouts', {
+        res.render('workoutHistory', {
             // ...user,
             // logged_in: true
 
@@ -144,6 +144,42 @@ router.get('/explore', withAuth, async (req, res) => {
             logged_in: req.session.logged_in,
             exercises,
             muscleGroups: muscleGroupData
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+router.get('/addWorkouts', withAuth, async (req, res) => {
+    try {
+        // const userData = await User.findByPk(req.session.user_id, {
+        //     attributes: { exclude: ['password'] },
+        //     include: [{ model: Workout }],
+        // });
+
+        // const user = userData.get({ plain: true });
+        const workoutHistory = await Workout.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        for (let i = 0; i < workoutHistory.length; i++) {
+            const exerciseHistory = await Exercise.findAll({
+                where: {
+                    workout_id: workoutHistory[i].id
+                }
+            });
+            workoutHistory[i].dataValues.exercises = exerciseHistory;
+        }
+        
+        
+
+        res.render('workouts', {
+            // ...user,
+            // logged_in: true
+
         });
     } catch (err) {
         res.status(500).json(err);

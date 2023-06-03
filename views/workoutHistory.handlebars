@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Workout History | Flexcellent</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/css/master-stylesheet.css" />
+        <link rel="stylesheet" href="/css/workout-history-stylesheet.css" />
+    </head>
 
-<head>
-    <title>Workout History | Flexcellent</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/master-stylesheet.css" />
-    <link rel="stylesheet" href="/css/workout-history-stylesheet.css" />
-</head>
-
-<body>
-    <div id="workoutContainer">
-        {{#each workouts}}
-        <div class="card">
-            <div class="card-header">
-                <h2 class="neon-glow-text" id="workoutDate"><strong>{{toTitleCase date}}</strong></h2>
-                <p id="workoutDuration"><strong>Duration: </strong>{{duration}}</p>
+    <body>
+        <div id="workoutContainer">
+            {{#each workouts}}
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="neon-glow-text" id="workoutDate"><strong>{{toTitleCase date}}</strong></h2>
+                    <p id="workoutDuration"><strong>Duration: </strong>{{duration}}</p>
+                </div>
+                <div class="card-body">
+                    <p id="workoutExercises"><strong>Exercises: </strong>{{exercises}}</p>
+                    {{#each exercises}}
+                        <ul id="workoutList">
+                            <li>{{this}}</li>
+                        </ul>
+                    {{/each}}
+                </div>
             </div>
-            <div class="card-body">
-                <p id="workoutExercises"><strong>Exercises: </strong>{{exercises}}</p>
-                {{#each exercises}}
-                    <ul id="workoutList">
-                        <li>{{this}}</li>
-                    </ul>
-                {{/each}}
-            </div>
+            {{/each}}
         </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    </body>
 </html>
