@@ -1,0 +1,14 @@
+
+.card {
+    background-color: var(--lightObsidian);
+    border: 2px solid var(--pink);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  
+  }
+  
