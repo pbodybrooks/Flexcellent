@@ -19,6 +19,11 @@ Workout.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
+    date_completed: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+    },
     user_id: {
         type: DataTypes.INTEGER,
         references: {
