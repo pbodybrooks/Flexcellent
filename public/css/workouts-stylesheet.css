@@ -10,7 +10,13 @@ body{
     }
 
     .formbtn{
-        background-color: blue;
+        background-color: #292827;
+        color: ghostwhite;
+        border-color: #00CAB1;
+        border-radius: 5px;
+        width:95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
     }
     
     .container {
