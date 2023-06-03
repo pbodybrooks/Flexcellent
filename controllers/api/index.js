@@ -8,7 +8,7 @@ const measureRoutes = require('./measureRoutes');
 
 router.use('/users', userRoutes);
 router.use('/workouts', workoutRoutes);
-router.use('/measurements', measureRoutes);
+// router.use('/measurements', measureRoutes);
 router.use('/exercises', exerciseRoutes);
 router.use('/weight', weightRoutes);
 
