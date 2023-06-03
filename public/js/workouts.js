@@ -10,13 +10,13 @@ function createCard() {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].innerHTML ="<form name='input' class='workoutForm' action='#' method='get'>" +
         "<label for='exercise'>Exercise</label>" +
-        "<input type='text' id='exercise' name='exercise'><br><br>" +
+        "<input type='text' id='exercise' name='exercise'><br>" +
         "<label for='sets'>Sets</label>" +
-        "<input type='text' id='sets' name='sets' ><br>" +
+        "<input type='text' id='sets' name='sets' >" +
         "<label for='reps'>Reps</label>" +
-        "<input type='text' id='reps' name='reps'><br>" +
+        "<input type='text' id='reps' name='reps'>" +
         "<label for='weight'>Weight</label>" +
-        "<input type='text' id='weight' name='w eight'><br><br>" +
+        "<input type='text' id='weight' name='w eight'><br>" +
         "<input type='button' class='formbtn' value='Save'>" +
         "</form>"
         ;

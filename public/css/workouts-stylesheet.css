@@ -2,11 +2,17 @@ body{
     background-color: #292827;
 }
 
+root{
+--background:#292827;
+}
+
 #newCard {
         margin-bottom: 2vh;
+        margin-left: 45%;
         background-color: #3a3a39;
         color:ghostwhite;
         border-radius: 5px;
+        width: 10vw;
     }
 
     .formbtn{
@@ -18,9 +24,11 @@ body{
         margin-left: 2.5%;
         margin-right: 2.5%;
     }
-    
-    .container {
-        margin: auto;
+
+
+    .container, .container-fluid, .mt-5 {
+        margin-left: 20% !important;
+        margin-right: 10% !important;
     }
     
     .workouts{
@@ -30,12 +38,13 @@ body{
         align-items: center;
         width:100%;
         height:auto;
+        color:ghostwhite !important;
     }
     
     .workCard {
         width: 250px;
         height: 400px;
-        color:ghostwhite;
+        color:ghostwhite !important;
         background-color: #3a3a39;
         box-shadow: 7px 7px 5px #0f0f0e;
         margin: 12px;
@@ -44,7 +53,7 @@ body{
     
     input[type=text], textarea {
         width:95%;
-        padding:6px 10px;
+        /* padding:6px 10px; */
         margin:4px 2.5%;
         display:inline-block;
         color:ghostwhite;
@@ -60,10 +69,14 @@ body{
         box-shadow: 0 0 10px #00fdde;
     }
 
+    #exercise, #sets, #reps, #weight, .formbtn {
+        margin:0;
+    }
+
     label {
         margin:4px 2.5%;
     }
 
-    /* .workoutForm {
-        
-    } */
+    .workoutForm {
+        margin:0;
+    }
