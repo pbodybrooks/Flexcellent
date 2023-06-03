@@ -1,0 +1,586 @@
+[
+    {
+        "name": "Barbell Bench Press",
+        "muscle": "Chest",
+        "sets": 3,
+        "reps": 10,
+        "weight": 135,
+        "workout_id": 1
+    },
+    {
+        "name": "Incline Dumbbell Bench Press",
+        "muscle": "Chest",
+        "sets": 3,
+        "reps": 12,
+        "weight": 60,
+        "workout_id": 1
+    },
+    {
+        "name": "Cable Fly",
+        "muscle": "Chest",
+        "sets": 4,
+        "reps": 16,
+        "weight": 40,
+        "workout_id": 1
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 180,
+        "workout_id": 1
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 180,
+        "workout_id": 1
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 4,
+        "reps": 12,
+        "weight": 70,
+        "workout_id": 1
+    },
+    {
+        "name": "Bent Over Barbell Row",
+        "muscle": "Back",
+        "sets": 3,
+        "reps": 10,
+        "weight": 135,
+        "workout_id": 2
+    },
+    {
+        "name": "Lat Pulldown",
+        "muscle": "Back",
+        "sets": 3,
+        "reps": 12,
+        "weight": 120,
+        "workout_id": 2
+    },
+    {
+        "name": "Seated Cable Row",
+        "muscle": "Back",
+        "sets": 4,
+        "reps": 8,
+        "weight": 160,
+        "workout_id": 2
+    },
+    {
+        "name": "Easy Bar Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 12,
+        "weight": 80,
+        "workout_id": 2
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 16,
+        "weight": 40,
+        "workout_id": 2
+    },
+    {
+        "name": "Dumbbell Preacher Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 12,
+        "weight": 40,
+        "workout_id": 2
+    },
+    {
+        "name": "Barbell Overhead Press",
+        "muscle": "Deltoids",
+        "sets": 3,
+        "reps": 12,
+        "weight": 125,
+        "workout_id": 3
+    },
+    {
+        "name": "Standing Dumbbell Lateral Raise",
+        "muscle": "Deltoids",
+        "sets": 4,
+        "reps": 12,
+        "weight": 20,
+        "workout_id": 3
+    },
+    {
+        "name": "Dumbbell Shrug",
+        "muscle": "Trapezius",
+        "sets": 4,
+        "reps": 16,
+        "weight": 45,
+        "workout_id": 3
+    },
+    {
+        "name": "Romanian Deadlift",
+        "muscle": "Hamstring",
+        "sets": 3,
+        "reps": 8,
+        "weight": 405,
+        "workout_id": 4
+    },
+    {
+        "name": "Highbar Squat",
+        "muscle": "Quadricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 325,
+        "workout_id": 4
+    },
+    {
+        "name": "Seated Calf Raise",
+        "muscle": "Calf",
+        "sets": 3,
+        "reps": 14,
+        "weight": 135,
+        "workout_id": 4
+    },
+    {
+        "name": "Easy Bar Skull Crusher",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 12,
+        "weight": 95,
+        "workout_id": 5
+    },
+    {
+        "name": "Supination Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 16,
+        "weight": 35,
+        "workout_id": 5
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 12,
+        "weight": 190,
+        "workout_id": 5
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 5
+    },
+    {
+        "name": "Barbell Bench Press",
+        "muscle": "Chest",
+        "sets": 1,
+        "reps": 4,
+        "weight": 15,
+        "workout_id": 6
+    },
+    {
+        "name": "Decline Dummbell Bench Press",
+        "muscle": "Chest",
+        "sets": 1,
+        "reps": 2,
+        "weight": 35,
+        "workout_id": 6
+    },
+    {
+        "name": "Row Machine",
+        "muscle": "Back",
+        "sets": 1,
+        "reps": 7,
+        "weight": 30,
+        "workout_id": 7
+    },
+    {
+        "name": "T-Bar Row",
+        "muscle": "Back",
+        "sets": 1,
+        "reps": 1,
+        "weight": 5,
+        "workout_id": 7
+    },
+    {
+        "name": "Seated Lateral Raise",
+        "muscle": "Deltoids",
+        "sets": 1,
+        "reps": 4,
+        "weight": 5,
+        "workout_id": 8
+    },
+    {
+        "name": "Barbell Shrug",
+        "muscle": "Trapezius",
+        "sets": 1,
+        "reps": 6,
+        "weight": 45,
+        "workout_id": 8
+    },
+    {
+        "name": "Standing Calf Raise",
+        "muscle": "Calf",
+        "sets": 2,
+        "reps": 8,
+        "weight": 0,
+        "workout_id": 9
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 1,
+        "reps": 12,
+        "weight": 10,
+        "workout_id": 10
+    },
+    {
+        "name": "Dumbbell Supination Curl",
+        "muscle": "Bicep",
+        "sets": 1,
+        "reps": 7,
+        "weight": 5,
+        "workout_id": 11
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 12
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 12
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 12
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 12
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 12
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 12
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 13
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 13
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 13
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 13
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 13
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 13
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 14
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 14
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 14
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 14
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 14
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 14
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 15
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 15
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 15
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 15
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 15
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 15
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 16
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 16
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 16
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 16
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 16
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 16
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 17
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 17
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 17
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 17
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 17
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 17
+    },
+    {
+        "name": "Tricep Pushdown",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 200,
+        "workout_id": 18
+    },
+    {
+        "name": "Dumbbell Skull Crushers",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 95,
+        "workout_id": 18
+    },
+    {
+        "name": "Tricep Dips",
+        "muscle": "Tricep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 190,
+        "workout_id": 18
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 45,
+        "workout_id": 18
+    },
+    {
+        "name": "Standing Barbell Curl",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 135,
+        "workout_id": 18
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "muscle": "Bicep",
+        "sets": 3,
+        "reps": 8,
+        "weight": 110,
+        "workout_id": 18
+    }
+]

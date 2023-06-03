@@ -1,22 +1,21 @@
 [
   {
+    "id": "1",
     "name": "BarryBigGains",
     "email": "gains@hotmail.com",
     "password": "password12345"
   },
   {
-    "name": "ArnoldS",
-    "email": "terminator@gmail.com",
+    "id": "2",
+    "name": "NicholasNoGains",
+    "email": "smallboi@email.com",
     "password": "password12345"
   },
   {
-    "name": "RonnieColeman",
-    "email": "mrolympia0@aol.com",
-    "password": "password12345"
-  },
-  {
+    "id": "3",
     "name": "DomMazzetti",
     "email": "dom@broscience.com",  
     "password": "password12345"
   }
+
 ]

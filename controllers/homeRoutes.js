@@ -50,7 +50,8 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-
+// Below is for workout history page
+// get workout history from database -> render workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
     try {
         // const userData = await User.findByPk(req.session.user_id, {
@@ -60,10 +61,29 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
 
         // const user = userData.get({ plain: true });
 
-        res.render('workouts', {
+        // get workouts from database that belong to the user
+        const workoutHistory = await Workout.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        allHistoricalWorkouts = [];
+        // for each historical workout, get the exercises that belong to it
+        for (let i = 0; i < workoutHistory.length; i++) {
+            const historicalWorkout = await Exercise.findAll({
+                where: {
+                    workout_id: workoutHistory[i].id
+                }
+            });
+            historicalWorkout = workoutHistory[i].toJSON;
+            allHistoricalWorkouts.push(historicalWorkout);
+        }
+
+        res.render('workoutHistory', {
             // ...user,
             // logged_in: true
-
+            allHistoricalWorkouts
         });
     } catch (err) {
         res.status(500).json(err);
@@ -144,6 +164,28 @@ router.get('/explore', withAuth, async (req, res) => {
             logged_in: req.session.logged_in,
             exercises,
             muscleGroups: muscleGroupData
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/addWorkouts', withAuth, async (req, res) => {
+    try {
+        // const userData = await User.findByPk(req.session.user_id, {
+        //     attributes: { exclude: ['password'] },
+        //     include: [{ model: Workout }],
+        // });
+
+        // const user = userData.get({ plain: true });
+        
+
+        
+
+        res.render('workouts', {
+            // ...user,
+            // logged_in: true
+
         });
     } catch (err) {
         res.status(500).json(err);
