@@ -17,7 +17,7 @@ function createCard() {
         "<input type='text' id='reps' name='reps'><br>" +
         "<label for='weight'>Weight</label>" +
         "<input type='text' id='weight' name='w eight'><br><br>" +
-        "<input type='button' value='Save'>" +
+        "<input type='button' class='formbtn' value='Save'>" +
         "</form>"
         ;
     }

@@ -3,7 +3,14 @@ body{
 }
 
 #newCard {
-        margin-bottom: 3vh;
+        margin-bottom: 2vh;
+        background-color: #3a3a39;
+        color:ghostwhite;
+        border-radius: 5px;
+    }
+
+    .formbtn{
+        background-color: blue;
     }
     
     .container {
@@ -22,9 +29,9 @@ body{
     .workCard {
         width: 250px;
         height: 400px;
-        color:white;
+        color:ghostwhite;
         background-color: #3a3a39;
-        box-shadow: 7px 7px 5px black;
+        box-shadow: 7px 7px 5px #0f0f0e;
         margin: 12px;
         border-radius: 10px;
     }
@@ -34,7 +41,7 @@ body{
         padding:6px 10px;
         margin:4px 2.5%;
         display:inline-block;
-        color:white;
+        color:ghostwhite;
         border: 1px solid #00CAB1;
         background-color: #292827;
         border-radius: 3px;
