@@ -6,12 +6,16 @@
   margin-bottom: 3vh;
 }
 
+.container {
+  margin: auto;
+}
+
 .workouts{
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width:98%;
+  width:100%;
   height:auto;
   background-color: azure;
 }
