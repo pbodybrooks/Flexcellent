@@ -32,11 +32,11 @@
       <button id="retrieve">Retrieve from local storage</button> --}}
     </div>
 
-    <div class="neon-glow-container m-4" id="exerciseContainer">
+    <div class="m-4" id="exerciseContainer">
       {{#each exercises}}
         <div class="card">
           <div class="card-header">
-            <h2 class="neon-glow" id="exerciseName"><strong>{{toTitleCase name}}</strong></h2>
+            <h2 class="neon-glow-text" id="exerciseName"><strong>{{toTitleCase name}}</strong></h2>
           </div>
           <div class="card-body">
             <p id="exerciseMuscle"><strong>Muscle Group: </strong>{{toTitleCase muscle}}</p>
