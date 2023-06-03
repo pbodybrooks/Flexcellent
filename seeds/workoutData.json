@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Chest & Triceps",
+        "date_created": "2023-06-01",
+        "workout_duration": 60,
+        "user_id": 1
+    },
+    {
+        "name": "Back and Biceps",
+        "date_created": "2023-06-02",
+        "workout_duration": 75,
+        "user_id": 1
+    },
+    {
+        "name": "Shoulders",
+        "date_created": "2023-06-03",
+        "workout_duration": 55,
+        "user_id": 1
+    },
+    {
+        "name": "Legs",
+        "date_created": "2023-06-04",
+        "workout_duration":90,
+        "user_id": 1
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-05",
+        "workout_duration": 85,
+        "user_id": 1
+    },
+    
+    {
+        "name": "Chest",
+        "date_created": "2023-06-01",
+        "workout_duration": 10,
+        "user_id": 2
+    },
+    {
+        "name": "Back",
+        "date_created": "2023-06-02",
+        "workout_duration": 13,
+        "user_id": 2
+    },
+    {
+        "name": "Shoulders",
+        "date_created": "2023-06-03",
+        "workout_duration": 11,
+        "user_id": 2
+    },
+    {
+        "name": "Legs",
+        "date_created": "2023-06-04",
+        "workout_duration": 5,
+        "user_id": 2
+    },
+    {
+        "name": "Triceps",
+        "date_created": "2023-06-05",
+        "workout_duration": 6,
+        "user_id": 2
+    },
+    {
+        "name": "Biceps",
+        "date_created": "2023-06-06",
+        "workout_duration": 4,
+        "user_id": 2
+    },
+
+    {
+        "name": "Arms",
+        "date_created": "2023-06-01",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-02",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-03",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-04",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-05",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-06",
+        "workout_duration": 120,
+        "user_id": 3
+    },
+    {
+        "name": "Arms",
+        "date_created": "2023-06-07",
+        "workout_duration": 120,
+        "user_id": 3
+    }
+]

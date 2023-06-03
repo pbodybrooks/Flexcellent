@@ -50,7 +50,8 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-// render workout history from database -> workoutHistory.handlebars
+// Below is for workout history page
+// get workout history from database -> render workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
     try {
         // const userData = await User.findByPk(req.session.user_id, {
@@ -60,10 +61,29 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
 
         // const user = userData.get({ plain: true });
 
+        // get workouts from database that belong to the user
+        const workoutHistory = await Workout.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+
+        allHistoricalWorkouts = [];
+        // for each historical workout, get the exercises that belong to it
+        for (let i = 0; i < workoutHistory.length; i++) {
+            const historicalWorkout = await Exercise.findAll({
+                where: {
+                    workout_id: workoutHistory[i].id
+                }
+            });
+            historicalWorkout = workoutHistory[i].toJSON;
+            allHistoricalWorkouts.push(historicalWorkout);
+        }
+
         res.render('workoutHistory', {
             // ...user,
             // logged_in: true
-
+            allHistoricalWorkouts
         });
     } catch (err) {
         res.status(500).json(err);
@@ -150,7 +170,6 @@ router.get('/explore', withAuth, async (req, res) => {
     }
 });
 
-
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
         // const userData = await User.findByPk(req.session.user_id, {
@@ -159,21 +178,8 @@ router.get('/addWorkouts', withAuth, async (req, res) => {
         // });
 
         // const user = userData.get({ plain: true });
-        const workoutHistory = await Workout.findAll({
-            where: {
-                user_id: req.session.user_id
-            }
-        });
-
-        for (let i = 0; i < workoutHistory.length; i++) {
-            const exerciseHistory = await Exercise.findAll({
-                where: {
-                    workout_id: workoutHistory[i].id
-                }
-            });
-            workoutHistory[i].dataValues.exercises = exerciseHistory;
-        }
         
+
         
 
         res.render('workouts', {
