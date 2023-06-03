@@ -7,9 +7,8 @@ function createCard() {
     container.appendChild(cardEle);
 
     const nodeList = document.querySelectorAll(".workCard");
-    console.log(nodeList);
     for (let i = 0; i < nodeList.length; i++) {
-        nodeList[i].innerHTML ="<form name='input' action='#' method='get'>" +
+        nodeList[i].innerHTML ="<form name='input' class='workoutForm' action='#' method='get'>" +
         "<label for='exercise'>Exercise</label>" +
         "<input type='text' id='exercise' name='exercise'><br><br>" +
         "<label for='sets'>Sets</label>" +
@@ -18,11 +17,11 @@ function createCard() {
         "<input type='text' id='reps' name='reps'><br>" +
         "<label for='weight'>Weight</label>" +
         "<input type='text' id='weight' name='w eight'><br><br>" +
-        "<input type='submit' value='Save'>" +
+        "<input type='button' value='Save'>" +
         "</form>"
         ;
     }
-
+    // Add in 'preventDefault();' so page is not refreshed and data is lost !!!
 }
 
 
