@@ -31,19 +31,5 @@ body {
   border: 2px solid var(--pink);
   padding: 10px 20px;
   text-shadow: 0 0 10px white;
-  box-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink), 0 0 30px var(--pink), 0 0 40px var(--magenta), 0 0 70px var(--magenta), 0 0 80px var(--magenta), 0 0 100px var(--magenta), 0 0 150px var(--purple);
-}
-
-/* explore.handlebars-specific styling */
-.card {
-  background-color: var(--lightObsidian);
-  border: 2px solid var(--pink);
-}
-
-.card-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-
+  box-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
 }

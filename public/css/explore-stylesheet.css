@@ -1,14 +1,14 @@
-
 .card {
     background-color: var(--lightObsidian);
     border: 2px solid var(--pink);
+    box-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
+
   }
   
-  .card-header {
+.card-header {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-  
-  }
+}
   
