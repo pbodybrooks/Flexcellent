@@ -6,8 +6,10 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script> -->
+    <link rel="stylesheet" href="/css/master-stylesheet.css" />
+    <link rel="stylesheet" href="/css/explore-stylesheet.css" />
+
+    {{!-- <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script> --> --}}
 </head>
 
 <body>
@@ -23,18 +25,20 @@
     </form>
 
     {{!-- <a href="/explore"></a> --}}
-
-    <button class="btn-red" id="getExercises">Get Exercises! [Call API]</button>
-    <button class="btn-red" id="getRandomExercises">Get Random Exercises! [Call API]</button>
-    {{!-- the below two buttons were for testing purposes and can be deleted when we are done --}}
-    {{!-- <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
-    <button id="retrieve">Retrieve from local storage</button> --}}
+    
+    <div>
+      <button class="btn-red neon-glow-button" id="getExercises">Get Exercises! [Call API]</button>
+      <button class="btn-red neon-glow-button" id="getRandomExercises">Get Random Exercises! [Call API]</button>
+      {{!-- the below two buttons were for testing purposes and can be deleted when we are done --}}
+      {{!-- <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
+      <button id="retrieve">Retrieve from local storage</button> --}}
+    </div>
 
     <div class="m-4" id="exerciseContainer">
       {{#each exercises}}
         <div class="card">
           <div class="card-header">
-            <h2 id="exerciseName"><strong>{{toTitleCase name}}</strong></h2>
+            <h2 class="neon-glow-text" id="exerciseName"><strong>{{toTitleCase name}}</strong></h2>
           </div>
           <div class="card-body">
             <p id="exerciseMuscle"><strong>Muscle Group: </strong>{{toTitleCase muscle}}</p>
