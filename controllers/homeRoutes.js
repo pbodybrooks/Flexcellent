@@ -53,37 +53,44 @@ router.get('/register', (req, res) => {
 // Below is for workout history page
 // get workout history from database -> render workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
+    // check to make sure user is logged in
+    if (!req.session.logged_in) {
+        return res.status(404).send('User not logged in');
+    }
+
     try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
-
-        // const user = userData.get({ plain: true });
-
         // get workouts from database that belong to the user
         const workoutHistory = await Workout.findAll({
             where: {
                 user_id: req.session.user_id
             }
         });
+        const result = {};
 
-        allHistoricalWorkouts = [];
-        // for each historical workout, get the exercises that belong to it
         for (let i = 0; i < workoutHistory.length; i++) {
-            const historicalWorkout = await Exercise.findAll({
+            const workoutData = workoutHistory[i].dataValues;
+
+            const exercises = await Exercise.findAll({
                 where: {
                     workout_id: workoutHistory[i].id
                 }
             });
-            historicalWorkout = workoutHistory[i].toJSON;
-            allHistoricalWorkouts.push(historicalWorkout);
-        }
+            const exerciseArray = [];
+            for (let j = 0; j < exercises.length; j++) {
+                const exercise = exercises[j].dataValues;
+                exerciseArray.push(exercise);
+            }
+            console.log("exercise array: ", exerciseArray); 
 
+            result[workoutHistory[i].id] = {
+                "workoutData": workoutData,
+                "exercises": exerciseArray
+            };
+            console.log("result: ", result);
+        }
+        
         res.render('workoutHistory', {
-            // ...user,
-            // logged_in: true
-            allHistoricalWorkouts
+            result
         });
     } catch (err) {
         res.status(500).json(err);
