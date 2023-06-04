@@ -1,0 +1,547 @@
+[
+    {
+        "weight": 245.6,
+        "date": "2023-05-01",
+        "userId": 1
+    },
+    {
+        "weight": 247.8,
+        "date": "2023-05-01",
+        "userId": 1
+    },
+    {
+        "weight": 247.8,
+        "date": "2023-05-02",
+        "userId": 1
+    },
+    {
+        "weight": 248.4,
+        "date": "2023-05-03",
+        "userId": 1
+    },
+    {
+        "weight": 248.6,
+        "date": "2023-05-04",
+        "userId": 1
+    },
+    {
+        "weight": 249,
+        "date": "2023-05-05",
+        "userId": 1
+    },
+    {
+        "weight": 249.4,
+        "date": "2023-05-06",
+        "userId": 1
+    },
+    {
+        "weight": 249.2,
+        "date": "2023-05-07",
+        "userId": 1
+    },
+    {
+        "weight": 249.4,
+        "date": "2023-05-08",
+        "userId": 1
+    },
+    {
+        "weight": 249.2,
+        "date": "2023-05-09",
+        "userId": 1
+    },
+    {
+        "weight": 249.8,
+        "date": "2023-05-10",
+        "userId": 1
+    },
+    {
+        "weight": 250,
+        "date": "2023-05-11",
+        "userId": 1
+    },
+    {
+        "weight": 250.2,
+        "date": "2023-05-12",
+        "userId": 1
+    },
+    {
+        "weight": 250.8,
+        "date": "2023-05-13",
+        "userId": 1
+    },
+    {
+        "weight": 251.8,
+        "date": "2023-05-14",
+        "userId": 1
+    },
+    {
+        "weight": 252.4,
+        "date": "2023-05-15",
+        "userId": 1
+    },
+    {
+        "weight": 253.0,
+        "date": "2023-05-16",
+        "userId": 1
+    },
+    {
+        "weight": 252.8,
+        "date": "2023-05-17",
+        "userId": 1
+    },
+    {
+        "weight": 253.4,
+        "date": "2023-05-18",
+        "userId": 1
+    },
+    {
+        "weight": 253.6,
+        "date": "2023-05-19",
+        "userId": 1
+    },
+    {
+        "weight": 253.8,
+        "date": "2023-05-20",
+        "userId": 1
+    },
+    {
+        "weight": 254.2,
+        "date": "2023-05-21",
+        "userId": 1
+    },
+    {
+        "weight": 253.8,
+        "date": "2023-05-22",
+        "userId": 1
+    },
+    {
+        "weight": 254.0,
+        "date": "2023-05-23",
+        "userId": 1
+    },
+    {
+        "weight": 254.2,
+        "date": "2023-05-24",
+        "userId": 1
+    },
+    {
+        "weight": 254.8,
+        "date": "2023-05-25",
+        "userId": 1
+    },
+    {
+        "weight": 254.6,
+        "date": "2023-05-26",
+        "userId": 1
+    },
+    {
+        "weight": 254.6,
+        "date": "2023-05-27",
+        "userId": 1
+    },
+    {
+        "weight": 255.0,
+        "date": "2023-05-28",
+        "userId": 1
+    },
+    {
+        "weight": 254.8,
+        "date": "2023-05-29",
+        "userId": 1
+    },
+    {
+        "weight": 255.4,
+        "date": "2023-05-30",
+        "userId": 1
+    },
+    {
+        "weight": 255.4,
+        "date": "2023-05-31",
+        "userId": 1
+    },
+    {
+        "weight": 255.4,
+        "date": "2023-06-01",
+        "userId": 1
+    },
+    {
+        "weight": 255.8,
+        "date": "2023-06-02",
+        "userId": 1
+    },
+    {
+        "weight": 256.0,
+        "date": "2023-06-03",
+        "userId": 1
+    },
+    {
+        "weight": 256.0,
+        "date": "2023-06-04",
+        "userId": 1
+    },
+    {
+        "weight": 256.4,
+        "date": "2023-06-05",
+        "userId": 1
+    },
+    {
+        "weight": 138.6,
+        "date": "2023-05-01",
+        "userId": 2
+    },
+    {
+        "weight": 138.5,
+        "date": "2023-05-02",
+        "userId": 2
+    },
+    {
+        "weight": 138.4,
+        "date": "2023-05-03",
+        "userId": 2
+    },
+    {
+        "weight": 138.3,
+        "date": "2023-05-04",
+        "userId": 2
+    },
+    {
+        "weight": 138.2,
+        "date": "2023-05-05",
+        "userId": 2
+    },
+    {
+        "weight": 138.1,
+        "date": "2023-05-06",
+        "userId": 2
+    },
+    {
+        "weight": 138,
+        "date": "2023-05-07",
+        "userId": 2
+    },
+    {
+        "weight": 137.9,
+        "date": "2023-05-08",
+        "userId": 2
+    },
+    {
+        "weight": 137.8,
+        "date": "2023-05-09",
+        "userId": 2
+    },
+    {
+        "weight": 137.7,
+        "date": "2023-05-10",
+        "userId": 2
+    },
+    {
+        "weight": 137.6,
+        "date": "2023-05-11",
+        "userId": 2
+    },
+    {
+        "weight": 137.5,
+        "date": "2023-05-12",
+        "userId": 2
+    },
+    {
+        "weight": 137.4,
+        "date": "2023-05-13",
+        "userId": 2
+    },
+    {
+        "weight": 137.3,
+        "date": "2023-05-14",
+        "userId": 2
+    },
+    {
+        "weight": 137.2,
+        "date": "2023-05-15",
+        "userId": 2
+    },
+    {
+        "weight": 137.1,
+        "date": "2023-05-16",
+        "userId": 2
+    },
+    {
+        "weight": 137,
+        "date": "2023-05-17",
+        "userId": 2
+    },
+    {
+        "weight": 136.9,
+        "date": "2023-05-18",
+        "userId": 2
+    },
+    {
+        "weight": 136.8,
+        "date": "2023-05-19",
+        "userId": 2
+    },
+    {
+        "weight": 136.7,
+        "date": "2023-05-20",
+        "userId": 2
+    },
+    {
+        "weight": 136.6,
+        "date": "2023-05-21",
+        "userId": 2
+    },
+    {
+        "weight": 136.5,
+        "date": "2023-05-22",
+        "userId": 2
+    },
+    {
+        "weight": 136.4,
+        "date": "2023-05-23",
+        "userId": 2
+    },
+    {
+        "weight": 136.3,
+        "date": "2023-05-24",
+        "userId": 2
+    },
+    {
+        "weight": 136.2,
+        "date": "2023-05-25",
+        "userId": 2
+    },
+    {
+        "weight": 136.1,
+        "date": "2023-05-26",
+        "userId": 2
+    },
+    {
+        "weight": 136,
+        "date": "2023-05-27",
+        "userId": 2
+    },
+    {
+        "weight": 135.9,
+        "date": "2023-05-28",
+        "userId": 2
+    },
+    {
+        "weight": 135.8,
+        "date": "2023-05-29",
+        "userId": 2
+    },
+    {
+        "weight": 135.7,
+        "date": "2023-05-30",
+        "userId": 2
+    },
+    {
+        "weight": 135.6,
+        "date": "2023-05-31",
+        "userId": 2
+    },
+    {
+        "weight": 135.5,
+        "date": "2023-06-01",
+        "userId": 2
+    },
+    {
+        "weight": 135.4,
+        "date": "2023-06-02",
+        "userId": 2
+    },
+    {
+        "weight": 135.3,
+        "date": "2023-06-03",
+        "userId": 2
+    },
+    {
+        "weight": 135.2,
+        "date": "2023-06-04",
+        "userId": 2
+    },
+    {
+        "weight": 135.1,
+        "date": "2023-06-05",
+        "userId": 2
+    },
+    {
+        "weight": 190,
+        "date": "2023-05-01",
+        "userId": 3
+    },
+    {
+        "weight": 191,
+        "date": "2023-05-02",
+        "userId": 3
+    },
+    {
+        "weight": 190.8,
+        "date": "2023-05-03",
+        "userId": 3
+    },
+    {
+        "weight": 191.2,
+        "date": "2023-05-04",
+        "userId": 3
+    },
+    {
+        "weight": 191.2,
+        "date": "2023-05-05",
+        "userId": 3
+    },
+    {
+        "weight": 191.4,
+        "date": "2023-05-06",
+        "userId": 3
+    },
+    {
+        "weight": 191.6,
+        "date": "2023-05-07",
+        "userId": 3
+    },
+    {
+        "weight": 191.9,
+        "date": "2023-05-08",
+        "userId": 3
+    },
+    {
+        "weight": 192.1,
+        "date": "2023-05-09",
+        "userId": 3
+    },
+    {
+        "weight": 192.4,
+        "date": "2023-05-10",
+        "userId": 3
+    },
+    {
+        "weight": 192.6,
+        "date": "2023-05-11",
+        "userId": 3
+    },
+    {
+        "weight": 192.5,
+        "date": "2023-05-12",
+        "userId": 3
+    },
+    {
+        "weight": 192.4,
+        "date": "2023-05-13",
+        "userId": 3
+    },
+    {
+        "weight": 192.3,
+        "date": "2023-05-14",
+        "userId": 3
+    },
+    {
+        "weight": 193,
+        "date": "2023-05-15",
+        "userId": 3
+    },
+    {
+        "weight": 193.2,
+        "date": "2023-05-16",
+        "userId": 3
+    },
+    {
+        "weight": 193.4,
+        "date": "2023-05-17",
+        "userId": 3
+    },
+    {
+        "weight": 194,
+        "date": "2023-05-18",
+        "userId": 3
+    },
+    {
+        "weight": 194.5,
+        "date": "2023-05-19",
+        "userId": 3
+    },
+    {
+        "weight": 194.7,
+        "date": "2023-05-20",
+        "userId": 3
+    },
+    {
+        "weight": 195,
+        "date": "2023-05-21",
+        "userId": 3
+    },
+    {
+        "weight": 195.2,
+        "date": "2023-05-22",
+        "userId": 3
+    },
+    {
+        "weight": 195.4,
+        "date": "2023-05-23",
+        "userId": 3
+    },
+    {
+        "weight": 195.3,
+        "date": "2023-05-24",
+        "userId": 3
+    },
+    {
+        "weight": 195.2,
+        "date": "2023-05-25",
+        "userId": 3
+    },
+    {
+        "weight": 195.1,
+        "date": "2023-05-26",
+        "userId": 3
+    },
+    {
+        "weight": 195.7,
+        "date": "2023-05-27",
+        "userId": 3
+    },
+    {
+        "weight": 195.9,
+        "date": "2023-05-28",
+        "userId": 3
+    },
+    {
+        "weight": 196.4,
+        "date": "2023-05-29",
+        "userId": 3
+    },
+    {
+        "weight": 196.5,
+        "date": "2023-05-30",
+        "userId": 3
+    },
+    {
+        "weight": 196.7,
+        "date": "2023-05-31",
+        "userId": 3
+    },
+    {
+        "weight": 196.7,
+        "date": "2023-06-01",
+        "userId": 3
+    },
+    {
+        "weight": 196.3,
+        "date": "2023-06-02",
+        "userId": 3
+    },
+    {
+        "weight": 196.4,
+        "date": "2023-06-03",
+        "userId": 3
+    },
+    {
+        "weight": 196.2,
+        "date": "2023-06-04",
+        "userId": 3
+    },
+    {
+        "weight": 196.8,
+        "date": "2023-06-05",
+        "userId": 3
+    }
+]
