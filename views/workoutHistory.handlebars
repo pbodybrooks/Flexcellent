@@ -11,24 +11,28 @@
 
     <body>
         <div class="header">
-            <h1 class="neon-glow-text">My Workout History</h1>
+            <h1 class="neon-glow-text">Workout History</h1>
         </div>
         <div id="workoutHistoryContainer">
             {{#each result}}
-                <div>
-                    <div class="card-header">
-                        <h2 class="neon-glow-text" id="workoutName"><strong>{{workoutData.name}} - {{format_date workoutData.date_created}}</strong></h2>
+                <div class="workoutCard">
+                    <div class="cardHeader">
+                        <h2 class="neon-glow-text" id="workoutName"><strong>{{workoutData.name}}</strong></h2>
+                        <h3 class="neon-glow-text" id="workoutDate"> {{format_date_day_of_week workoutData.date_created}}</h3>
                         {{!-- <h3 class="neon-glow-text" id="workoutDate">{{format_date workoutData.date_created}}</h3> --}}
-                        <h3 class="neon-glow-text" id="workoutDuration">Workout Duration: {{workoutData.workout_duration}} minutes</h3>
+                        <h3 class="neon-glow-text" id="workoutDuration">Duration: {{workoutData.workout_duration}} minutes</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="cardBody">
                         {{#each exercises}}
-                            <h4 id="exerciseHeader">Exercise {{addHelper @index 1}}: {{this.name}}</h4>
-                            <ul id="exerciseDetails">
-                                <li>Primary Muscle Group: {{this.muscle}}</li>
-                                <li>{{this.sets}} Sets of {{this.reps}} Reps</li>
-                                <li>Equipment Weight: {{this.equipment_weight}} lbs</li>
-                            </ul>
+                            <div class="exerciseSubCard">
+                                <h4 id="exerciseHeader">{{this.name}}</h4>
+                                <p id="exerciseNumber">Exercise {{addHelper @index 1}}</p>
+                                <ul id="exerciseDetails">
+                                    <li><strong>Primary Muscle Group:</strong> {{this.muscle}}</li>
+                                    <li>{{this.sets}}  <strong>Sets of</strong>  {{this.reps}}  <strong>Reps</strong></li>
+                                    <li><strong>Equipment Weight:</strong> {{this.equipment_weight}} <strong>lbs</strong></li>
+                                </ul>
+                            </div>
                         {{/each}}
                     </div>
                 </div>
