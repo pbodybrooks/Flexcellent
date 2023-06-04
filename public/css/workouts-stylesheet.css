@@ -2,29 +2,37 @@ body{
     background-color: #292827;
 }
 
-root{
---background:#292827;
-}
-
 #newCard {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
         margin-bottom: 2vh;
-        margin-left: 45%;
+        border-radius: 5px;
+        width: auto;
+    }
+
+    .workbtn{
         background-color: #3a3a39;
-        color:ghostwhite;
-        border-radius: 5px;
-        width: 10vw;
-    }
-
-    .formbtn{
-        background-color: #292827;
-        color: ghostwhite;
         border-color: #00CAB1;
-        border-radius: 5px;
-        width:95%;
-        margin-left: 2.5%;
-        margin-right: 2.5%;
     }
 
+    .workbtn:hover{
+        background-color: #00fdde;
+        box-shadow: 2px 2px 20px #00cab1;
+        color: #3a3a39;
+    }
+
+    .workbtn:focus{
+        background-color: #3a3a39;
+        border-color: #00CAB1;
+    }
+
+    .workbtn:focus:hover {
+        background-color: #00fdde;
+        box-shadow: 2px 2px 20px #00cab1;
+        color: #3a3a39;  
+    }
 
     .container, .container-fluid, .mt-5 {
         margin-left: 20% !important;
@@ -34,25 +42,25 @@ root{
     .workouts{
         display:flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        width:100%;
         height:auto;
+        margin-left:auto;
+        margin-right:auto;
         color:ghostwhite !important;
     }
     
     .workCard {
         width: 250px;
-        height: 400px;
+        height: auto;
         color:ghostwhite !important;
         background-color: #3a3a39;
-        box-shadow: 7px 7px 5px #0f0f0e;
+        /* box-shadow: 7px 7px 5px #0f0f0e; */
+        box-shadow: 2px 2px 20px #ff66b4;
         margin: 12px;
-        border-radius: 10px;
+        border-radius:15px;
     }
     
     input[type=text], textarea {
-        width:95%;
+        /* width:90%; */
         /* padding:6px 10px; */
         margin:4px 2.5%;
         display:inline-block;
@@ -66,15 +74,47 @@ root{
     input[type=text]:focus {
         outline:none;
         border-color: #00fdde;
+        background-color: #001915;
         box-shadow: 0 0 10px #00fdde;
     }
 
+    .formbtn{
+        background-color: #292827;
+        color: ghostwhite;
+        border-color: #00CAB1;
+        border-radius: 5px;
+    }
+
+    .formbtn:hover{
+        background-color: #00fdde;
+        box-shadow: 2px 2px 20px #00cab1;
+        color: #3a3a39;
+    }
+
+    .formbtn:focus{
+        background-color: #292827;
+        border-color: #00CAB1;
+    }
+
+    .formbtn:focus:hover {
+        background-color: #00fdde;
+        box-shadow: 2px 2px 20px #00cab1;
+        color: #292827; 
+    }
+
+    /* test line */
+
     #exercise, #sets, #reps, #weight, .formbtn {
         margin:0;
+        width:85% !important;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     label {
-        margin:4px 2.5%;
+        color:ghostwhite;
+        /* text-shadow: 1px 1px 14px #f9f9f9; */
+        margin:3% 5%;
     }
 
     .workoutForm {

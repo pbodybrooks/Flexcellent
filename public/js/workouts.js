@@ -3,7 +3,7 @@ function createCard() {
     cardEle.classList.add('workCard');
 
     var container = document.querySelector('.workouts');
-
+    console.log(container);
     container.appendChild(cardEle);
 
     const nodeList = document.querySelectorAll(".workCard");
@@ -24,5 +24,11 @@ function createCard() {
     // Add in 'preventDefault();' so page is not refreshed and data is lost !!!
 }
 
+// function varCheck() {
+//     var save_btn = document.querySelectorAll(".formbtn");
+//     if (save_btn)
+// }
 
-
+// document.getElementsByClassName('.formbtn').onclick = function() {
+//     alert("button has been clicked");
+// }
