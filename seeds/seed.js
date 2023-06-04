@@ -1,10 +1,11 @@
 const sequelize = require('../config/connection');
-const { User, Exercise, Workout } = require('../models');
+const { User, Exercise, Workout, Weight } = require('../models');
 // const seedFILE2 = require('');
 
 const userData = require('./userData.json');
 const exerciseData = require('./exerciseData.json');
 const workoutData = require('./workoutData.json');
+const weightData = require('./weightData.json');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -19,6 +20,10 @@ const seedAll = async () => {
       returning: true,
     });
     await Exercise.bulkCreate(exerciseData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Weight.bulkCreate(weightData, {
       individualHooks: true,
       returning: true,
     });
