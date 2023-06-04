@@ -3,14 +3,12 @@ module.exports = {
     //   // Format date as MM/DD/YYYY
     //   return date.toLocaleDateString();
     // },
+    // format date as MM/DD/YYYY
     format_date: (date) => {
-      // Using JavaScript Date methods, we get and format the month, date, and year
-      // We need to add one to the month since it is returned as a zero-based value
-      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
-        // We add five years to the 'year' value to calculate the end date
-        new Date(date).getFullYear()
-      }`;
+      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
     },
+
+    // formats a string to title case and removes underscores, replaces them with spaces
     toTitleCase: (str) => {
       let words = str.replace("_", " ").split(" ");
     let titleCaseWords = words.map(function(word) {
@@ -19,6 +17,8 @@ module.exports = {
     let titleCaseStr = titleCaseWords.join(" ");
     return titleCaseStr;
     }, 
+    
+    // simple helper to add two numbers used to format indexes from 0 to 1, 1 to 2, etc.
     addHelper : (a, b) => {
       return a + b;
     }
