@@ -1,0 +1,82 @@
+body{
+    background-color: #292827;
+}
+
+root{
+--background:#292827;
+}
+
+#newCard {
+        margin-bottom: 2vh;
+        margin-left: 45%;
+        background-color: #3a3a39;
+        color:ghostwhite;
+        border-radius: 5px;
+        width: 10vw;
+    }
+
+    .formbtn{
+        background-color: #292827;
+        color: ghostwhite;
+        border-color: #00CAB1;
+        border-radius: 5px;
+        width:95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
+
+    .container, .container-fluid, .mt-5 {
+        margin-left: 20% !important;
+        margin-right: 10% !important;
+    }
+    
+    .workouts{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width:100%;
+        height:auto;
+        color:ghostwhite !important;
+    }
+    
+    .workCard {
+        width: 250px;
+        height: 400px;
+        color:ghostwhite !important;
+        background-color: #3a3a39;
+        box-shadow: 7px 7px 5px #0f0f0e;
+        margin: 12px;
+        border-radius: 10px;
+    }
+    
+    input[type=text], textarea {
+        width:95%;
+        /* padding:6px 10px; */
+        margin:4px 2.5%;
+        display:inline-block;
+        color:ghostwhite;
+        border: 1px solid #00CAB1;
+        background-color: #292827;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    input[type=text]:focus {
+        outline:none;
+        border-color: #00fdde;
+        box-shadow: 0 0 10px #00fdde;
+    }
+
+    #exercise, #sets, #reps, #weight, .formbtn {
+        margin:0;
+    }
+
+    label {
+        margin:4px 2.5%;
+    }
+
+    .workoutForm {
+        margin:0;
+    }
