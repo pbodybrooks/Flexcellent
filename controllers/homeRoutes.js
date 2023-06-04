@@ -81,38 +81,15 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 exerciseArray.push(exercise);
             }
             console.log("exercise array: ", exerciseArray); 
-            // console.log("workout history: ", workoutHistory[i].id)
-            // console.log("exercises: ", exercises);
-            // console.log("workout history: ", workoutHistory[i].dataValues);
+
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
                 "exercises": exerciseArray
             };
+            console.log("result: ", result);
         }
-        console.log("result: ", result);
-        // console.log("result: ", result);
-
-
-
-
-        // allHistoricalWorkouts = [];
-        // // for each historical workout, get the exercises that belong to it
-        // for (let i = 0; i < workoutHistory.length; i++) {
-        //     const historicalWorkout = await Exercise.findAll({
-        //         where: {
-        //             workout_id: workoutHistory[i].id
-        //         }
-        //     });
-        //     console.log("historical workout: ", historicalWorkout);
-        //     historicalWorkout = workoutHistory[i].toJSON;
-        //     allHistoricalWorkouts.push(historicalWorkout);
-        //     console.log("Workouts array: ", allHistoricalWorkouts);
-        // }
-        // // console.log({ allHistoricalWorkouts });
-
+        
         res.render('workoutHistory', {
-            // ...user,
-            // logged_in: true
             result
         });
     } catch (err) {

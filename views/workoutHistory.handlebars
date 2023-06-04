@@ -10,42 +10,30 @@
     </head>
 
     <body>
+        <div class="header">
+            <h1 class="neon-glow-text">My Workout History</h1>
+        </div>
         <div id="workoutHistoryContainer">
             {{#each result}}
                 <div>
                     <div class="card-header">
-                        <h2 class="neon-glow-text" id="workoutName"><strong>{{workoutData.name}}</strong></h2>
-                        <h3 class="neon-glow-text" id="workoutDate">{{workoutData.date_created}}</h3>
-                        <h3 class="neon-glow-text" id="workoutDuration">Duration: {{workoutData.workout_duration}}</h3>
+                        <h2 class="neon-glow-text" id="workoutName"><strong>{{workoutData.name}} - {{format_date workoutData.date_created}}</strong></h2>
+                        {{!-- <h3 class="neon-glow-text" id="workoutDate">{{format_date workoutData.date_created}}</h3> --}}
+                        <h3 class="neon-glow-text" id="workoutDuration">Workout Duration: {{workoutData.workout_duration}} minutes</h3>
                     </div>
                     <div class="card-body">
                         {{#each exercises}}
-                            <ul id="workoutList">
-                                <li>{{this}}</li>
+                            <h4 id="exerciseHeader">Exercise {{addHelper @index 1}}: {{this.name}}</h4>
+                            <ul id="exerciseDetails">
+                                <li>Primary Muscle Group: {{this.muscle}}</li>
+                                <li>{{this.sets}} Sets of {{this.reps}} Reps</li>
+                                <li>Equipment Weight: {{this.equipment_weight}} lbs</li>
                             </ul>
                         {{/each}}
                     </div>
                 </div>
             {{/each}}
         </div>
-        {{!-- <div id="workoutContainer">
-            {{#each workouts}}
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="neon-glow-text" id="workoutDate"><strong>{{toTitleCase date}}</strong></h2>
-                    <p id="workoutDuration"><strong>Duration: </strong>{{duration}}</p>
-                </div>
-                <div class="card-body">
-                    <p id="workoutExercises"><strong>Exercises: </strong>{{exercises}}</p>
-                    {{#each exercises}}
-                        <ul id="workoutList">
-                            <li>{{this}}</li>
-                        </ul>
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
-        </div> --}}
 
         <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
     </body>
