@@ -4,7 +4,7 @@
         "muscle": "Chest",
         "sets": 3,
         "reps": 10,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 1
     },
     {
@@ -12,7 +12,7 @@
         "muscle": "Chest",
         "sets": 3,
         "reps": 12,
-        "weight": 60,
+        "equipment_weight": 60,
         "workout_id": 1
     },
     {
@@ -20,7 +20,7 @@
         "muscle": "Chest",
         "sets": 4,
         "reps": 16,
-        "weight": 40,
+        "equipment_weight": 40,
         "workout_id": 1
     },
     {
@@ -28,7 +28,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 180,
+        "equipment_weight": 180,
         "workout_id": 1
     },
     {
@@ -36,7 +36,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 180,
+        "equipment_weight": 180,
         "workout_id": 1
     },
     {
@@ -44,7 +44,7 @@
         "muscle": "Tricep",
         "sets": 4,
         "reps": 12,
-        "weight": 70,
+        "equipment_weight": 70,
         "workout_id": 1
     },
     {
@@ -52,7 +52,7 @@
         "muscle": "Back",
         "sets": 3,
         "reps": 10,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 2
     },
     {
@@ -60,7 +60,7 @@
         "muscle": "Back",
         "sets": 3,
         "reps": 12,
-        "weight": 120,
+        "equipment_weight": 120,
         "workout_id": 2
     },
     {
@@ -68,7 +68,7 @@
         "muscle": "Back",
         "sets": 4,
         "reps": 8,
-        "weight": 160,
+        "equipment_weight": 160,
         "workout_id": 2
     },
     {
@@ -76,7 +76,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 12,
-        "weight": 80,
+        "equipment_weight": 80,
         "workout_id": 2
     },
     {
@@ -84,7 +84,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 16,
-        "weight": 40,
+        "equipment_weight": 40,
         "workout_id": 2
     },
     {
@@ -92,7 +92,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 12,
-        "weight": 40,
+        "equipment_weight": 40,
         "workout_id": 2
     },
     {
@@ -100,7 +100,7 @@
         "muscle": "Deltoids",
         "sets": 3,
         "reps": 12,
-        "weight": 125,
+        "equipment_weight": 125,
         "workout_id": 3
     },
     {
@@ -108,7 +108,7 @@
         "muscle": "Deltoids",
         "sets": 4,
         "reps": 12,
-        "weight": 20,
+        "equipment_weight": 20,
         "workout_id": 3
     },
     {
@@ -116,7 +116,7 @@
         "muscle": "Trapezius",
         "sets": 4,
         "reps": 16,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 3
     },
     {
@@ -124,7 +124,7 @@
         "muscle": "Hamstring",
         "sets": 3,
         "reps": 8,
-        "weight": 405,
+        "equipment_weight": 405,
         "workout_id": 4
     },
     {
@@ -132,7 +132,7 @@
         "muscle": "Quadricep",
         "sets": 3,
         "reps": 8,
-        "weight": 325,
+        "equipment_weight": 325,
         "workout_id": 4
     },
     {
@@ -140,7 +140,7 @@
         "muscle": "Calf",
         "sets": 3,
         "reps": 14,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 4
     },
     {
@@ -148,7 +148,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 12,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 5
     },
     {
@@ -156,7 +156,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 16,
-        "weight": 35,
+        "equipment_weight": 35,
         "workout_id": 5
     },
     {
@@ -164,7 +164,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 12,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 5
     },
     {
@@ -172,7 +172,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 5
     },
     {
@@ -180,7 +180,7 @@
         "muscle": "Chest",
         "sets": 1,
         "reps": 4,
-        "weight": 15,
+        "equipment_weight": 15,
         "workout_id": 6
     },
     {
@@ -188,7 +188,7 @@
         "muscle": "Chest",
         "sets": 1,
         "reps": 2,
-        "weight": 35,
+        "equipment_weight": 35,
         "workout_id": 6
     },
     {
@@ -196,7 +196,7 @@
         "muscle": "Back",
         "sets": 1,
         "reps": 7,
-        "weight": 30,
+        "equipment_weight": 30,
         "workout_id": 7
     },
     {
@@ -204,7 +204,7 @@
         "muscle": "Back",
         "sets": 1,
         "reps": 1,
-        "weight": 5,
+        "equipment_weight": 5,
         "workout_id": 7
     },
     {
@@ -212,7 +212,7 @@
         "muscle": "Deltoids",
         "sets": 1,
         "reps": 4,
-        "weight": 5,
+        "equipment_weight": 5,
         "workout_id": 8
     },
     {
@@ -220,7 +220,7 @@
         "muscle": "Trapezius",
         "sets": 1,
         "reps": 6,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 8
     },
     {
@@ -228,7 +228,7 @@
         "muscle": "Calf",
         "sets": 2,
         "reps": 8,
-        "weight": 0,
+        "equipment_weight": 0,
         "workout_id": 9
     },
     {
@@ -236,7 +236,7 @@
         "muscle": "Tricep",
         "sets": 1,
         "reps": 12,
-        "weight": 10,
+        "equipment_weight": 10,
         "workout_id": 10
     },
     {
@@ -244,7 +244,7 @@
         "muscle": "Bicep",
         "sets": 1,
         "reps": 7,
-        "weight": 5,
+        "equipment_weight": 5,
         "workout_id": 11
     },
     {
@@ -252,7 +252,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 12
     },
     {
@@ -260,7 +260,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 12
     },
     {
@@ -268,7 +268,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 12
     },
     {
@@ -276,7 +276,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 12
     },
     {
@@ -284,7 +284,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 12
     },
     {
@@ -292,7 +292,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 12
     },
     {
@@ -300,7 +300,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 13
     },
     {
@@ -308,7 +308,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 13
     },
     {
@@ -316,7 +316,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 13
     },
     {
@@ -324,7 +324,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 13
     },
     {
@@ -332,7 +332,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 13
     },
     {
@@ -340,7 +340,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 13
     },
     {
@@ -348,7 +348,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 14
     },
     {
@@ -356,7 +356,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 14
     },
     {
@@ -364,7 +364,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 14
     },
     {
@@ -372,7 +372,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 14
     },
     {
@@ -380,7 +380,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 14
     },
     {
@@ -388,7 +388,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 14
     },
     {
@@ -396,7 +396,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 15
     },
     {
@@ -404,7 +404,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 15
     },
     {
@@ -412,7 +412,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 15
     },
     {
@@ -420,7 +420,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 15
     },
     {
@@ -428,7 +428,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 15
     },
     {
@@ -436,7 +436,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 15
     },
     {
@@ -444,7 +444,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 16
     },
     {
@@ -452,7 +452,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 16
     },
     {
@@ -460,7 +460,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 16
     },
     {
@@ -468,7 +468,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 16
     },
     {
@@ -476,7 +476,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 16
     },
     {
@@ -484,7 +484,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 16
     },
     {
@@ -492,7 +492,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 17
     },
     {
@@ -500,7 +500,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 17
     },
     {
@@ -508,7 +508,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 17
     },
     {
@@ -516,7 +516,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 17
     },
     {
@@ -524,7 +524,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 17
     },
     {
@@ -532,7 +532,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 17
     },
     {
@@ -540,7 +540,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 200,
+        "equipment_weight": 200,
         "workout_id": 18
     },
     {
@@ -548,7 +548,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 95,
+        "equipment_weight": 95,
         "workout_id": 18
     },
     {
@@ -556,7 +556,7 @@
         "muscle": "Tricep",
         "sets": 3,
         "reps": 8,
-        "weight": 190,
+        "equipment_weight": 190,
         "workout_id": 18
     },
     {
@@ -564,7 +564,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 45,
+        "equipment_weight": 45,
         "workout_id": 18
     },
     {
@@ -572,7 +572,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 135,
+        "equipment_weight": 135,
         "workout_id": 18
     },
     {
@@ -580,7 +580,7 @@
         "muscle": "Bicep",
         "sets": 3,
         "reps": 8,
-        "weight": 110,
+        "equipment_weight": 110,
         "workout_id": 18
     }
 ]
