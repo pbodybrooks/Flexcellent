@@ -65,8 +65,10 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 user_id: req.session.user_id
             }
         });
+        // create an object to store the workout data and the exercises associated with each workout
         const result = {};
 
+        // loop through the workouts and get the exercises associated with each workout
         for (let i = 0; i < workoutHistory.length; i++) {
             const workoutData = workoutHistory[i].dataValues;
 
@@ -75,20 +77,22 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                     workout_id: workoutHistory[i].id
                 }
             });
+            // create an array to store the exercises associated with each workout
             const exerciseArray = [];
+            // loop through the exercises and push them to the array
             for (let j = 0; j < exercises.length; j++) {
                 const exercise = exercises[j].dataValues;
                 exerciseArray.push(exercise);
             }
-            console.log("exercise array: ", exerciseArray); 
-
+            // console.log("exercise array: ", exerciseArray); 
+            // add the workout data and the exercises to the result object
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
                 "exercises": exerciseArray
             };
-            console.log("result: ", result);
+            // console.log("result: ", result);
         }
-        
+        // render the result object for user in handlebars
         res.render('workoutHistory', {
             result
         });
