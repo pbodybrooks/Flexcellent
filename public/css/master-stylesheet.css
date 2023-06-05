@@ -30,6 +30,39 @@
 
 }
 
+/* TODO: Define universal heading font sizes, margin, padding, etc.: */
+/* h1 {
+  font-size: ;
+  margin: ;
+  padding: ;
+}
+
+h2 {
+  font-size: ;
+  margin: ;
+  padding: ;
+}
+
+h3 {
+  font-size: ;
+  margin: ;
+  padding: ;
+}
+
+h4 {
+  font-size: ;
+  margin: ;
+  padding: ;
+}
+
+h5 {
+  font-size: ;
+  margin: ;
+  padding: ;
+} */
+
+
+/* set the background color for all pages to the "Old Black" color */
 body {
   background-color: var(--oldBlack);
 }
