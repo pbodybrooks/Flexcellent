@@ -18,10 +18,12 @@ module.exports = {
     });
     let titleCaseStr = titleCaseWords.join(" ");
     return titleCaseStr;
-    }, 
-    addHelper : (a, b) => {
-      return a + b;
-    }
+  },
+
+  addHelper: (a, b) => {
+    return a + b;
+  },
+
 };
 
 

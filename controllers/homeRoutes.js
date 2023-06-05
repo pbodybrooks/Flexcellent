@@ -80,7 +80,7 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 const exercise = exercises[j].dataValues;
                 exerciseArray.push(exercise);
             }
-            console.log("exercise array: ", exerciseArray); 
+            console.log("exercise array: ", exerciseArray);
 
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
@@ -88,7 +88,7 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
             };
             console.log("result: ", result);
         }
-        
+
         res.render('workoutHistory', {
             result
         });
@@ -99,17 +99,7 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
 
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
-
-        // const user = userData.get({ plain: true });
-
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
-
         });
     } catch (err) {
         res.status(500).json(err);
@@ -136,51 +126,46 @@ const muscleGroupData = [
     { value: 'triceps', id: 'triceps', label: 'Triceps' }
 ];
 
+const fetchExercises = (muscleGroup) => {
+    return new Promise((resolve, reject) => {
+        const options = {
+            host: 'exercises-by-api-ninjas.p.rapidapi.com',
+            path: `/v1/exercises?muscle=${muscleGroup}`,
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.API_KEY,
+                'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+
+        const httpReq = http.request(options, function (httpRes) {
+            const chunks = [];
+            httpRes.on('data', function (chunk) {
+                chunks.push(chunk);
+            });
+            httpRes.on('end', function () {
+                const body = Buffer.concat(chunks);
+                resolve(body.toString());
+            });
+        });
+
+        httpReq.on('error', function (err) {
+            reject(err);
+        });
+
+        httpReq.end();
+    });
+};
+
 router.get('/explore', withAuth, async (req, res) => {
     try {
         let exercises = [];
-        console.log("api key", process.env.API_KEY);
-        // TODO: create a function that returns this if statement
-        if (req.query.muscleGroup) {
-            // const url = `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${req.query.muscleGroup}`;
-            const options = {
-                host: 'exercises-by-api-ninjas.p.rapidapi.com',
-                path: `/v1/exercises?muscle=${req.query.muscleGroup}`,
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': process.env.API_KEY,
-                    'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
-                }
-            };
-            // console.log({ url, options });
-            const promise = new Promise((resolve, reject) => {
-                const httpReq = http.request(options, function(httpRes) {
-                  const chunks = [];
-                  httpRes.on('data', function(chunk) {
-                    chunks.push(chunk);
-                  });
-                  httpRes.on('end', function () {
-                    const body = Buffer.concat(chunks);
-                    resolve(body.toString());
-                  });
-                })
-              
-                httpReq.on('error', function(err) {
-                  reject(err);
-                })
-              
-                httpReq.end();
-              });
 
-            exercises = await promise
-                .then(function (response) {
-                    console.log({ response });
-                    return JSON.parse(response);
-                })
-                .catch((err) => {
-                    console.log({ err });
-                    return [];
-                })
+
+        if (req.query.muscleGroup) {
+            const response = await fetchExercises(req.query.muscleGroup);
+
+            exercises = JSON.parse(response);
         }
 
         console.log({ exercises });
@@ -189,7 +174,7 @@ router.get('/explore', withAuth, async (req, res) => {
             layout: 'main',
             logged_in: req.session.logged_in,
             exercises,
-            muscleGroups: muscleGroupData
+            muscleGroups: muscleGroupData,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -198,20 +183,7 @@ router.get('/explore', withAuth, async (req, res) => {
 
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
-
-        // const user = userData.get({ plain: true });
-        
-
-        
-
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
-
         });
     } catch (err) {
         res.status(500).json(err);
