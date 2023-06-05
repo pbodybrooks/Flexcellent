@@ -94,6 +94,7 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
         }
         // render the result object for user in handlebars
         res.render('workoutHistory', {
+            layout: 'main',
             result
         });
     } catch (err) {

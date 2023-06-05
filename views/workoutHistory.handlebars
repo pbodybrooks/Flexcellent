@@ -13,6 +13,9 @@
         <div class="header">
             <h1 class="neon-glow-text">Workout History</h1>
         </div>
+        <div>
+            <button class="btn-red neon-glow-button" id="addWorkoutBtn">Add a Custom Workout</button>
+        </div>
         <div id="workoutHistoryContainer">
             {{#each result}}
                 <div class="workoutCard">
@@ -30,7 +33,7 @@
                                 <ul id="exerciseDetails">
                                     <li><strong>Primary Muscle Group:</strong> {{this.muscle}}</li>
                                     <li>{{this.sets}}  <strong>Sets of</strong>  {{this.reps}}  <strong>Reps</strong></li>
-                                    <li><strong>Equipment Weight:</strong> {{this.equipment_weight}} <strong>lbs</strong></li>
+                                    <li><strong>Equipment Weight:</strong> {{this.equipment_weight}} lbs</li>
                                 </ul>
                             </div>
                         {{/each}}
@@ -40,5 +43,6 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+        <script src="/js/workoutHistory.js" type="text/javascript"></script>
     </body>
 </html>

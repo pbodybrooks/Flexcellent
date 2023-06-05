@@ -3,6 +3,7 @@ module.exports = {
     format_date: (date) => {
       return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
     },
+
     // format date as "Thursday, June 1st, 2023", for example. (used for Workout History)
     format_date_day_of_week: (date) => {
       const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
@@ -27,7 +28,6 @@ module.exports = {
             suffix = 'th';
         }
       }
-    
       return formattedDate.replace(/\b\d+\b/, (match) => match + suffix);
     },
 
