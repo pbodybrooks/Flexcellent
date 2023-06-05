@@ -25,9 +25,9 @@ h4 {
     flex-direction: column;
     justify-content: left;
     border: 2px solid var(--pink);
-    background-color: var(--lightObsidian);
     padding: 2rem;
     margin: 2rem;
+    background-color: var(--lightOldBlack);
 }
 
 .cardHeader {
@@ -36,9 +36,8 @@ h4 {
     justify-content: center;
     align-items: center;
 
-    background-color: var(--lightObsidian);
-}
 
+}
 
 .cardBody {
     display: flex;
@@ -48,11 +47,10 @@ h4 {
 }
 
 .exerciseSubCard {
-    background-color: var(--lighterObsidian);
+    /* background-color: var(--lighterOldBlack); */
     padding: 1rem;
     margin: .5rem;
     border: 2px solid var(--purple);
-
 }
 
 #exerciseHeader{
