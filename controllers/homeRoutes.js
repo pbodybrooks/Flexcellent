@@ -102,25 +102,6 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
     }
 });
 
-router.get('/addWorkouts', withAuth, async (req, res) => {
-    try {
-        // const userData = await User.findByPk(req.session.user_id, {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: Workout }],
-        // });
-
-        // const user = userData.get({ plain: true });
-
-        res.render('workouts', {
-            // ...user,
-            // logged_in: true
-
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 // TODO: put this in a helper file and then import it in this file, maybe
 const muscleGroupData = [
     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
@@ -216,7 +197,7 @@ router.get('/addWorkouts', withAuth, async (req, res) => {
         res.render('workouts', {
             // ...user,
             // logged_in: true
-
+            muscleGroups: muscleGroupData
         });
     } catch (err) {
         res.status(500).json(err);
