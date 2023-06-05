@@ -16,11 +16,12 @@
 
   <header>
     <h2 id="tittle">Flexcellent</h2>
-    <img src="/assets/images/flexcellent-logo.png" alt="Flexcellent Fitness Logo">
   </header>
   <main>
     <div id="mainCard">
       <form class="form login-form">
+        {{!-- TODO: Tweak logo spacing so it sits between "Email" and the top of the login card --}}
+        <img src="/assets/images/flexcellent-logo.png" alt="Flexcellent Fitness Logo" style="max-width: 200px; display: block; margin: 0 auto;">
         <div class="form-group">
           <label for="email-login">Email</label>
           <input class="form-input" type="text" id="email-login" />

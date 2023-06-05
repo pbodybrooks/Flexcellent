@@ -2,7 +2,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 65px;
+    
 }
+
+
 
 #tittle {
     font-family: 'Bruno Ace', cursive;
@@ -10,7 +14,6 @@ header {
     text-align: center;
     color: #00ffff;
     text-shadow: 7px 2px 2px #e478b0;
-    padding-bottom: 65px;
 }
 
 #mainCard {
@@ -46,7 +49,7 @@ header {
     box-shadow: 2px 2px 40px #ff66b4;
     border-radius: 50px;
     min-height: 40vh;
-    background-color: #262626;
+    background-color: var(--oldBlack);
     padding: 30px;
     margin-bottom: 6vh;
 }
