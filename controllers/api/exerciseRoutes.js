@@ -9,7 +9,6 @@ const { User, Exercise, Workout } = require('../../models');
 
         const exercise = await Exercise.create({
           name: req.body.name,
-          muscle: req.body.muscle,
           sets: req.body.sets,
           reps: req.body.reps,
           equipment_weight: req.body.eqpWeight,
