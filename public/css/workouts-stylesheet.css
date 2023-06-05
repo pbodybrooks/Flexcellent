@@ -2,6 +2,16 @@ body{
     background-color: #292827;
 }
 
+.muscleDrop{
+    background-color: #3a3a39;
+    box-shadow: 2px 2px 20px #00cab1;
+}
+
+.muscleDrop:focus{
+    box-shadow: 2px 2px 20px #00cab1;
+    border:none;
+}
+
 #newCard {
     display: flex; 
     flex-wrap: wrap;
@@ -55,7 +65,7 @@ body{
     background-color: #3a3a39;
     /* box-shadow: 7px 7px 5px #0f0f0e; */
     box-shadow: 2px 2px 20px #ff66b4;
-    margin: auto;
+    margin: 13px;
     border-radius:15px;
 }
     

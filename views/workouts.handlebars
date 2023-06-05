@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="/css/master-stylesheet.css" />
 </head>
 <body>
+
+        <form action="/explore" method="GET">
+      <label for="muscleGroup">Muscle Focus For Today:</label>
+      <select name="muscleGroup" id="muscleGroup" class="muscleDrop">
+        {{#each muscleGroups}}
+          <option value="{{value}}" id="{{id}}">{{label}}</option>
+        {{/each}}
+      </select>
+    </form>
+
     <div id = "newCard" >
         {{!-- <button class = "workbtn" onclick="createCard()">New Workout!</button> --}}
         <div class = "workouts">
