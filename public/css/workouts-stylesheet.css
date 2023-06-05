@@ -1,5 +1,6 @@
 body{
     background-color: #292827;
+    /* text-shadow: 2px 2px 15px ghostwhite; */
 }
 
 .muscleDrop{
@@ -51,11 +52,6 @@ body{
     background-color: #00fdde;
     box-shadow: 2px 2px 20px #00cab1;
     color: #3a3a39;  
-}
-
-.container, .container-fluid, .mt-5 {
-    margin-left: 20% !important;
-    margin-right: 10% !important;
 }
     
 .workouts{
