@@ -1,0 +1,83 @@
+#tittle {
+    font-family: 'Bruno Ace', cursive;
+    font-size: 125px;
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 7px 2px 2px #e478b0;
+    padding-bottom: 65px;
+}
+
+#mainCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 65px;
+}
+
+#menuTab {
+    display: none
+}
+
+.textCard {
+    box-shadow: 6px 4px 5px #00b7ff;
+    padding: 12px 17px;
+    border-radius: 26px;
+    border: 1px solid #272729;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 17%;
+    background-color: #ff66b4;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 40px #ff66b4;
+    border-radius: 50px;
+    min-height: 40vh;
+    background-color: #262626;
+    padding: 30px;
+    margin-bottom: 6vh;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #3a3a39;
+    border-color: #00CAB1;
+}
+
+.btn:hover {
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #3a3a39;
+}
+
+.btn:focus {
+    background-color: #3a3a39;
+    border-color: #00CAB1;
+}
+
+.btn:focus:hover {
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #3a3a39;
+}
+
+.form-input {
+    background-color: #e478b0;
+    color: white;
+}
+
+label {
+    text-shadow: 1px 1px 14px white;
+    color: #00CAB1;
+}
