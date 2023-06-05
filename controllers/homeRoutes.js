@@ -102,18 +102,6 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
-=======
-router.get('/addWorkouts', withAuth, async (req, res) => {
-    try {
-        res.render('workouts', {
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
->>>>>>> 75cd7b7 (fixed getRandomExercise button)
 // TODO: put this in a helper file and then import it in this file, maybe
 const muscleGroupData = [
     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
