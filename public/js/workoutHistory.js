@@ -8,4 +8,4 @@ function addWorkout() {
 }
 
 // custom workout button event listener
-addNewWorkoutBtn.addEventListener('click', addWorkout);
+addWorkoutBtn.addEventListener('click', addWorkout);

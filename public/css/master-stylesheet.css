@@ -1,14 +1,33 @@
-/* i wasnt able to access our notion doc to match colors with hex codes, so that remains to be done */
 :root {
+  /* placeholder colors*/
   --pink: #ff69b4;
   --magenta: #ff00ff;
   --purple: #800080;
   --indigo: #4b0082;
   --cyan: #00ffff;
   --darkPurple: #570074;
-  --obsidian: #262626;
-  --lightObsidian: #2a2a2a;
-  --lighterObsidian: #383838;
+
+  /* colors from Notion swatches */
+  /* "Old Black" (#292827) and two lighter iterations */
+  --oldBlack: #292827;
+  --lightOldBlack: #2e2d2c;
+  --lighterOldBlack: #383635;
+
+  /* "Neon Teal" (#00cab1) */
+  --neonTeal: #00cab1;
+
+  /* "Neon Fuchsia" (#ff0ef3) */
+  --neonFuchsia: #FF0ef3;
+
+  /* "Sweet Purple" (#9d3fae) */
+  --sweetPurple: #9d3fae;
+  
+  /* nextColor */
+
+  /* nextColor */
+
+  /* nextColor */
+
 }
 
 body {
