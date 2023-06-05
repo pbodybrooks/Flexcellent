@@ -21,7 +21,7 @@
 
   /* "Sweet Purple" (#9d3fae) */
   --sweetPurple: #9d3fae;
-  
+
   /* nextColor */
 
   /* nextColor */
@@ -31,7 +31,7 @@
 }
 
 body {
-  background-color: var(--obsidian);
+  background-color: var(--oldBlack);
 }
 
 .neon-glow-text {
