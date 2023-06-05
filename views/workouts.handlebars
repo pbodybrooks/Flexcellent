@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="/css/master-stylesheet.css" />
 </head>
 <body>
-    {{!-- <div class="cardSpace"> --}}
-        <div id = "newCard" >
-            <button class = "workbtn" onclick="createCard()">New Lift!</button>
-            
-            <div class = "workouts">
-                {{!-- forms are being rendered in through js --}}
-            </div>
+    <div id = "newCard" >
+        <button class = "workbtn" onclick="createCard()">New Workout!</button>
+        <div class = "workouts">
+            {{!-- forms are being rendered in through js --}}
         </div>
-    {{!-- </div> --}}
+        <button class = "newExc">New Exercise</button>
+        <button class = "savebtn">Save Workout</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
     <script src="/js/workouts.js" type="text/javascript"></script>
 </body>
