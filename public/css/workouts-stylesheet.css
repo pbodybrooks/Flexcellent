@@ -4,11 +4,20 @@ body{
 
 .muscleDrop{
     background-color: #3a3a39;
+    border-color:#00cab1;
+    /* box-shadow: 2px 2px 20px #00cab1; */
+    color:ghostwhite;
+}
+
+.muscleDrop:hover{
     box-shadow: 2px 2px 20px #00cab1;
 }
 
+.muscleDrop
+
 .muscleDrop:focus{
     box-shadow: 2px 2px 20px #00cab1;
+    border-color:#00cab1;
     border:none;
 }
 
@@ -66,6 +75,7 @@ body{
     /* box-shadow: 7px 7px 5px #0f0f0e; */
     box-shadow: 2px 2px 20px #ff66b4;
     margin: 13px;
+    margin-bottom: 25px;
     border-radius:15px;
 }
     
