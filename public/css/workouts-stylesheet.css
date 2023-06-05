@@ -85,18 +85,18 @@ body{
         border-radius: 5px;
     }
 
-    .formbtn:hover{
+    .formbtn:hover, .newExc:hover, .savebtn:hover{
         background-color: #00fdde;
         box-shadow: 2px 2px 20px #00cab1;
         color: #3a3a39;
     }
 
-    .formbtn:focus{
+    .formbtn:focus, .newExc:focus, .savebtn:focus{
         background-color: #292827;
         border-color: #00CAB1;
     }
 
-    .formbtn:focus:hover {
+    .formbtn:focus:hover, .newExc:focus:hover, .savebtn:focus:hover {
         background-color: #00fdde;
         box-shadow: 2px 2px 20px #00cab1;
         color: #292827; 
@@ -120,3 +120,19 @@ body{
     .workoutForm {
         margin:0;
     }
+
+    .dualbtn{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .newExc, .savebtn{
+        width:40%;
+        margin-left: 4%;
+        margin-right: 4%;
+        background-color: #3a3a39;
+        color: ghostwhite;
+        border-color: #00CAB1;
+        border-radius: 5px;
+    }
+
