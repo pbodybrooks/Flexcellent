@@ -1,38 +1,42 @@
 <head>
-    <title>Register | Flexcellent</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/master-stylesheet.css" />
-    <link rel="stylesheet" href="/css/login-register-stylesheet.css" />
+  <title>Register | Flexcellent</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.0.2/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/master-stylesheet.css" />
+  <link rel="stylesheet" href="/css/login-register-stylesheet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Farsan&display=swap" rel="stylesheet">
 </head>
 
 <img id="logo">
 
-<h2>Create Your Free Account</h2>
-<p>Ready to be flexcellent? Create your profile.</p>
+<header>
+  <h2 id="tittle">Flexcellent</h2>
+</header>
 
 <form class="form signup-form">
   <div class="form-group">
-    <label for="name-signup">name</label>
+    <label for="name-signup">Name</label>
     <input class="form-input" type="text" id="name-signup" />
   </div>
   <div class="form-group">
-    <label for="email-signup">email</label>
+    <label for="email-signup">Email</label>
     <input class="form-input" type="text" id="email-signup" />
   </div>
   <div class="form-group">
-    <label for="password-signup">create a password</label>
+    <label for="password-signup">Create A Password</label>
     <input class="form-input" type="password" id="password-signup" />
   </div>
   <div class="form-group">
-        <label for="confirm-password-signup">Confirm Password:</label>
-        <input class="form-input" type="password" id="confirm-password-signup" />
+    <label for="confirm-password-signup">Confirm Password:</label>
+    <input class="form-input" type="password" id="confirm-password-signup" />
   </div>
   <div class="form-group">
-    <button class="btn btn-primary" type="submit">Let's do this</button>
+    <button class="btn btn-primary" type="submit">Create Your Free Account</button>
   </div>
-  <p id="show-login-form">Back to <a href="/login">login</a></p>
+  <p id="show-login-form" class="textCard"><a href="/login">Back to login</a></p>
 </form>
 
 <script src="/js/signup.js" type="text/javascript"></script>
