@@ -6,9 +6,10 @@ function createCard() {
     console.log(container);
     container.appendChild(cardEle);
 
-    const nodeList = document.querySelectorAll(".workCard");
-    for (let i = 0; i < nodeList.length; i++) {
-        nodeList[i].innerHTML ="<form name='input' class='workoutForm' action='#' method='get'>" +
+    // const nodeList = document.querySelectorAll(".workCard");
+    // for (let i = 0; i < nodeList.length; i++) {
+    //     nodeList[i].innerHTML
+    var formhtml ="<form name='input' class='workoutForm' action='#' method='get'>" +
         "<label for='exercise'>Exercise</label>" +
         "<input type='text' id='exercise' name='exercise'><br>" +
         "<label for='sets'>Sets</label>" +
@@ -18,17 +19,25 @@ function createCard() {
         "<label for='weight'>Weight</label>" +
         "<input type='text' id='weight' name='weight'><br>" +
         // "<input type='button' class='formbtn' value='Save'>" +
+        "<div class='dualbtn'>" +
+        "<button class = 'newExc' onclick='createCard()'>New Exercise</button>" +
+        // "<button class = 'savebtn'>Save Workout</button>" +
+        "</div>" +
         "</form>"
         ;
+
+        cardEle.innerHTML = formhtml;
+
+        var form = cardEle.querySelector('.workoutForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission and page reload
+        // Handle form submission logic here if needed
+    });
+    
     }
     // Add in 'preventDefault();' so page is not refreshed and data is lost !!!
+// }
+
+function addEx() {
+
 }
-
-// function varCheck() {
-//     var save_btn = document.querySelectorAll(".formbtn");
-//     if (save_btn)
-// }
-
-// document.getElementsByClassName('.formbtn').onclick = function() {
-//     alert("button has been clicked");
-// }

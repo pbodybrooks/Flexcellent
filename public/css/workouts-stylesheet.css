@@ -1,6 +1,10 @@
-body{
+/* body{
     background-color: #292827;
-    /* text-shadow: 2px 2px 15px ghostwhite; */
+    text-shadow: 2px 2px 15px ghostwhite;
+} */
+
+html{
+    background-color: #292827;
 }
 
 .muscleDrop{
@@ -14,11 +18,9 @@ body{
     box-shadow: 2px 2px 20px #00cab1;
 }
 
-.muscleDrop
-
 .muscleDrop:focus{
     box-shadow: 2px 2px 20px #00cab1;
-    border-color:#00cab1;
+    border-color:#00cab1 !important;
     border:none;
 }
 
