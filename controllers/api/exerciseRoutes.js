@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Exercise } = require('../../models');
 
+
     // TODO: question: /addWorkout is the page i'll be on when the post is created, is that what I put in the first arg?
     // router.post('/exercises', async (req, res) => {
     router.post('/addWorkouts', async (req, res) => {
