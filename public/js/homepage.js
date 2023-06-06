@@ -90,17 +90,17 @@ async function upWeight(id) {
 async function userData() {
     const response = await fetch('/api/weight/retriever');
     const jsonData = await response.json();
-    console.log(jsonData)
     chart.data.datasets[0].data = jsonData.weights.map((value) => { return { x: value.x, y: value.y } })
     chart.update();
     const weightDataElement = document.getElementById("weightdata")
     let html = ""
     for (let i = 0; i < jsonData.weights.length; i++) {
         const date = new Date(jsonData.weights[i].x);
+        date.setUTCHours(date.getUTCHours() + 24);
 
         const formattedDated = `${date.getFullYear()}-${(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1}-${(date.getDate() < 10 ? "0" + date.getDate() : date.getDate())}`;
 
-        console.log(date, formattedDated)
+        console.log(jsonData.weights[i], date, formattedDated)
         html += `<div class= "row${jsonData.weights[i].id}">
         <input class="weight" type="number" value= "${jsonData.weights[i].y}"/>
     <input class="date" type="date" value = "${formattedDated}"/>
