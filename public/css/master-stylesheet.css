@@ -87,6 +87,7 @@ h5 {
   color:var(--oldBlack);
   text-decoration: none;
   background-color: var(--cyan);
+  box-shadow: 2px 2px 20px var(--cyan);
 }
 
 #xbtn{
