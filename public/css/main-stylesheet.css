@@ -1,6 +1,56 @@
-#menubtn{
-    margin-left: 30px;
-    border-color: var(--pink);
+#year, #barvalue, #trackerDate, #weightTrackerButton{
     background-color: var(--lighterOldBlack);
-    box-shadow: none;
+    border-color: var(--sweetPurple);
+    color: var(--ghost);
+}
+
+#year:hover, #barvalue:hover, #trackerDate:hover, #weightTrackerButton:hover{
+    box-shadow: 2px 2px 20px var(--sweetPurple);
+}
+
+#weightTrackerButton:hover{
+    background-color: var(--sweetPurple);
+}
+
+#year:focus, #barvalue:focus, #trackerDate:focus, #weightTrackerButton:focus{
+    border-color: var(--sweetPurple);
+}
+
+.weight, .date, .updateWeightBtn, .deleteWeightBtn{
+    background-color: var(--lighterOldBlack);
+    color:var(--ghost);
+}
+
+.weight, .date{
+    border-color: var(--ghost);
+}
+
+.weight:hover, .date:hover{
+    box-shadow: 2px 2px 20px var(--ghost);
+}
+
+.weight:focus, .date:focus{
+    border-color: var(--ghost);
+}
+
+.updateWeightBtn{
+    border-color: #57F287;
+}
+
+.updateWeightBtn:hover{
+    color: var(--oldBlack);
+    background-color: #57F287;
+    border-color: #57F287;
+    box-shadow: 2px 2px 20px #57F287;
+}
+
+.deleteWeightBtn{
+    border-color: #F94D47;
+}
+
+.deleteWeightBtn:hover{
+    color: var(--oldBlack);
+    background-color: #F94D47;
+    border-color: #F94D47;
+    box-shadow: 2px 2px 20px #F94D47;
 }
