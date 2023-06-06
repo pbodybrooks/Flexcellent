@@ -10,15 +10,26 @@
     <link rel="stylesheet" href="/css/master-stylesheet.css" />
 </head>
 <body>
-    {{!-- <div class="cardSpace"> --}}
-        <div id = "newCard" >
-            <button class = "workbtn">New Lift!</button>
-            
-            <div class = "workouts">
-                {{!-- forms are being rendered in through js --}}
-            </div>
+
+    <form action="/addWorkouts" method="GET">
+      <label for="muscleGroup">Muscle Focus For Today:</label>
+      <select name="muscleGroup" id="muscleGroup" class="muscleDrop">
+        {{#each muscleGroups}}
+          <option value="{{value}}" id="{{id}}">{{label}}</option>
+        {{/each}}
+      </select>
+    </form>
+
+    <div id = "newCard" >
+        {{!-- <button class = "workbtn" onclick="createCard()">New Workout!</button> --}}
+        <div class = "workouts">
+            {{!-- forms are being rendered in through js --}}
         </div>
-    {{!-- </div> --}}
+    </div>
+    <div class="dualbtn">
+        <button class = "newExc" onclick="createCard()">New Exercise</button>
+        <button class = "savebtn">Save Workout</button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
     <script src="/js/workouts.js" type="text/javascript"></script>
 </body>

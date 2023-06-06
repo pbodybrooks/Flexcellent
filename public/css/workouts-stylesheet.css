@@ -2,121 +2,145 @@ body{
     background-color: #292827;
 }
 
+.muscleDrop{
+    background-color: #3a3a39;
+    box-shadow: 2px 2px 20px #00cab1;
+}
+
+.muscleDrop:focus{
+    box-shadow: 2px 2px 20px #00cab1;
+    border:none;
+}
+
 #newCard {
     display: flex; 
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-        margin-bottom: 2vh;
-        border-radius: 5px;
-        width: auto;
-    }
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    width: auto;
+}
 
-    .workbtn{
-        background-color: #3a3a39;
-        border-color: #00CAB1;
-    }
+.workbtn{
+    background-color: #3a3a39;
+    border-color: #00CAB1;
+}
 
-    .workbtn:hover{
-        background-color: #00fdde;
-        box-shadow: 2px 2px 20px #00cab1;
-        color: #3a3a39;
-    }
+.workbtn:hover{
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #3a3a39;
+}
 
-    .workbtn:focus{
-        background-color: #3a3a39;
-        border-color: #00CAB1;
-    }
+.workbtn:focus{
+    background-color: #3a3a39;
+    border-color: #00CAB1;
+}
 
-    .workbtn:focus:hover {
-        background-color: #00fdde;
-        box-shadow: 2px 2px 20px #00cab1;
-        color: #3a3a39;  
-    }
+.workbtn:focus:hover {
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #3a3a39;  
+}
 
-    .container, .container-fluid, .mt-5 {
-        margin-left: 20% !important;
-        margin-right: 10% !important;
-    }
+.container, .container-fluid, .mt-5 {
+    margin-left: 20% !important;
+    margin-right: 10% !important;
+}
     
-    .workouts{
-        display:flex;
-        flex-wrap: wrap;
-        height:auto;
-        margin-left:auto;
-        margin-right:auto;
-        color:ghostwhite !important;
-    }
+.workouts{
+    display:flex;
+    flex-wrap: wrap;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    color:ghostwhite !important;
+}
     
-    .workCard {
-        width: 250px;
-        height: auto;
-        color:ghostwhite !important;
-        background-color: #3a3a39;
-        /* box-shadow: 7px 7px 5px #0f0f0e; */
-        box-shadow: 2px 2px 20px #ff66b4;
-        margin: 12px;
-        border-radius:15px;
-    }
+.workCard {
+    width: auto;
+    height: auto;
+    color:ghostwhite !important;
+    background-color: #3a3a39;
+    /* box-shadow: 7px 7px 5px #0f0f0e; */
+    box-shadow: 2px 2px 20px #ff66b4;
+    margin: 13px;
+    border-radius:15px;
+}
     
-    input[type=text], textarea {
-        /* width:90%; */
-        /* padding:6px 10px; */
-        margin:4px 2.5%;
-        display:inline-block;
-        color:ghostwhite;
-        border: 1px solid #00CAB1;
-        background-color: #292827;
-        border-radius: 3px;
-        box-sizing: border-box;
-    }
+input[type=text], textarea {
+    /* width:90%; */
+    /* padding:6px 10px; */
+    margin:4px 2.5%;
+    display:inline-block;
+    color:ghostwhite;
+    border: 1px solid #00CAB1;
+    background-color: #292827;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
 
-    input[type=text]:focus {
-        outline:none;
-        border-color: #00fdde;
-        background-color: #001915;
-        box-shadow: 0 0 10px #00fdde;
-    }
+input[type=text]:focus {
+    outline:none;
+    border-color: #00fdde;
+    background-color: #001915;
+    box-shadow: 0 0 10px #00fdde;
+}
 
-    .formbtn{
-        background-color: #292827;
-        color: ghostwhite;
-        border-color: #00CAB1;
-        border-radius: 5px;
-    }
+.formbtn{
+    background-color: #292827;
+    color: ghostwhite;
+    border-color: #00CAB1;
+    border-radius: 5px;
+}
 
-    .formbtn:hover{
-        background-color: #00fdde;
-        box-shadow: 2px 2px 20px #00cab1;
-        color: #3a3a39;
-    }
+.formbtn:hover, .newExc:hover, .savebtn:hover{
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #3a3a39;
+}
 
-    .formbtn:focus{
-        background-color: #292827;
-        border-color: #00CAB1;
-    }
+.formbtn:focus, .newExc:focus, .savebtn:focus{
+    background-color: #292827;
+    border-color: #00CAB1;
+}
 
-    .formbtn:focus:hover {
-        background-color: #00fdde;
-        box-shadow: 2px 2px 20px #00cab1;
-        color: #292827; 
-    }
+.formbtn:focus:hover, .newExc:focus:hover, .savebtn:focus:hover {
+    background-color: #00fdde;
+    box-shadow: 2px 2px 20px #00cab1;
+    color: #292827; 
+}
 
-    /* test line */
+#exercise, #sets, #reps, #weight, .formbtn {
+    margin:0;
+    width:85% !important;
+    margin-left:auto;
+    margin-right:auto;
+}
 
-    #exercise, #sets, #reps, #weight, .formbtn {
-        margin:0;
-        width:85% !important;
-        margin-left:auto;
-        margin-right:auto;
-    }
+label {
+    color:ghostwhite;
+    /* text-shadow: 1px 1px 14px #f9f9f9; */
+    margin:3% 5%;
+}
 
-    label {
-        color:ghostwhite;
-        /* text-shadow: 1px 1px 14px #f9f9f9; */
-        margin:3% 5%;
-    }
+.workoutForm {
+    margin:0;
+}
 
-    .workoutForm {
-        margin:0;
-    }
+.dualbtn{
+    display:flex;
+    justify-content: space-around;
+}
+
+.newExc, .savebtn{
+    width:40%;
+    margin-left: 4%;
+    margin-right: 4%;
+    background-color: #3a3a39;
+    color: ghostwhite;
+    border-color: #00CAB1;
+    border-radius: 5px;
+}
+
