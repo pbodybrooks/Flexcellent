@@ -4,7 +4,7 @@ Repo for the Flexcellent Fitness Tracker
 ## Description 
 A fitness tracker that allows users to easily track their weight and workout history with a simple and intuitive interface. Users can store their weight history and view it on a dashboard, as well as add new measurements or edit previous ones. Historical workouts can be viewed, and new workouts with custom exercises, sets, reps, and equipment weight can be added. Users can also explore new exercises by muscle group or get random exercise suggestions.
 
-**A *premium experience* is also available for  power users.**
+**A *premium experience* is also available for power users.**
 
 ## Table of Contents
 
