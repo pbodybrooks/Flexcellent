@@ -28,5 +28,5 @@ async function getRandomExercise(event) {
     window.location.href = '/explore?muscleGroup=' + randomMuscleGroup
 };
 
-// getExercisesBtn.addEventListener('click', getExercises);
+getExercisesBtn.addEventListener('click', getExercises);
 getRandomExercisesBtn.addEventListener('click', getRandomExercise);
