@@ -1,7 +1,7 @@
 const User = require('./User');
 const Exercise = require('./Exercise');
 const Workout = require('./Workout');
-const Weight = require('./Weight');
+const Weight = require('./tempweight');
 
 Workout.hasMany(Exercise, {
     foreignKey: 'workout_id',
