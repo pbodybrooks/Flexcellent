@@ -73,6 +73,12 @@ h5 {
 
 /* TODO: Define glow size/intensite for text and for buttons/boxes for each color (teal, fuchsia, purple, etc.) */
 
+.greeting {
+  font-family: 'Arial', sans-serif;
+  color: var(--darkPurple);
+  text-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
+}
+
 #menubtn{
   margin-left: 30px;
   border-color: var(--magenta);
