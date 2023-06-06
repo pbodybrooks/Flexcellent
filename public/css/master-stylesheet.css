@@ -22,7 +22,8 @@
   /* "Sweet Purple" (#9d3fae) */
   --sweetPurple: #9d3fae;
 
-  /* nextColor */
+  /* "Ghostwhite" used for text*/
+  --ghost: ghostwhite;
 
   /* nextColor */
 
@@ -32,6 +33,10 @@
 
 /* set the background color for all pages to the "Old Black" color */
 body {
+  background-color: var(--oldBlack);
+}
+
+html {
   background-color: var(--oldBlack);
 }
 
@@ -68,20 +73,69 @@ h5 {
 
 /* TODO: Define glow size/intensite for text and for buttons/boxes for each color (teal, fuchsia, purple, etc.) */
 
+#menubtn{
+  margin-left: 30px;
+  border-color: var(--magenta);
+  background-color: var(--lighterOldBlack);
+  box-shadow: none;
+}
 
+#menubtn:hover{
+  box-shadow: 3px 3px 30px var(--magenta);
+  background-color: var(--magenta);
+  color: var(--lighterOldBlack);
+}
+
+#offcanvasExample{
+  background-color: var(--oldBlack);
+  color:var(--ghost);
+}
+
+::marker{
+  color: var(--cyan);
+}
+
+.dropdown-item{
+  color:var(--ghost);
+  border-radius: 5px;
+}
+
+.dropdown-item:hover{
+  color:var(--oldBlack);
+  text-decoration: none;
+  background-color: var(--cyan);
+  box-shadow: 2px 2px 20px var(--cyan);
+}
+
+#xbtn{
+  background-color:var(--pink);
+}
+
+#logout{
+  border-color:var(--cyan);
+  color:var(--ghost);
+}
+
+#logout:hover{
+  background-color: var(--cyan);
+  box-shadow: 2px 2px var(--cyan);
+  color:var(--oldBlack);
+  font-weight: bold;
+}
 
 .neon-glow-text {
-  font-family: 'Arial', sans-serif;
-  color: var(--darkPurple);
-  text-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
+  color:var(--ghost);
+  font-weight: normal;
+  text-shadow: 2px 2px 4px var(--ghost);
 }
 
 .neon-glow-button {
   font-family: 'Arial', sans-serif;
   color: white;
   background-color: transparent;
-  border: 2px solid var(--pink);
+  /* border: 2px solid var(--pink); */
   padding: 10px 20px;
   text-shadow: 0 0 10px white;
   box-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
 }
+
