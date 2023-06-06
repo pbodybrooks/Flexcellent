@@ -1,0 +1,6 @@
+#menubtn{
+    margin-left: 30px;
+    border-color: var(--pink);
+    background-color: var(--lighterOldBlack);
+    box-shadow: none;
+}
