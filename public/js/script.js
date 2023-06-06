@@ -18,18 +18,6 @@ async function getExercises(event) {
     };
 };
 
-async function muscles(event) {
-    event.preventDefault();
-
-    let selectedMuscleGroup = document.getElementById("muscleGroup").value;
-
-    if (selectedMuscleGroup === "null") {
-        alert("Please select a muscle group.");
-    } else {
-        // window.location.href = '/explore?muscleGroup=' + selectedMuscleGroup;
-    };
-};
-
 // queries exercises based on a random muscle group
 async function getRandomExercise(event) {
     event.preventDefault();

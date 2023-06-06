@@ -177,6 +177,7 @@ router.get('/explore', withAuth, async (req, res) => {
     }
 });
 
+
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
         res.render('workouts', {

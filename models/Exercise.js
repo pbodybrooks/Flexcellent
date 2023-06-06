@@ -39,10 +39,10 @@ Exercise.init(
       allowNull: false,
     },
     // primary muscle group targeted by the exercise
-    // muscle: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+    muscle: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     // number of sets per exercise
     sets: {
       type: DataTypes.INTEGER,
