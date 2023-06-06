@@ -29,8 +29,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-
-
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -96,7 +94,6 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
     }
 });
 
-// TODO: put this in a helper file and then import it in this file, maybe
 const muscleGroupData = [
     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
     { value: 'abductors', id: 'abductors', label: 'Abductors' },
@@ -175,8 +172,6 @@ router.get('/explore', withAuth, async (req, res) => {
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
             muscleGroups: muscleGroupData
         });
     } catch (err) {

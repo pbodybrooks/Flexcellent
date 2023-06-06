@@ -63,15 +63,12 @@ body{
     height: auto;
     color:ghostwhite !important;
     background-color: #3a3a39;
-    /* box-shadow: 7px 7px 5px #0f0f0e; */
     box-shadow: 2px 2px 20px #ff66b4;
     margin: 13px;
     border-radius:15px;
 }
     
 input[type=text], textarea {
-    /* width:90%; */
-    /* padding:6px 10px; */
     margin:4px 2.5%;
     display:inline-block;
     color:ghostwhite;
@@ -121,7 +118,6 @@ input[type=text]:focus {
 
 label {
     color:ghostwhite;
-    /* text-shadow: 1px 1px 14px #f9f9f9; */
     margin:3% 5%;
 }
 

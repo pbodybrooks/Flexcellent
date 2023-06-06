@@ -22,7 +22,8 @@ function createCard() {
         <div class='dualbtn'>
 
         </div>
-        </form>`;
+        </form>`
+        ;
 
         cardEle.innerHTML = formhtml;
         var form = cardEle.querySelector('.workoutForm');

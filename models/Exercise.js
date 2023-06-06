@@ -1,27 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// DEFINITION OF EXERCISE MODEL
-// AN EXERCISE IS A SPECIFIC MOVEMENT - FOR EXAMPLE:
-//    - DUMBBELL BENCH PRESS
-// EACH EXERCISE CONTAINS THE DETAILS OF THE MOVEMENT:
-//    - NAME OF EXERCISE
-//    - PRIMARY MUSCLE GROUP TARGETED
-//    - NUMBER OF SETS
-//    - NUMBER OF REPS PER SET
-//    - EQUIPMENT USED (WEIGHT OF EQUIPMENT)
-//    - ETC.
-
-class Exercise extends Model {
-  // static async checkExercise(allParams) {
-  //   const exercise = await Exercise.findOne({
-  //     where: allParams
-  //   });
-
-  //   // Returns true if exercise exists, false otherwise 
-  //   return exercise !== null; 
-  // }
-}
+class Exercise extends Model {}
 
 Exercise.init(
   {

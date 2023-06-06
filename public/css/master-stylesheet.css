@@ -1,5 +1,4 @@
 :root {
-  /* placeholder colors*/
   --pink: #ff69b4;
   --magenta: #ff00ff;
   --purple: #800080;
@@ -7,27 +6,15 @@
   --cyan: #00ffff;
   --darkPurple: #570074;
 
-  /* colors from Notion swatches */
-  /* "Old Black" (#292827) and two lighter iterations */
   --oldBlack: #292827;
   --lightOldBlack: #2e2d2c;
   --lighterOldBlack: #383635;
 
-  /* "Neon Teal" (#00cab1) */
   --neonTeal: #00cab1;
-
-  /* "Neon Fuchsia" (#ff0ef3) */
   --neonFuchsia: #FF0ef3;
-
-  /* "Sweet Purple" (#9d3fae) */
   --sweetPurple: #9d3fae;
 
   /* nextColor */
-
-  /* nextColor */
-
-  /* nextColor */
-
 }
 
 /* set the background color for all pages to the "Old Black" color */
@@ -35,45 +22,11 @@ body {
   background-color: var(--oldBlack);
 }
 
-/* TODO: Define universal heading font sizes, margin, padding, etc.: */
-/* h1 {
-  font-size: ;
-  margin: ;
-  padding: ;
-}
-
-h2 {
-  font-size: ;
-  margin: ;
-  padding: ;
-}
-
-h3 {
-  font-size: ;
-  margin: ;
-  padding: ;
-}
-
-h4 {
-  font-size: ;
-  margin: ;
-  padding: ;
-}
-
-h5 {
-  font-size: ;
-  margin: ;
-  padding: ;
-} */
-
-/* TODO: Define glow size/intensite for text and for buttons/boxes for each color (teal, fuchsia, purple, etc.) */
-
 .greeting {
   font-family: 'Arial', sans-serif;
   color: var(--darkPurple);
   text-shadow: 0 0 5px var(--pink), 0 0 10px var(--pink), 0 0 15px var(--pink), 0 0 20px var(--magenta), 0 0 35px var(--magenta), 0 0 40px var(--magenta), 0 0 50px var(--magenta), 0 0 75px var(--purple);
 }
-
 
 .neon-glow-text {
   font-family: 'Arial', sans-serif;

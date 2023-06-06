@@ -1,15 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// DEFINITION OF WORKOUT MODEL
-// A WORKOUT IS A COLLECTION OF EXERCISES - FOR EXAMPLE:
-// A "CHEST AND TRICEPS" WORKOUT MAY INCLUDE THE FOLLOWING EXERCISES:
-//    - DUMBBELL BENCH PRESS
-//    - DUMBBELL FLY
-//    - TRICEPS PUSHDOWN
-//    - TRICEPS DIP
-//    - ETC.
-
 class Workout extends Model {}
 
 Workout.init(

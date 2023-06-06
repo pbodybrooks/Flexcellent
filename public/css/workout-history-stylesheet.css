@@ -45,7 +45,6 @@ h4 {
 }
 
 .exerciseSubCard {
-    /* background-color: var(--lighterOldBlack); */
     padding: 1rem;
     margin: .5rem;
     border: 2px solid var(--purple);
@@ -69,8 +68,6 @@ h4 {
 }
 
 #exerciseDetails {
-    /* display: flex;
-    justify-content: left; */
     font-size: 1.2rem;
     color: white;
     text-shadow: 0 0 10px white;

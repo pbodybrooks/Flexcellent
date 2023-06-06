@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Weight extends Model {
-
-}
+class Weight extends Model {}
 
 Weight.init({
     id: {
