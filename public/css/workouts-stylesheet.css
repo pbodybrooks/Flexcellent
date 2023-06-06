@@ -56,6 +56,7 @@ html{
     display:flex;
     flex-wrap: wrap;
     height:auto;
+    justify-content: center;
     margin-left:auto;
     margin-right:auto;
 }
@@ -128,6 +129,11 @@ label {
     margin:0;
 }
 
+.workoutForm input[type=text]{
+    margin:auto;
+    width:90%;
+}
+
 .dualbtn{
     display:flex;
     justify-content: space-around;
@@ -143,3 +149,6 @@ label {
     border-radius: 5px;
 }
 
+@media screen {
+    
+}

@@ -7,13 +7,16 @@ const { Workout } = require('../../models');
 router.post('/myWorkouts', async (req, res) => {
     try {
         const workout = await Workout.create({
-            date_created: req.body.date_created
+            // date_created: req.body.date_created
+            ...req.body,
+            user_id: req.session.user_id,
         });
-
+        console.log("workout", workout);
+    
         req.session.save(() => {
             req.session.logged_in = true;
             req.session.workout_id = workout.id;
-            req.session.user_id = workout.user_id;
+            // req.session.user_id = workout.user_id;
             res.status(200).json(workout);
         });
     } catch (err) {
