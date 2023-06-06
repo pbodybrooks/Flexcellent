@@ -66,6 +66,16 @@ img{
     color:var(--lighterOldBlack);
 }
 
+#backtoL{
+    color:var(--ghost);
+    text-decoration: none;
+}
+
+.textCard:hover > #backtoL{
+    color:var(--lighterOldBlack);
+    text-decoration: none;
+}
+
 .form {
     display: flex;
     flex-direction: column;
