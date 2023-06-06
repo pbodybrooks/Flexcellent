@@ -21,10 +21,10 @@ router.get('/', withAuth, async (req, res) => {
 
         console.log("userData", userData)
 
-        const users = userData.map((project) => project.get({ plain: true }));
+        const userName = userData.map((user) => user.name);
 
         res.render('homepage', {
-            users,
+            userName,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -84,13 +84,11 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 const exercise = exercises[j].dataValues;
                 exerciseArray.push(exercise);
             }
-            // console.log("exercise array: ", exerciseArray); 
             // add the workout data and the exercises to the result object
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
                 "exercises": exerciseArray
             };
-            // console.log("result: ", result);
         }
         // render the result object for user in handlebars
         res.render('workoutHistory', {
