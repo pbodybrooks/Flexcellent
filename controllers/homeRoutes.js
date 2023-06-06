@@ -6,25 +6,22 @@ const http = require('https');
 require('dotenv').config();
 
 router.get('/', withAuth, async (req, res) => {
-    if (
-        req.session.logged_in == false && !req.session.userid
-    ) {
-        res.redirect('/login')
+    if (!req.session.logged_in || !req.session.user_id) {
+        res.redirect('/login');
         return;
     }
     try {
-        console.log(req.session)
-        const userData = await User.findAll({
+        console.log("sesh", req.session)
+        const user = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
             order: [['name', 'ASC']],
         });
 
+        const userData = user.get({ plain: true });
         console.log("userData", userData)
 
-        const users = userData.map((project) => project.get({ plain: true }));
-
         res.render('homepage', {
-            users,
+            user: userData,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -50,20 +47,19 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-// Below is for workout history page
-// get workout history from database -> render workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
-    // check to make sure user is logged in
-    if (!req.session.logged_in) {
-        return res.status(404).send('User not logged in');
+    if (!req.session.logged_in || !req.session.user_id) {
+        res.redirect('/login');
+        // return res.status(404).send('User not logged in');
+        return;
     }
 
     try {
-        // get workouts from database that belong to the user
         const workoutHistory = await Workout.findAll({
             where: {
-                user_id: req.session.user_id
-            }
+                user_id: req.session.user_id,
+            },
+            include: Exercise,
         });
         // create an object to store the workout data and the exercises associated with each workout
         const result = {};
@@ -84,25 +80,23 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 const exercise = exercises[j].dataValues;
                 exerciseArray.push(exercise);
             }
-            // console.log("exercise array: ", exerciseArray); 
             // add the workout data and the exercises to the result object
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
                 "exercises": exerciseArray
             };
-            // console.log("result: ", result);
         }
         // render the result object for user in handlebars
         res.render('workoutHistory', {
             layout: 'main',
-            result
+            result,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// TODO: put this in a helper file and then import it in this file, maybe
 const muscleGroupData = [
     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
     { value: 'abductors', id: 'abductors', label: 'Abductors' },
@@ -168,9 +162,9 @@ router.get('/explore', withAuth, async (req, res) => {
 
         res.render('explore', {
             layout: 'main',
-            logged_in: req.session.logged_in,
             exercises,
             muscleGroups: muscleGroupData,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -181,9 +175,8 @@ router.get('/explore', withAuth, async (req, res) => {
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
-            muscleGroups: muscleGroupData
+            muscleGroups: muscleGroupData,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);

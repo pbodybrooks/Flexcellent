@@ -1,4 +1,3 @@
-// select button to create a new custom workout
 const addWorkoutBtn = document.querySelector('#addWorkoutBtn');
 
 const createWorkout = async () => {

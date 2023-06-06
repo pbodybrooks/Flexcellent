@@ -20,6 +20,19 @@ h4 {
     align-items: center;
 }
 
+#addWorkoutBtn{
+    text-shadow: 2px;
+}
+
+#addWorkoutBtn:hover{
+    background-color: transparent;
+    background-image: linear-gradient(to bottom right, var(--neonFuchsia), var(--pink), var(--magenta));
+    color:var(--oldBlack);
+    font-weight: bold;
+    text-shadow: none;
+    border-color:transparent;
+}
+
 .workoutCard {
     display: flex;
     flex-direction: column;
@@ -28,6 +41,7 @@ h4 {
     padding: 2rem;
     margin: 2rem;
     background-color: var(--lightOldBlack);
+    border-radius: 8px;
 }
 
 .cardHeader {
@@ -45,10 +59,10 @@ h4 {
 }
 
 .exerciseSubCard {
-    /* background-color: var(--lighterOldBlack); */
     padding: 1rem;
     margin: .5rem;
     border: 2px solid var(--purple);
+    border-radius: 8px;
 }
 
 #exerciseHeader{
@@ -56,7 +70,7 @@ h4 {
     justify-content: center;
     font-size: 1.8rem;
     color: white;
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 3px white;
     margin-bottom: 0rem;
 }
 
@@ -65,14 +79,12 @@ h4 {
     justify-content: center;
     font-size: 1.2rem;
     color: white;
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 3px white;
 }
 
 #exerciseDetails {
-    /* display: flex;
-    justify-content: left; */
     font-size: 1.2rem;
     color: white;
-    text-shadow: 0 0 10px white;
+    text-shadow: 0 0 5px white;
 }
 

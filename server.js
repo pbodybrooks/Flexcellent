@@ -11,15 +11,12 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-// Set up sessions with cookies
-const sess = {
-  secret: 'Super secret secret',
+const sesh = {
+  secret: 'Secret sesh',
   cookie: {
-    // Stored in milliseconds
-    maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
+    maxAge: 24 * 60 * 60 * 1000,
   },
   resave: false,
   saveUninitialized: true,
@@ -28,7 +25,7 @@ const sess = {
   }),
 };
 
-app.use(session(sess));
+app.use(session(sesh));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +40,7 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log(
-      `\nServer running on port ${PORT}. Visit http://localhost:${PORT} and create an account!`
+      `\nServer running on: http://localhost:${PORT}`
     )
   );
 });

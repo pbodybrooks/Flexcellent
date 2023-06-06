@@ -6,7 +6,7 @@ function createCard() {
     var cardEle = document.createElement('div');
     cardEle.classList.add('workCard');
     var container = document.querySelector('.workouts');
-    console.log(container);
+    // console.log(container);
     container.appendChild(cardEle);
 
     var formhtml =`<form name='input' class='workoutForm workoutForm-${cardNum}' action='#' method='get'> 
@@ -22,7 +22,8 @@ function createCard() {
         <div class='dualbtn'>
 
         </div>
-        </form>`;
+        </form>`
+        ;
 
         cardEle.innerHTML = formhtml;
         var form = cardEle.querySelector('.workoutForm');

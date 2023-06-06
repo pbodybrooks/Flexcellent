@@ -12,20 +12,18 @@
     <link rel="stylesheet" href="/css/master-stylesheet.css" />
 </head>
 
-{{!-- TODO: Override the default bootstrap coloring of nav/menu bar and use Old Black instead to match logo background --}}
 <main>
     <body>
         <header id="menuTab">
-            <a class="btn btn-primary neon-glow-button" data-bs-toggle="offcanvas" href="#offcanvasExample"
+            <a id = "menubtn" class="btn btn-primary neon-glow-button" data-bs-toggle="offcanvas" href="#offcanvasExample"
                 role="button" aria-controls="offcanvasExample">
                 Menu
             </a>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
-                    {{!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">LOGO GOES HERE!</h5> --}}
                     <img src="/assets/images/flexcellent-logo.png" alt="Flexcellent Fitness Logo">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    <button type="button" id="xbtn" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -36,12 +34,12 @@
                             <li id="my-workouts-nav"><a class="dropdown-item" href="/myWorkouts">My Workouts</a></li>
                             <li id="explore-nav"><a class="dropdown-item" href="/explore">Explore</a></li>
                             <li><a href="https://www.youtube.com/watch?v=a3Z7zEc7AXQ" target="_blank"
-                                    class="dropdown-item">Click here for Premium
-                                    Subscription</a></li>
+                                    class="dropdown-item">Premium
+                                    Subscription Here</a></li>
                         </ul>
                         {{#if logged_in}}
                         <nav>
-                            <button class="btn" id="logout">logout</button>
+                            <button class="btn" id="logout">Logout</button>
                         </nav>
                         {{/if}}
                     </div>

@@ -74,7 +74,8 @@ async function deleteWeight(id) {
         }, body: JSON.stringify({ rowId: id })
     })
     userData()
-}
+};
+
 async function upWeight(id) {
     const weight = document.querySelector(`.row${id} input.weight`).value
     const date = document.querySelector(`.row${id} input.date`).value
@@ -84,7 +85,7 @@ async function upWeight(id) {
         }, body: JSON.stringify({ rowId: id, weight: weight, date: date })
     })
     userData()
-}
+};
 
 async function userData() {
     const response = await fetch('/api/weight/retriever');
@@ -111,15 +112,16 @@ async function userData() {
     </div>`
     }
     weightDataElement.innerHTML = html;
+};
 
-}
 function init() {
     yearElement.value = new Date().getFullYear()
     chart2()
     userData()
 
-}
-init()
+};
+
+init();
 
 trackerBtn.addEventListener('click', async () => {
     const weightData = {
@@ -132,10 +134,8 @@ trackerBtn.addEventListener('click', async () => {
         }, body: JSON.stringify(weightData)
     })
     userData()
-    // const jsonData = await storing.json();
-    // data.push(weightData)
-    // chart.update();
 });
+
 yearElement.addEventListener('change', () => {
     const minMax = getMinMax()
     chart.options.scales.x.min = minMax.min

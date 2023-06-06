@@ -22,11 +22,4 @@ User.hasMany(Weight, {
     onDelete: 'CASCADE'
 });
 
-// TODO: Don't think this is needed because we are not tying exercises directly to users
-// instead, exercises are tied to the workout, which is tied to the user!
-// User.hasMany(Exercise, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
-
 module.exports = { User, Exercise, Workout, Weight }
