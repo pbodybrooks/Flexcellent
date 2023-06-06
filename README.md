@@ -21,6 +21,9 @@ A fitness tracker that allows users to easily track their weight and workout his
 ![Screenshot of Flexcellent Register Page.](public/assets/images/screenshot2.png)
 ![Screenshot of Flexcellent Dashboard.](public/assets/images/screenshot2.png)
 
+## Flexcellent Presentation
+[Flexcellent Presentation Slides](https://www.canva.com/design/DAFk6BZjLtE/wtT1D7EX9xMWGalhYye0uQ/edit?utm_content=DAFk6BZjLtE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## Installation 
 N/A
 
