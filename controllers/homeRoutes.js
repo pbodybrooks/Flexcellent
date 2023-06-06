@@ -6,31 +6,30 @@ const http = require('https');
 require('dotenv').config();
 
 router.get('/', withAuth, async (req, res) => {
-    if (
-        req.session.logged_in == false && !req.session.userid
-    ) {
-        res.redirect('/login')
+    if (!req.session.logged_in || !req.session.user_id) {
+        res.redirect('/login');
         return;
     }
     try {
-        console.log(req.session)
-        const userData = await User.findAll({
+        console.log("sesh", req.session)
+        const user = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
             order: [['name', 'ASC']],
         });
 
+        const userData = user.get({ plain: true });
         console.log("userData", userData)
 
-        const userName = userData.map((user) => user.name);
-
         res.render('homepage', {
-            userName,
+            user: userData,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
@@ -50,20 +49,17 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
-// Below is for workout history page
-// get workout history from database -> render workoutHistory.handlebars
 router.get('/myWorkouts', withAuth, async (req, res) => {
-    // check to make sure user is logged in
-    if (!req.session.logged_in) {
+    if (!req.session.logged_in || !req.session.user_id) {
         return res.status(404).send('User not logged in');
     }
 
     try {
-        // get workouts from database that belong to the user
         const workoutHistory = await Workout.findAll({
             where: {
-                user_id: req.session.user_id
-            }
+                user_id: req.session.user_id,
+            },
+            include: Exercise,
         });
         // create an object to store the workout data and the exercises associated with each workout
         const result = {};
