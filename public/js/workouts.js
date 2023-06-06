@@ -3,7 +3,7 @@ function createCard() {
     cardEle.classList.add('workCard');
 
     var container = document.querySelector('.workouts');
-    console.log(container);
+    // console.log(container);
     container.appendChild(cardEle);
 
     // const nodeList = document.querySelectorAll(".workCard");
@@ -31,13 +31,8 @@ function createCard() {
         var form = cardEle.querySelector('.workoutForm');
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission and page reload
-        // Handle form submission logic here if needed
     });
-    
-    }
-    // Add in 'preventDefault();' so page is not refreshed and data is lost !!!
-// }
 
-function addEx() {
-
+    console.log("made");
 }
+
