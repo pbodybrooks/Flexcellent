@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/explore-stylesheet.css" />
     <link rel="stylesheet" href="/css/master-stylesheet.css" />
-
-    {{!-- <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/browser.js"></script> --> --}}
 </head>
 
 <body>
@@ -24,14 +22,11 @@
       </select>
     </form>
 
-    {{!-- <a href="/explore"></a> --}}
     
     <div>
-      <button class="btn-red neon-glow-button" id="getExercises">Get Exercises! [Call API]</button>
-      <button class="btn-red neon-glow-button" id="getRandomExercises">Get Random Exercises! [Call API]</button>
-      {{!-- the below two buttons were for testing purposes and can be deleted when we are done --}}
-      {{!-- <button class="btn-red" id="getAllExercises">Get All Exercises! [Call API]</button>
-      <button id="retrieve">Retrieve from local storage</button> --}}
+      <button class="btn-red neon-glow-button" id="getExercises">Get Exercises!</button>
+      <button class="btn-red neon-glow-button" id="getRandomExercises">Get Random Exercises!</button>
+    
     </div>
 
     <div class="m-4" id="exerciseContainer">
@@ -53,8 +48,7 @@
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-  {{!-- TODO: Ash, if you rename script.js, remember to update the source here: --}}
-  <script src="/js/script.js" type="text/javascript"></script>
+  <script src="/js/explore.js" type="text/javascript"></script>
 </body>
 
 </html>

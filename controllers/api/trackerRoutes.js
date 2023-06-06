@@ -16,6 +16,7 @@ router.post('/add', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
+
 router.get('/retriever', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -30,6 +31,7 @@ router.get('/retriever', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
+
 router.put('/update', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -44,6 +46,7 @@ router.put('/update', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
+
 router.delete('/delete', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -56,4 +59,5 @@ router.delete('/delete', async (req, res) => {
         res.status(500).send(error.message);
     }
 });
+
 module.exports = router;

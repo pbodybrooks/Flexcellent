@@ -1,7 +1,7 @@
 const User = require('./User');
 const Exercise = require('./Exercise');
 const Workout = require('./Workout');
-const Weight = require('./Weight');
+const Weight = require('./tempweight');
 
 Workout.hasMany(Exercise, {
     foreignKey: 'workout_id',
@@ -21,12 +21,5 @@ User.hasMany(Weight, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
-
-// TODO: Don't think this is needed because we are not tying exercises directly to users
-// instead, exercises are tied to the workout, which is tied to the user!
-// User.hasMany(Exercise, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
 
 module.exports = { User, Exercise, Workout, Weight }

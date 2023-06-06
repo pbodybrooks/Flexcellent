@@ -29,8 +29,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-
-
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -51,7 +49,9 @@ router.get('/register', (req, res) => {
 
 router.get('/myWorkouts', withAuth, async (req, res) => {
     if (!req.session.logged_in || !req.session.user_id) {
-        return res.status(404).send('User not logged in');
+        res.redirect('/login');
+        // return res.status(404).send('User not logged in');
+        return;
     }
 
     try {
@@ -89,14 +89,14 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
         // render the result object for user in handlebars
         res.render('workoutHistory', {
             layout: 'main',
-            result
+            result,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// TODO: put this in a helper file and then import it in this file, maybe
 const muscleGroupData = [
     { value: 'abdominals', id: 'abdominals', label: 'Abdominals' },
     { value: 'abductors', id: 'abductors', label: 'Abductors' },
@@ -162,9 +162,9 @@ router.get('/explore', withAuth, async (req, res) => {
 
         res.render('explore', {
             layout: 'main',
-            logged_in: req.session.logged_in,
             exercises,
             muscleGroups: muscleGroupData,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -175,9 +175,8 @@ router.get('/explore', withAuth, async (req, res) => {
 router.get('/addWorkouts', withAuth, async (req, res) => {
     try {
         res.render('workouts', {
-            // ...user,
-            // logged_in: true
-            muscleGroups: muscleGroupData
+            muscleGroups: muscleGroupData,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);

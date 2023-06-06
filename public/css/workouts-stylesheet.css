@@ -121,7 +121,6 @@ input[type=text]:focus {
 
 label {
     color:var(--ghost);
-    /* text-shadow: 1px 1px 14px #f9f9f9; */
     margin:3% 5%;
     font-size: 2.5vh;
 }
