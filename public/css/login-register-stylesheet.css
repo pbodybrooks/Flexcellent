@@ -4,13 +4,25 @@ header {
     justify-content: center;
 }
 
+body{
+    margin:0;
+    height: 100%;
+    overflow: hidden;
+}
+
 #tittle {
     font-family: 'Bruno Ace', cursive;
-    font-size: 125px;
+    font-size: 6vh;
     text-align: center;
     color: #00ffff;
+    margin:0;
     text-shadow: 7px 2px 2px #e478b0;
-    padding-bottom: 65px;
+}
+
+img{
+    max-width: 20vh;
+    margin:auto;
+    padding-bottom: 3vh;
 }
 
 #mainCard {
@@ -27,14 +39,41 @@ header {
 }
 
 .textCard {
-    box-shadow: 6px 4px 5px #00b7ff;
     padding: 12px 17px;
-    border-radius: 26px;
-    border: 1px solid #272729;
+    border-radius: 15px;
+    border: 1px solid var(--pink);
     text-transform: uppercase;
     font-weight: 500;
-    width: 17%;
-    background-color: #ff66b4;
+    background-color: var(--lightOldBlack);
+}
+
+#signin{
+    margin-top:3vh;
+    width: 28.5vh;
+}
+
+.textCard:hover {
+    background-color: var(--pink);
+    box-shadow: 2px 2px 20px var(--pink);
+}
+
+#regbtn{
+    text-decoration: none;
+    color:var(--ghost);
+}
+
+.textCard:hover > #regbtn {
+    color:var(--lighterOldBlack);
+}
+
+#backtoL{
+    color:var(--ghost);
+    text-decoration: none;
+}
+
+.textCard:hover > #backtoL{
+    color:var(--lighterOldBlack);
+    text-decoration: none;
 }
 
 .form {
@@ -48,7 +87,7 @@ header {
     min-height: 40vh;
     background-color: #262626;
     padding: 30px;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
 }
 
 a {
