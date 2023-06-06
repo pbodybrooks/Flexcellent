@@ -22,7 +22,9 @@
                     <div class="cardHeader">
                         <h2 class="neon-glow-text" id="workoutName"><strong>{{workoutData.name}}</strong></h2>
                         <h3 class="neon-glow-text" id="workoutDate"> {{format_date_day_of_week workoutData.date_created}}</h3>
-                        <h3 class="neon-glow-text" id="workoutDuration">Duration: {{workoutData.workout_duration}} minutes</h3>
+                        {{#if workoutData.workout_duration}}
+                            <h3 class="neon-glow-text" id="workoutDuration">Duration: {{workoutData.workout_duration}} minutes</h3>
+                        {{/if}}
                     </div>
                     <div class="cardBody">
                         {{#each exercises}}
