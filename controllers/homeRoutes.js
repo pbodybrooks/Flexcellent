@@ -5,6 +5,7 @@ const http = require('https');
 
 require('dotenv').config();
 
+// dashboard route, render the homepage if the user is logged in, otherwise redirect to the login page
 router.get('/', withAuth, async (req, res) => {
     if (!req.session.logged_in || !req.session.user_id) {
         res.redirect('/login');
@@ -29,6 +30,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+// login route, if logged in redirect to homepage/dashboard
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -38,6 +40,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// register route, if logged in redirect to homepage/dashboard
 router.get('/register', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -47,6 +50,7 @@ router.get('/register', (req, res) => {
     res.render('register');
 });
 
+// My Workouts page route, get all historical workouts for the user and render the page
 router.get('/myWorkouts', withAuth, async (req, res) => {
     if (!req.session.logged_in || !req.session.user_id) {
         res.redirect('/login');
@@ -116,6 +120,7 @@ const muscleGroupData = [
     { value: 'triceps', id: 'triceps', label: 'Triceps' }
 ];
 
+// call the API-Ninjas Exercises API to get workouts by muscle group
 const fetchExercises = (muscleGroup) => {
     return new Promise((resolve, reject) => {
         const options = {
@@ -147,6 +152,7 @@ const fetchExercises = (muscleGroup) => {
     });
 };
 
+// Explore page route
 router.get('/explore', withAuth, async (req, res) => {
     try {
         let exercises = [];

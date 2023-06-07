@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Weight extends Model {}
 
+// model defining the structure for body weight data points
 Weight.init({
     id: {
         type: DataTypes.INTEGER,

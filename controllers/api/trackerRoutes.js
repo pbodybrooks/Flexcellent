@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Weight } = require('../../models');
 const { Op } = require("sequelize");
 
+// add/create a new user weight data point (used for weight tracking - dashboard)
 router.post('/add', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -17,6 +18,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
+// get all weight data points for the user (used for weight tracking - dashboard)
 router.get('/retriever', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -32,6 +34,7 @@ router.get('/retriever', async (req, res) => {
     }
 });
 
+// update a weight data point for the user (used for weight tracking - dashboard)
 router.put('/update', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');
@@ -47,6 +50,7 @@ router.put('/update', async (req, res) => {
     }
 });
 
+// delete a weight data point for the user (used for weight tracking - dashboard)
 router.delete('/delete', async (req, res) => {
     if (!req.session.logged_in) {
         return res.status(404).send('User not logged in');

@@ -1,5 +1,6 @@
 const addWorkoutBtn = document.querySelector('#addWorkoutBtn');
 
+// create a workout that serves as the main card for the "Create a Workout" functionality 
 const createWorkout = async () => {
     try {
     const date_created = new Date();

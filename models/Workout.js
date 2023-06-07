@@ -17,6 +17,15 @@ Workout.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
+    // optional - reference exercise muscle for the heading of workout cards in workout history
+    muscle_group: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        references: {
+          model: 'exercise',
+          key: 'muscle',
+        },
+    },
     // date will be automatically generated and used in the heading of workout cards in workout history
     date_created: {
         type: DataTypes.DATE,
@@ -24,7 +33,6 @@ Workout.init(
         defaultValue: DataTypes.NOW,
     },
     // optional: enter the duration of your workout in minutes (ex. 50 minutes) 
-    //    - clicking "complete workout" will ask user if they want to enter a duration
     workout_duration: {
         type: DataTypes.INTEGER,
         allowNull: true,

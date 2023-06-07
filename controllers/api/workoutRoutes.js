@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Workout } = require('../../models');
 
+// post a newly created workout to the database (used for Create a New Workout)
 router.post('/myWorkouts', async (req, res) => {
     try {
         const workout = await Workout.create({
