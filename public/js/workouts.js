@@ -2,6 +2,8 @@ const saveWorkout = document.querySelector('.savebtn');
 const newExercise = document.querySelector('.newExc');
 let cardNum = 0;
 
+// create an exercise that serves as the sub-cards for the "Create a Workout" functionality 
+
 function createCard() {
     var cardEle = document.createElement('div');
     cardEle.classList.add('workCard');

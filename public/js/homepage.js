@@ -7,6 +7,8 @@ const weekly = document.getElementById("trackerDate");
 const month = document.getElementById("month");
 let chart;
 
+// code for weight tracker using chart.js
+
 function getMinMax() {
     const monthDate = month.value
     const yearDate = yearElement.value
