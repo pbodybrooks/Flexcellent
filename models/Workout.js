@@ -17,15 +17,6 @@ Workout.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-    // optional - reference exercise muscle for the heading of workout cards in workout history
-    muscle_group: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        references: {
-          model: 'exercise',
-          key: 'muscle',
-        },
-    },
     // date will be automatically generated and used in the heading of workout cards in workout history
     date_created: {
         type: DataTypes.DATE,

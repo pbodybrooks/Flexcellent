@@ -84,6 +84,8 @@ router.get('/myWorkouts', withAuth, async (req, res) => {
                 const exercise = exercises[j].dataValues;
                 exerciseArray.push(exercise);
             }
+
+            console.log("workoutData", workoutData)
             // add the workout data and the exercises to the result object
             result[workoutHistory[i].id] = {
                 "workoutData": workoutData,
