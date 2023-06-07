@@ -1,33 +1,43 @@
 const router = require('express').Router();
-const { Exercise } = require('../../models');
+const { Exercise, Workout } = require('../../models');
 
-// post a newly created workout to the database (used for Create a New Workout)
+// POST a newly created exercise and workout to the database
 router.post('/addWorkouts', async (req, res) => {
   try {
-    const workout_id = req.session.workout_id;
+    const { workout_name, date_created, name, muscle, sets, reps, eqpWeight } = req.body;
+    
+    console.log("sets", sets);
 
+    const workout = await Workout.create({
+      name: workout_name,
+      date_created: date_created,
+      user_id: req.session.user_id,
+    });
+
+    console.log("workout", workout);
+
+    // Create the exercise
     const exercise = await Exercise.create({
-      name: req.body.name,
-      muscle: req.body.muscle,
-      sets: req.body.sets,
-      reps: req.body.reps,
-      equipment_weight: req.body.eqpWeight,
-      workout_id: workout_id,
+      name: name,
+      muscle: muscle,
+      sets: sets,
+      reps: reps,
+      equipment_weight: eqpWeight,
+      workout_id: workout.id,
     });
 
-    req.session.save(() => {
-      req.session.logged_in = true;
-      req.session.exercise_id = exercise.id;
-      res
-        .status(200)
-        .json({ message: 'Exercise added successfully', exercise: exercise })
-    });
+    console.log("exercise", exercise);
 
+
+    res.status(200).json({
+      message: 'Exercise and Workout added successfully',
+      workout: workout,
+      exercise: exercise,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-      
 
 module.exports = router;
