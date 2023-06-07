@@ -3,7 +3,7 @@ const addWorkoutBtn = document.querySelector('#addWorkoutBtn');
 const createWorkout = async () => {
     try {
     const date_created = new Date();
-    const name = '';
+    const name = 'Chest';
     const workout_duration = null;
       const response = await fetch('/api/workouts/myWorkouts', {
         method: 'POST',
